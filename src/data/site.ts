@@ -8,10 +8,10 @@ export const company = {
   name: "Topocond Cadastru",
   shortName: "TOPOCOND",
   // PLACEHOLDER — număr de telefon de confirmat
-  phoneLabel: "0754 827 923",
-  phoneHref: "tel:0754827923",
+  phoneLabel: "0754 827 623",
+  phoneHref: "tel:0754827623",
   // PLACEHOLDER — link WhatsApp de confirmat
-  whatsappHref: "https://wa.me/40754827923",
+  whatsappHref: "https://wa.me/40754827623",
   // PLACEHOLDER — email de confirmat
   email: "email@placeholder.ro",
   // PLACEHOLDER — adresă / județ de confirmat
