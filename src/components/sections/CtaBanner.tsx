@@ -1,6 +1,7 @@
 import { MessageCircle, Phone } from "lucide-react";
 
 import { Reveal } from "@/components/common/Reveal";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { company } from "@/data/site";
 import { ClipboardIcon } from "@/components/sections/ClipboardIcon";
@@ -8,26 +9,38 @@ import { ClipboardIcon } from "@/components/sections/ClipboardIcon";
 type CtaBannerProps = {
   title: string;
   subtitle: string;
+  floating?: boolean;
 };
 
 /** Bannerul verde de CTA, folosit identic pe toate paginile. */
-export function CtaBanner({ title, subtitle }: CtaBannerProps) {
+export function CtaBanner({ title, subtitle, floating = false }: CtaBannerProps) {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-      <Reveal className="flex flex-col gap-6 rounded-xl bg-brand px-6 py-8 text-primary-foreground sm:px-10 lg:flex-row lg:items-center lg:justify-between">
-        <div className="flex min-w-0 items-start gap-4">
-          <span className="hidden size-14 shrink-0 place-items-center rounded-lg bg-primary-foreground/10 sm:grid">
-            <ClipboardIcon className="size-7" />
+    <section
+      className={cn(
+        "mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8",
+        floating &&
+          "relative z-10 -mt-[48px] -mb-4 py-0 sm:-mt-[50px] sm:-mb-5 sm:py-0 lg:-mt-[52px] lg:-mb-6 lg:py-0",
+      )}
+    >
+      <Reveal
+        className={cn(
+          "flex flex-col gap-6 rounded-xl bg-brand px-6 py-10 text-primary-foreground sm:px-10 lg:flex-row lg:items-center lg:justify-between",
+          floating && "rounded-b-none bg-footer py-[3.25rem]",
+        )}
+      >
+        <div className="flex min-w-0 items-center gap-4">
+          <span className="hidden size-[56px] shrink-0 place-items-center rounded-lg bg-primary-foreground/10 sm:grid">
+            <ClipboardIcon className="size-[2.2rem]" />
           </span>
           <div className="min-w-0">
-            <h2 className="text-xl leading-snug font-bold sm:text-2xl">{title}</h2>
-            <p className="mt-2 text-sm text-primary-foreground/85">{subtitle}</p>
+            <h2 className="text-[1.375rem] leading-snug font-bold sm:text-[2.125rem]">{title}</h2>
+            <p className="mt-2 text-sm text-primary-foreground/78">{subtitle}</p>
           </div>
         </div>
-        <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
+        <div className="flex flex-col gap-3 self-center sm:flex-row lg:shrink-0">
           <Button
             asChild
-            className="bg-primary-foreground text-brand hover:bg-primary-foreground/90"
+            className="h-11 bg-primary-foreground px-6 text-brand hover:bg-primary-foreground/90 sm:h-12 sm:px-7"
           >
             <a href={company.whatsappHref} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="size-4" aria-hidden="true" />
@@ -36,7 +49,7 @@ export function CtaBanner({ title, subtitle }: CtaBannerProps) {
           </Button>
           <Button
             asChild
-            className="bg-brand-dark text-primary-foreground hover:bg-brand-dark/90"
+            className="h-11 bg-brand-dark px-6 text-primary-foreground hover:bg-brand-dark/90 sm:h-12 sm:px-7"
           >
             <a href={company.phoneHref}>
               <Phone className="size-4" aria-hidden="true" />

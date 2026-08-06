@@ -4,13 +4,13 @@ import { ArrowRight, MessageCircle, Phone } from "lucide-react";
 import { Reveal } from "@/components/common/Reveal";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { CtaBanner } from "@/components/sections/CtaBanner";
-import { IconCardGrid } from "@/components/sections/IconCardGrid";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { WhyChooseSection } from "@/components/sections/WhyChooseSection";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
-import { advantages, company } from "@/data/site";
+import { company } from "@/data/site";
 import { getUiIcon, serviceIcons } from "@/lib/icons";
 
 const title = "Cadastru, Intabulare și Topografie în Botoșani | Topocond";
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/")({
     scripts: [
       {
         type: "application/ld+json",
-        // PLACEHOLDER — date de firmă de confirmat înainte de publicare
+        // PLACEHOLDER - date de firmă de confirmat înainte de publicare
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
@@ -80,17 +80,17 @@ function HomePage() {
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "linear-gradient(90deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.42) 35%, rgba(0,0,0,.18) 70%, rgba(0,0,0,.05) 100%)",
+              "linear-gradient(90deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.5) 35%, rgba(0,0,0,.24) 70%, rgba(0,0,0,.08) 100%)",
           }}
           aria-hidden="true"
         />
 
-        <div className="mx-auto grid min-h-[540px] max-w-7xl items-start gap-8 px-4 pt-6 pb-24 sm:min-h-[585px] sm:px-6 sm:pt-8 sm:pb-28 lg:h-[67vh] lg:min-h-[500px] lg:max-h-[620px] lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-10 lg:px-8 lg:pt-5 lg:pb-[5.5rem]">
-          <Reveal className="pt-4 sm:pt-6 lg:pt-0">
+        <div className="mx-auto grid min-h-[540px] max-w-7xl items-start gap-8 px-4 pt-6 pb-24 sm:min-h-[585px] sm:px-6 sm:pt-8 sm:pb-28 lg:px-8 lg:pt-8 lg:pb-36 xl:h-[67vh] xl:min-h-[500px] xl:max-h-[620px] xl:grid-cols-[1.08fr_0.92fr] xl:items-center xl:gap-10 xl:pt-5 xl:pb-[5.5rem]">
+          <Reveal className="pt-4 sm:pt-6 xl:pt-0">
             <h1 className="text-3xl leading-[1.05] font-bold text-primary-foreground sm:text-4xl lg:text-[3.55rem]">
-              <span className="lg:whitespace-nowrap">Cadastru, Intabulare</span>
+              <span className="lg:whitespace-nowrap">Cadastru, Intabulare</span>{" "}
               <br className="hidden lg:block" />
-              <span className="lg:whitespace-nowrap">și Topografie</span>
+              <span className="lg:whitespace-nowrap">și Topografie</span>{" "}
               <br className="hidden lg:block" />
               <span className="text-brand-accent lg:whitespace-nowrap">în Botoșani</span>
             </h1>
@@ -130,24 +130,24 @@ function HomePage() {
             </div>
           </Reveal>
 
-          <Reveal delay={120} className="lg:justify-self-end">
-            <ul className="grid gap-4 sm:grid-cols-2">
+          <Reveal delay={120} className="xl:justify-self-end">
+            <ul className="grid gap-4 sm:grid-cols-2 lg:max-w-[40rem] lg:gap-5 xl:max-w-none">
               {heroHighlights.map((item) => {
                 const Icon = getUiIcon(item.icon);
                 return (
                   <li
                     key={item.label}
-                    className="flex min-w-0 items-start gap-4 rounded-2xl border border-white/[0.15] bg-white/[0.08] px-7 py-6 backdrop-blur-[10px]"
+                    className="flex min-w-0 items-start gap-4 rounded-2xl border border-white/[0.15] bg-white/[0.08] px-7 py-6 backdrop-blur-[10px] lg:min-h-[126px] lg:items-center lg:gap-6 lg:px-8 lg:py-7 xl:min-w-[252px]"
                   >
                     <Icon
-                      className="mt-0.5 size-[2rem] shrink-0 text-white sm:size-[2.15rem]"
+                      className="mt-0.5 size-[2rem] shrink-0 text-white sm:size-[2.15rem] lg:size-[2.25rem]"
                       aria-hidden="true"
                     />
-                    <div className="min-w-0">
+                    <div className="min-w-0 lg:self-center">
                       <p className="text-[0.78rem] font-medium tracking-[0.01em] text-white/84">
                         {item.label}
                       </p>
-                      <p className="mt-1 text-sm font-semibold text-white sm:text-base">
+                      <p className="mt-1.5 text-sm font-semibold text-white sm:text-base lg:text-[1.08rem] lg:leading-snug lg:font-bold lg:whitespace-nowrap">
                         {item.value}
                       </p>
                     </div>
@@ -160,8 +160,8 @@ function HomePage() {
       </section>
 
       {/* Bara cu cele 6 servicii, suprapusă pe hero */}
-      <div className="relative z-10 mx-auto -mt-16 max-w-7xl px-4 sm:px-6 lg:-mt-20 lg:px-8">
-        <Reveal className="rounded-[24px] border border-border bg-card p-6 shadow-[0_20px_60px_rgba(0,0,0,.08)] sm:p-8">
+      <div className="relative z-10 mx-auto -mt-[4.5rem] max-w-7xl px-4 sm:-mt-[4.9rem] sm:px-6 lg:-mt-[6rem] lg:px-8">
+        <Reveal className="rounded-[24px] border border-border bg-card p-6 shadow-[0_26px_70px_rgba(0,0,0,.12)] sm:p-8">
           <h2 className="text-center text-lg font-bold text-brand-dark">
             Servicii de cadastru și topografie
           </h2>
@@ -183,19 +183,19 @@ function HomePage() {
 
       <AboutSection eyebrow="CINE SUNTEM" title="Despre Topocond Cadastru" withCta variant="home" />
 
-      <section className="bg-surface py-14 sm:py-20">
+      <section className="bg-surface py-14 sm:py-[4.75rem]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Serviciile noastre"
             title="Soluții complete pentru proprietatea ta"
-            subtitle="[subtitlu placeholder]"
+            subtitle="Fie că ai nevoie de cadastru pentru un teren, intabulare pentru casă sau consultanță pentru acte, suntem aici să te ajutăm."
           />
           <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.slice(0, 3).map((service, index) => (
               <ServiceCard key={service.slug} service={service} delay={index * 80} />
             ))}
           </ul>
-          <div className="mt-8 text-center">
+          <div className="mt-6 text-center">
             <Button asChild variant="outline" className="border-brand text-brand">
               <Link to="/servicii">
                 Vezi toate serviciile
@@ -206,21 +206,17 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="De ce să alegi" title="Avantajele colaborării cu noi" />
-          <div className="mt-10">
-            <IconCardGrid items={advantages} />
-          </div>
-        </div>
-      </section>
+      <WhyChooseSection />
 
       <Testimonials />
 
-      <CtaBanner
-        title="Ai nevoie de servicii de cadastru sau topografie?"
-        subtitle="Contactează-ne acum și primești ofertă personalizată gratuit."
-      />
+      <div className="bg-footer pb-0">
+        <CtaBanner
+          title="Ai nevoie de servicii de cadastru sau topografie?"
+          subtitle="Contactează-ne acum și primești ofertă personalizată gratuit."
+          floating
+        />
+      </div>
     </>
   );
 }

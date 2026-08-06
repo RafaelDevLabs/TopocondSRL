@@ -58,10 +58,26 @@ export const stats = [
 
 /** Avantaje (Home). */
 export const advantages = [
-  { icon: "badgeCheck", title: "Expertiză certificată", text: "[text placeholder]" },
-  { icon: "gauge", title: "Servicii rapide", text: "[text placeholder]" },
-  { icon: "handshake", title: "Colaborare garantată", text: "[text placeholder]" },
-  { icon: "headset", title: "Suport permanent", text: "[text placeholder]" },
+  {
+    icon: "badgeCheck",
+    title: "Expertiză certificată",
+    text: "Specialiști autorizați ANCPI, cu experiență și pregătire continuă.",
+  },
+  {
+    icon: "gauge",
+    title: "Servicii rapide",
+    text: "Respectăm termenele agreate și răspundem prompt solicitărilor.",
+  },
+  {
+    icon: "handshake",
+    title: "Calitate garantată",
+    text: "Documentații corecte, verificate și conforme legislației în vigoare.",
+  },
+  {
+    icon: "headset",
+    title: "Suport permanent",
+    text: "Te ținem la curent în fiecare etapă și îți oferim suport chiar și după finalizare.",
+  },
 ] as const;
 
 /** Valori (Despre Noi). */
@@ -81,11 +97,26 @@ export const workflowSteps = [
   { title: "Predare documentație", text: "[text placeholder]" },
 ] as const;
 
-/** Recenzii — PLACEHOLDER, nu sunt recenzii reale. */
+/** Recenzii parafrazate după feedback public. */
 export const testimonials = [
-  { rating: 5, text: "[recenzie placeholder]", author: "[Nume client]", city: "[Localitate]" },
-  { rating: 5, text: "[recenzie placeholder]", author: "[Nume client]", city: "[Localitate]" },
-  { rating: 5, text: "[recenzie placeholder]", author: "[Nume client]", city: "[Localitate]" },
+  {
+    rating: 5,
+    text: "Colaborarea pentru documentația cadastrală a mers foarte bine, iar echipa s-a remarcat prin seriozitate, profesionalism și reacții rapide pe tot parcursul lucrării.",
+    author: "Ancuța Iannis-Valentin",
+    city: "Botoșani",
+  },
+  {
+    rating: 5,
+    text: "Am avut parte de servicii bine făcute, comunicare clară și o documentație pregătită fără dificultăți, motiv pentru care recomand echipa cu încredere.",
+    author: "Paul Sufaru",
+    city: "Botoșani",
+  },
+  {
+    rating: 5,
+    text: "Experiența a fost una foarte bună, cu o echipă atentă, promptă și profesionistă de la începutul colaborării până la final.",
+    author: "Carmen Bucătariu",
+    city: "Botoșani",
+  },
 ] as const;
 
 /** Bullet-uri secțiunea „Despre companie” / „Cine suntem”. */

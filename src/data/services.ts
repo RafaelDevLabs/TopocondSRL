@@ -5,12 +5,7 @@
  */
 
 export type ServiceIconName =
-  | "cadastru"
-  | "ridicari"
-  | "consultanta"
-  | "dezmembrari"
-  | "trasari"
-  | "planuri";
+  "cadastru" | "ridicari" | "consultanta" | "dezmembrari" | "trasari" | "planuri";
 
 export type Service = {
   slug: string;
@@ -21,6 +16,7 @@ export type Service = {
   /** Descriere completă (popup). */
   fullDescription: string;
   icon: ServiceIconName;
+  imageSrc?: string;
   /** Alt text pentru imaginea de card (imaginea reală urmează să fie livrată). */
   imageAlt: string;
   /** Bullet-uri afișate pe card. */
@@ -43,49 +39,109 @@ export const services: Service[] = [
     slug: "cadastru-si-intabulare",
     title: "Cadastru și Intabulare",
     shortTitle: "Cadastru și Intabulare",
-    shortDescription: "[descriere scurtă placeholder]",
-    fullDescription: "[descriere completă placeholder]",
+    shortDescription:
+      "Întocmirea documentațiilor pentru înscrierea terenurilor și construcțiilor în cartea funciară.",
+    fullDescription:
+      "Realizăm documentații cadastrale complete pentru terenuri, apartamente, case și alte construcții, astfel încât proprietatea ta să fie înregistrată corect și fără complicații.",
     icon: "cadastru",
-    imageAlt: "Imagine placeholder pentru serviciul de cadastru și intabulare",
-    bullets: placeholderList(4),
-    includes: placeholderList(4),
-    whenNeeded: "[text placeholder]",
-    documents: placeholderList(4),
-    duration: "[durată placeholder]",
-    price: "[preț placeholder]",
-    coverage: "[zonă placeholder]",
+    imageSrc: "/Images/Servicii/Cadastru_si_Intabulare.jpeg",
+    imageAlt: "Documentație cadastrală pentru teren și construcții",
+    bullets: [
+      "Înregistrarea terenurilor și construcțiilor",
+      "Obținerea Extrasului de Carte Funciară",
+      "Intabulare pentru apartamente, case și terenuri",
+      "Trasarea limitelor de proprietate",
+      "Dezmembrări și alipiri terenuri",
+      "Actualizări cadastrale",
+    ],
+    includes: [
+      "Măsurători și identificarea exactă a proprietății",
+      "Întocmirea documentației cadastrale complete",
+      "Pregătirea actelor pentru intabulare",
+      "Depunerea documentației conform cerințelor ANCPI",
+    ],
+    whenNeeded:
+      "Este necesar atunci când vinzi, cumperi, intabulezi sau actualizezi datele unei proprietăți în evidențele de cadastru și carte funciară.",
+    documents: [
+      "Act de proprietate",
+      "Carte de identitate proprietar",
+      "Certificat fiscal, dacă este solicitat",
+      "Documente tehnice existente, dacă sunt disponibile",
+    ],
+    duration: "În funcție de complexitatea proprietății",
+    price: "Se stabilește după analiza documentației",
+    coverage: "Botoșani și zonele limitrofe",
   },
   {
     slug: "ridicari-topografice",
     title: "Ridicări Topografice",
     shortTitle: "Ridicări Topografice",
-    shortDescription: "[descriere scurtă placeholder]",
-    fullDescription: "[descriere completă placeholder]",
+    shortDescription: "Măsurători precise pentru documentații tehnice și proiecte de construcții.",
+    fullDescription:
+      "Executăm ridicări topografice precise pentru proiecte rezidențiale, comerciale sau urbanistice, folosind echipamente moderne și metode de lucru adaptate fiecărui teren.",
     icon: "ridicari",
-    imageAlt: "Imagine placeholder pentru serviciul de ridicări topografice",
-    bullets: placeholderList(4),
-    includes: placeholderList(4),
-    whenNeeded: "[text placeholder]",
-    documents: placeholderList(4),
-    duration: "[durată placeholder]",
-    price: "[preț placeholder]",
-    coverage: "[zonă placeholder]",
+    imageSrc: "/Images/Servicii/Ridicari_Topografice.jpg",
+    imageAlt: "Ridicare topografică realizată pe teren cu echipamente moderne",
+    bullets: [
+      "Planuri topografice",
+      "Planuri de situație",
+      "PUZ, PUD și DTAC",
+      "Trasări limite de proprietate",
+      "Ridicări pentru proiecte de infrastructură",
+      "Modelare teren 3D",
+    ],
+    includes: [
+      "Măsurători topografice în teren",
+      "Prelucrarea și interpretarea datelor colectate",
+      "Întocmirea planurilor topografice și de situație",
+      "Predarea documentației în format util pentru proiectare",
+    ],
+    whenNeeded:
+      "Este necesar pentru proiecte de construire, urbanism, trasări, planuri de situație sau pentru orice analiză exactă a configurației terenului.",
+    documents: [
+      "Act de proprietate sau document care atestă folosința terenului",
+      "Carte de identitate proprietar sau reprezentant",
+      "Tema sau cerințele proiectului, dacă există",
+      "Planuri anterioare, dacă sunt disponibile",
+    ],
+    duration: "Stabilită în funcție de suprafață și complexitate",
+    price: "Personalizat în funcție de lucrare",
+    coverage: "Botoșani și împrejurimi",
   },
   {
     slug: "consultanta-cadastrala-si-juridica",
     title: "Consultanță Cadastrală și Juridică",
     shortTitle: "Consultanță Cadastrală",
-    shortDescription: "[descriere scurtă placeholder]",
-    fullDescription: "[descriere completă placeholder]",
+    shortDescription: "Consultanță și sprijin pentru întocmirea documentațiilor cadastrale.",
+    fullDescription:
+      "Oferim consultanță cadastrală și juridică pentru a clarifica pașii necesari, actele implicate și soluțiile potrivite fiecărei situații legate de proprietatea ta.",
     icon: "consultanta",
-    imageAlt: "Imagine placeholder pentru serviciul de consultanță cadastrală și juridică",
-    bullets: placeholderList(4),
-    includes: placeholderList(4),
-    whenNeeded: "[text placeholder]",
-    documents: placeholderList(4),
-    duration: "[durată placeholder]",
-    price: "[preț placeholder]",
-    coverage: "[zonă placeholder]",
+    imageSrc: "/Images/Servicii/Consultanta_Cadastrala_si_Juridica.jpg",
+    imageAlt: "Consultanță cadastrală și juridică pentru documentații imobiliare",
+    bullets: [
+      "Întocmirea actelor cadastrale",
+      "Verificarea documentației",
+      "Ghidare pentru obținerea avizelor",
+      "Consultanță privind înscrierea proprietăților",
+      "Soluții personalizate pentru fiecare caz",
+    ],
+    includes: [
+      "Analiza situației cadastrale și juridice",
+      "Verificarea actelor și a documentației disponibile",
+      "Recomandări clare pentru pașii următori",
+      "Sprijin în relația cu instituțiile implicate",
+    ],
+    whenNeeded:
+      "Este utilă atunci când ai neclarități privind actele, documentația cadastrală sau procedurile necesare pentru intabulare, actualizare ori clarificarea situației proprietății.",
+    documents: [
+      "Acte de proprietate existente",
+      "Carte de identitate",
+      "Documentații cadastrale anterioare, dacă există",
+      "Orice alte înscrisuri relevante pentru situația analizată",
+    ],
+    duration: "În funcție de complexitatea cazului",
+    price: "Se comunică după evaluarea solicitării",
+    coverage: "Botoșani și zonele limitrofe",
   },
   {
     slug: "dezmembrari-alipiri-terenuri",
@@ -94,7 +150,8 @@ export const services: Service[] = [
     shortDescription: "[descriere scurtă placeholder]",
     fullDescription: "[descriere completă placeholder]",
     icon: "dezmembrari",
-    imageAlt: "Imagine placeholder pentru serviciul de dezmembrări și alipiri terenuri",
+    imageSrc: "/Images/Servicii/Cadastru_si_Intabulare.jpeg",
+    imageAlt: "Documentație pentru dezmembrare și alipire terenuri",
     bullets: placeholderList(4),
     includes: placeholderList(4),
     whenNeeded: "[text placeholder]",
@@ -110,7 +167,8 @@ export const services: Service[] = [
     shortDescription: "[descriere scurtă placeholder]",
     fullDescription: "[descriere completă placeholder]",
     icon: "trasari",
-    imageAlt: "Imagine placeholder pentru serviciul de trasări limite de proprietate",
+    imageSrc: "/Images/Servicii/Ridicari_Topografice.jpg",
+    imageAlt: "Trasare limite de proprietate pe teren",
     bullets: placeholderList(4),
     includes: placeholderList(4),
     whenNeeded: "[text placeholder]",
@@ -126,7 +184,8 @@ export const services: Service[] = [
     shortDescription: "[descriere scurtă placeholder]",
     fullDescription: "[descriere completă placeholder]",
     icon: "planuri",
-    imageAlt: "Imagine placeholder pentru serviciul de planuri de situație",
+    imageSrc: "/Images/Servicii/Consultanta_Cadastrala_si_Juridica.jpg",
+    imageAlt: "Planuri de situație și documentații tehnice",
     bullets: placeholderList(4),
     includes: placeholderList(4),
     whenNeeded: "[text placeholder]",

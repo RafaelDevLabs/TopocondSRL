@@ -32,8 +32,8 @@ export function AboutSection({
     ] as const;
 
     return (
-      <section className="bg-white pt-14 pb-12 sm:pt-[4.5rem] sm:pb-16 lg:pt-20 lg:pb-14">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 md:grid-cols-[minmax(0,1.07fr)_minmax(0,1fr)] md:gap-12 lg:gap-16 lg:px-8">
+      <section className="bg-white pt-16 pb-14 sm:pt-[4.75rem] sm:pb-[4.5rem] lg:pt-[5.25rem] lg:pb-16">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 md:grid-cols-[minmax(0,1.07fr)_minmax(0,1fr)] md:gap-14 lg:gap-[4.5rem] lg:px-8">
           <Reveal className="relative">
             <div className="relative h-[540px] overflow-hidden rounded-2xl">
               <img
@@ -57,7 +57,7 @@ export function AboutSection({
             </div>
           </Reveal>
 
-          <Reveal delay={100}>
+          <Reveal delay={100} className="self-center">
             {eyebrow && (
               <p className="text-xs font-semibold tracking-[0.22em] text-brand-accent uppercase">
                 {eyebrow}

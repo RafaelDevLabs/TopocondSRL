@@ -1,20 +1,31 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 
 import { Logo } from "@/components/brand/Logo";
 import { services } from "@/data/services";
 import { company, usefulLinks } from "@/data/site";
+import { cn } from "@/lib/utils";
 
 export function Footer() {
+  const pathname = useRouterState({
+    select: (state) => state.location.pathname,
+  });
+  const isHomePage = pathname === "/";
+
   return (
     <footer className="bg-footer text-footer-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
+      <div
+        className={cn(
+          "mx-auto grid max-w-7xl gap-12 px-4 pb-16 sm:px-6 lg:grid-cols-4 lg:gap-14 lg:px-8",
+          isHomePage ? "pt-12 sm:pt-14 lg:pt-16" : "pt-14",
+        )}
+      >
         <div>
-          <Logo tone="dark" />
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-footer-muted">
+          <Logo tone="dark" className="h-12 sm:h-14" />
+          <p className="mt-5 max-w-xs text-sm leading-[1.9] text-footer-muted">
             {company.tagline}
           </p>
-          <ul className="mt-5 flex items-center gap-3">
+          <ul className="mt-6 flex items-center gap-3">
             <li>
               {/* PLACEHOLDER — link social de confirmat */}
               <a
@@ -39,10 +50,10 @@ export function Footer() {
         </div>
 
         <nav aria-labelledby="footer-servicii">
-          <h2 id="footer-servicii" className="text-sm font-semibold">
+          <h2 id="footer-servicii" className="text-[0.95rem] font-semibold tracking-[0.01em] text-footer-foreground">
             Servicii
           </h2>
-          <ul className="mt-4 space-y-2.5 text-sm text-footer-muted">
+          <ul className="mt-5 space-y-3 text-sm text-footer-muted">
             {services.map((service) => (
               <li key={service.slug}>
                 <Link
@@ -57,10 +68,10 @@ export function Footer() {
         </nav>
 
         <nav aria-labelledby="footer-utile">
-          <h2 id="footer-utile" className="text-sm font-semibold">
+          <h2 id="footer-utile" className="text-[0.95rem] font-semibold tracking-[0.01em] text-footer-foreground">
             Informații utile
           </h2>
-          <ul className="mt-4 space-y-2.5 text-sm text-footer-muted">
+          <ul className="mt-5 space-y-3 text-sm text-footer-muted">
             {usefulLinks.map((item) => (
               <li key={item.to}>
                 <Link
@@ -79,8 +90,8 @@ export function Footer() {
         </nav>
 
         <div>
-          <h2 className="text-sm font-semibold">Contact</h2>
-          <ul className="mt-4 space-y-3 text-sm text-footer-muted">
+          <h2 className="text-[0.95rem] font-semibold tracking-[0.01em] text-footer-foreground">Contact</h2>
+          <ul className="mt-5 space-y-4 text-sm text-footer-muted">
             <li className="flex items-start gap-2.5">
               <Phone className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
               <a
