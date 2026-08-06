@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Sitemap: se adaugă după setarea domeniului final
