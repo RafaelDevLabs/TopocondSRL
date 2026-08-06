@@ -181,7 +181,7 @@ function HomePage() {
         </Reveal>
       </div>
 
-      <AboutSection eyebrow="Cine suntem" title="Despre Topocond Cadastru" withCta />
+      <AboutSection eyebrow="CINE SUNTEM" title="Despre Topocond Cadastru" withCta variant="home" />
 
       <section className="bg-surface py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
