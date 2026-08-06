@@ -1,8 +1,8 @@
-import { Link } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { ImagePlaceholder } from "@/components/common/ImagePlaceholder";
+import { ScrollToTopLink } from "@/components/common/ScrollToTopLink";
 
 type PageHeroProps = {
   breadcrumb: { label: string; to?: string }[];
@@ -32,12 +32,12 @@ export function PageHero({ breadcrumb, title, subtitle, children }: PageHeroProp
               <li key={crumb.label} className="flex items-center gap-1">
                 {i > 0 && <ChevronRight className="size-3" aria-hidden="true" />}
                 {crumb.to ? (
-                  <Link
+                  <ScrollToTopLink
                     to={crumb.to}
                     className="rounded transition-colors hover:text-primary-foreground focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:outline-none"
                   >
                     {crumb.label}
-                  </Link>
+                  </ScrollToTopLink>
                 ) : (
                   <span aria-current="page" className="text-primary-foreground/80">
                     {crumb.label}

@@ -1,8 +1,8 @@
-import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, ShieldCheck } from "lucide-react";
 
 import { ImagePlaceholder } from "@/components/common/ImagePlaceholder";
 import { Reveal } from "@/components/common/Reveal";
+import { ScrollToTopLink } from "@/components/common/ScrollToTopLink";
 import { Button } from "@/components/ui/button";
 import { aboutBullets, company } from "@/data/site";
 
@@ -89,10 +89,10 @@ export function AboutSection({
                 asChild
                 className="mt-8 h-12 rounded-xl bg-brand text-primary-foreground hover:bg-brand/90"
               >
-                <Link to="/despre-noi">
+                <ScrollToTopLink to="/despre-noi">
                   Află mai multe despre noi
                   <ArrowRight className="size-4" aria-hidden="true" />
-                </Link>
+                </ScrollToTopLink>
               </Button>
             )}
             <span className="sr-only">{company.name}</span>
@@ -146,10 +146,10 @@ export function AboutSection({
           </ul>
           {withCta && (
             <Button asChild className="mt-7 bg-brand text-primary-foreground hover:bg-brand/90">
-              <Link to="/despre-noi">
+              <ScrollToTopLink to="/despre-noi">
                 Află mai multe despre noi
                 <ArrowRight className="size-4" aria-hidden="true" />
-              </Link>
+              </ScrollToTopLink>
             </Button>
           )}
           <span className="sr-only">{company.name}</span>

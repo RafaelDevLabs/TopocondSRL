@@ -1,8 +1,8 @@
-import { Link } from "@tanstack/react-router";
 import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Logo } from "@/components/brand/Logo";
+import { ScrollToTopLink } from "@/components/common/ScrollToTopLink";
 import { Button } from "@/components/ui/button";
 import { company, navItems } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -26,19 +26,19 @@ export function Navbar() {
       )}
     >
       <div className="mx-auto flex h-[78px] max-w-7xl items-center gap-5 px-6 sm:h-[84px] sm:px-8 lg:h-[88px] lg:px-10">
-        <Link
+        <ScrollToTopLink
           to="/"
           className="shrink-0 rounded-md focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-          aria-label={`${company.name} — pagina principală`}
+          aria-label={`${company.name} - pagina principala`}
         >
           <Logo className="h-[50px] sm:h-[60px] lg:h-[72px]" />
-        </Link>
+        </ScrollToTopLink>
 
-        <nav aria-label="Navigație principală" className="mx-auto hidden lg:block lg:-translate-x-3">
+        <nav aria-label="Navigatie principala" className="mx-auto hidden lg:block lg:-translate-x-3">
           <ul className="flex items-center gap-10 xl:gap-12">
             {navItems.map((item) => (
               <li key={item.to}>
-                <Link
+                <ScrollToTopLink
                   to={item.to}
                   activeOptions={{ exact: item.to === "/" }}
                   activeProps={{ className: "text-brand-accent" }}
@@ -46,7 +46,7 @@ export function Navbar() {
                   className="rounded-md text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                 >
                   {item.label}
-                </Link>
+                </ScrollToTopLink>
               </li>
             ))}
           </ul>
@@ -74,7 +74,7 @@ export function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls="mobile-nav"
-            aria-label={open ? "Închide meniul" : "Deschide meniul"}
+            aria-label={open ? "Inchide meniul" : "Deschide meniul"}
             className="grid size-10 place-items-center rounded-md border border-border text-foreground transition-colors hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none lg:hidden"
           >
             {open ? (
@@ -89,13 +89,13 @@ export function Navbar() {
       {open && (
         <nav
           id="mobile-nav"
-          aria-label="Navigație mobilă"
+          aria-label="Navigatie mobila"
           className="border-t border-border bg-background lg:hidden"
         >
           <ul className="mx-auto max-w-7xl px-4 py-2 sm:px-6">
             {navItems.map((item) => (
               <li key={item.to}>
-                <Link
+                <ScrollToTopLink
                   to={item.to}
                   onClick={() => setOpen(false)}
                   activeOptions={{ exact: item.to === "/" }}
@@ -103,7 +103,7 @@ export function Navbar() {
                   className="block rounded-md py-3 text-sm font-medium text-foreground/90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                 >
                   {item.label}
-                </Link>
+                </ScrollToTopLink>
               </li>
             ))}
           </ul>

@@ -1,7 +1,8 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { useRouterState } from "@tanstack/react-router";
 import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 
 import { Logo } from "@/components/brand/Logo";
+import { ScrollToTopLink } from "@/components/common/ScrollToTopLink";
 import { services } from "@/data/services";
 import { company, usefulLinks } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -27,7 +28,6 @@ export function Footer() {
           </p>
           <ul className="mt-6 flex items-center gap-3">
             <li>
-              {/* PLACEHOLDER — link social de confirmat */}
               <a
                 href="#"
                 aria-label="Facebook"
@@ -37,7 +37,6 @@ export function Footer() {
               </a>
             </li>
             <li>
-              {/* PLACEHOLDER — link social de confirmat */}
               <a
                 href="#"
                 aria-label="Instagram"
@@ -50,47 +49,54 @@ export function Footer() {
         </div>
 
         <nav aria-labelledby="footer-servicii">
-          <h2 id="footer-servicii" className="text-[0.95rem] font-semibold tracking-[0.01em] text-footer-foreground">
+          <h2
+            id="footer-servicii"
+            className="text-[0.95rem] font-semibold tracking-[0.01em] text-footer-foreground"
+          >
             Servicii
           </h2>
           <ul className="mt-5 space-y-3 text-sm text-footer-muted">
             {services.map((service) => (
               <li key={service.slug}>
-                <Link
+                <ScrollToTopLink
                   to="/servicii"
                   className="rounded transition-colors hover:text-footer-foreground focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:outline-none"
                 >
                   {service.shortTitle}
-                </Link>
+                </ScrollToTopLink>
               </li>
             ))}
           </ul>
         </nav>
 
         <nav aria-labelledby="footer-utile">
-          <h2 id="footer-utile" className="text-[0.95rem] font-semibold tracking-[0.01em] text-footer-foreground">
+          <h2
+            id="footer-utile"
+            className="text-[0.95rem] font-semibold tracking-[0.01em] text-footer-foreground"
+          >
             Informații utile
           </h2>
           <ul className="mt-5 space-y-3 text-sm text-footer-muted">
             {usefulLinks.map((item) => (
               <li key={item.to}>
-                <Link
+                <ScrollToTopLink
                   to={item.to}
                   className="rounded transition-colors hover:text-footer-foreground focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:outline-none"
                 >
                   {item.label}
-                </Link>
+                </ScrollToTopLink>
               </li>
             ))}
             <li>
-              {/* PLACEHOLDER — pagina de politică de confidențialitate */}
               <span>Politică de confidențialitate</span>
             </li>
           </ul>
         </nav>
 
         <div>
-          <h2 className="text-[0.95rem] font-semibold tracking-[0.01em] text-footer-foreground">Contact</h2>
+          <h2 className="text-[0.95rem] font-semibold tracking-[0.01em] text-footer-foreground">
+            Contact
+          </h2>
           <ul className="mt-5 space-y-4 text-sm text-footer-muted">
             <li className="flex items-start gap-2.5">
               <Phone className="mt-0.5 size-4 shrink-0" aria-hidden="true" />

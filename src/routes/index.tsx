@@ -1,7 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
 
 import { Reveal } from "@/components/common/Reveal";
+import { ScrollToTopLink } from "@/components/common/ScrollToTopLink";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { SectionHeading } from "@/components/sections/SectionHeading";
@@ -102,10 +103,10 @@ function HomePage() {
                 asChild
                 className="h-12 rounded-xl bg-brand text-primary-foreground hover:bg-brand/90"
               >
-                <Link to="/contact">
+                <ScrollToTopLink to="/contact">
                   Solicită ofertă gratuită
                   <ArrowRight className="size-4" aria-hidden="true" />
-                </Link>
+                </ScrollToTopLink>
               </Button>
               <Button
                 asChild
@@ -197,10 +198,10 @@ function HomePage() {
           </ul>
           <div className="mt-6 text-center">
             <Button asChild variant="outline" className="border-brand text-brand">
-              <Link to="/servicii">
+              <ScrollToTopLink to="/servicii">
                 Vezi toate serviciile
                 <ArrowRight className="size-4" aria-hidden="true" />
-              </Link>
+              </ScrollToTopLink>
             </Button>
           </div>
         </div>
