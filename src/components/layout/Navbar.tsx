@@ -25,17 +25,17 @@ export function Navbar() {
         scrolled && "shadow-card",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:h-20 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[78px] max-w-7xl items-center gap-5 px-6 sm:h-[84px] sm:px-8 lg:h-[88px] lg:px-10">
         <Link
           to="/"
           className="shrink-0 rounded-md focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           aria-label={`${company.name} — pagina principală`}
         >
-          <Logo />
+          <Logo className="h-[50px] sm:h-[60px] lg:h-[72px]" />
         </Link>
 
-        <nav aria-label="Navigație principală" className="mx-auto hidden lg:block">
-          <ul className="flex items-center gap-7">
+        <nav aria-label="Navigație principală" className="mx-auto hidden lg:block lg:-translate-x-3">
+          <ul className="flex items-center gap-10 xl:gap-12">
             {navItems.map((item) => (
               <li key={item.to}>
                 <Link
@@ -53,15 +53,20 @@ export function Navbar() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 lg:ml-0">
-          <Button asChild variant="outline" className="hidden border-brand text-brand sm:flex">
+          <Button asChild variant="outline" className="hidden h-11 border-brand px-4 text-brand sm:flex">
             <a href={company.phoneHref} aria-label={`Telefon ${company.phoneLabel}`}>
-              <Phone className="size-4" aria-hidden="true" />
+              <Phone className="size-[1.05rem]" aria-hidden="true" />
               {company.phoneLabel}
             </a>
           </Button>
-          <Button asChild size="icon" variant="outline" className="border-brand text-brand sm:hidden">
+          <Button
+            asChild
+            size="icon"
+            variant="outline"
+            className="size-10 border-brand text-brand sm:hidden"
+          >
             <a href={company.phoneHref} aria-label={`Telefon ${company.phoneLabel}`}>
-              <Phone className="size-4" aria-hidden="true" />
+              <Phone className="size-[1.05rem]" aria-hidden="true" />
             </a>
           </Button>
           <button
