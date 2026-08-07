@@ -5,12 +5,7 @@
  */
 
 export type ServiceIconName =
-  | "cadastru"
-  | "ridicari"
-  | "consultanta"
-  | "dezmembrari"
-  | "trasari"
-  | "planuri";
+  "cadastru" | "ridicari" | "consultanta" | "dezmembrari" | "trasari" | "planuri";
 
 export type Service = {
   slug: string;
@@ -79,8 +74,7 @@ export const services: Service[] = [
     slug: "ridicari-topografice",
     title: "Ridicări Topografice",
     shortTitle: "Ridicări Topografice",
-    shortDescription:
-      "Măsurători precise pentru documentații tehnice și proiecte de construcții.",
+    shortDescription: "Măsurători precise pentru documentații tehnice și proiecte de construcții.",
     fullDescription:
       "Executăm ridicări topografice precise pentru proiecte rezidențiale, comerciale sau urbanistice, folosind echipamente moderne și metode de lucru adaptate fiecărui teren.",
     icon: "ridicari",
@@ -116,8 +110,7 @@ export const services: Service[] = [
     slug: "consultanta-cadastrala-si-juridica",
     title: "Consultanță Cadastrală și Juridică",
     shortTitle: "Consultanță Cadastrală",
-    shortDescription:
-      "Consultanță și sprijin pentru întocmirea documentațiilor cadastrale.",
+    shortDescription: "Consultanță și sprijin pentru întocmirea documentațiilor cadastrale.",
     fullDescription:
       "Oferim consultanță cadastrală și juridică pentru a clarifica pașii necesari, actele implicate și soluțiile potrivite fiecărei situații legate de proprietatea ta.",
     icon: "consultanta",

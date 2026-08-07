@@ -6,6 +6,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { Analytics } from "@vercel/analytics/react";
 import type { ReactNode } from "react";
 
 import { ScrollToTopLink } from "../components/common/ScrollToTopLink";
@@ -141,6 +142,7 @@ function RootComponent() {
         <Footer />
         <Toaster />
       </div>
+      <Analytics />
     </QueryClientProvider>
   );
 }
