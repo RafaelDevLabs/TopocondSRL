@@ -49,7 +49,7 @@ export function AboutSection({
                   <ShieldCheck className="size-5" aria-hidden="true" />
                 </span>
                 <p className="text-sm leading-snug font-semibold text-brand-dark sm:text-[0.95rem]">
-                  Peste 1200 de clienți
+                  Peste 200 de clienți
                   <br />
                   au avut încredere în noi
                 </p>

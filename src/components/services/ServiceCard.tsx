@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 
 import { Reveal } from "@/components/common/Reveal";
+import { ServiceDialogContent } from "@/components/services/ServiceDialogContent";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -12,7 +13,6 @@ import {
 } from "@/components/ui/dialog";
 import type { Service } from "@/data/services";
 import { serviceIcons } from "@/lib/icons";
-import { ServiceDialogContent } from "@/components/services/ServiceDialogContent";
 
 type ServiceCardProps = {
   service: Service;
@@ -44,8 +44,8 @@ export function ServiceCard({ service, delay = 0 }: ServiceCardProps) {
             {service.shortDescription}
           </p>
           <ul className="mt-4 flex-1 space-y-2.5">
-            {service.bullets.map((bullet, i) => (
-              <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+            {service.bullets.map((bullet, index) => (
+              <li key={index} className="flex items-start gap-2 text-xs text-muted-foreground">
                 <Check className="mt-0.5 size-3.5 shrink-0 text-brand-accent" aria-hidden="true" />
                 <span>{bullet}</span>
               </li>

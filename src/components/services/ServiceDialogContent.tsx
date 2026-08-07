@@ -1,10 +1,11 @@
 import { Check, Clock, MapPin, MessageCircle, Tag } from "lucide-react";
+import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
 import type { Service } from "@/data/services";
 import { company } from "@/data/site";
 
-/** Conținutul popup-ului de serviciu — folosește exact aceleași date ca și cardul. */
+/** Conținutul popup-ului de serviciu folosește exact aceleași date ca și cardul. */
 export function ServiceDialogContent({ service }: { service: Service }) {
   return (
     <div className="space-y-8">
@@ -13,9 +14,9 @@ export function ServiceDialogContent({ service }: { service: Service }) {
       <section className="pt-1">
         <h4 className="text-sm font-bold text-slate-900">Ce include serviciul?</h4>
         <ul className="mt-4 space-y-3">
-          {service.includes.map((item, i) => (
+          {service.includes.map((item, index) => (
             <li
-              key={i}
+              key={index}
               className="flex items-start gap-2.5 text-sm leading-6 text-muted-foreground"
             >
               <Check className="mt-1 size-4 shrink-0 text-brand-accent" aria-hidden="true" />
@@ -33,9 +34,9 @@ export function ServiceDialogContent({ service }: { service: Service }) {
         <section>
           <h4 className="text-sm font-bold text-slate-900">Documente necesare</h4>
           <ul className="mt-4 space-y-3">
-            {service.documents.map((doc, i) => (
+            {service.documents.map((doc, index) => (
               <li
-                key={i}
+                key={index}
                 className="flex items-start gap-2.5 text-sm leading-6 text-muted-foreground"
               >
                 <Check className="mt-1 size-4 shrink-0 text-brand-accent" aria-hidden="true" />
@@ -71,7 +72,7 @@ export function ServiceDialogContent({ service }: { service: Service }) {
         <Button asChild variant="outline" className="h-11 border-brand text-brand">
           <a href={company.whatsappHref} target="_blank" rel="noopener noreferrer">
             <MessageCircle className="size-4" aria-hidden="true" />
-            Scrie pe WhatsApp
+            Scrie-ne pe WhatsApp
           </a>
         </Button>
       </div>
@@ -79,7 +80,7 @@ export function ServiceDialogContent({ service }: { service: Service }) {
   );
 }
 
-function InfoCard({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
+function InfoCard({ icon, label, value }: { icon: ReactNode; label: string; value: string }) {
   return (
     <div className="rounded-xl border border-border/60 bg-surface/60 p-5 text-center">
       <span className="mx-auto grid size-9 place-items-center rounded-full bg-brand-soft text-brand">

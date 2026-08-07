@@ -3,13 +3,14 @@ import { Headset, Map, Ruler, ScrollText } from "lucide-react";
 import { Reveal } from "@/components/common/Reveal";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { workflowSteps } from "@/data/site";
+import { cn } from "@/lib/utils";
 
 const stepIcons = [Headset, Map, Ruler, ScrollText];
 
 /** Secțiunea „Cum colaborăm?” — 4 pași pe o linie orizontală numerotată. */
-export function WorkflowSteps() {
+export function WorkflowSteps({ className }: { className?: string }) {
   return (
-    <section className="bg-surface py-14 sm:py-20">
+    <section className={cn("bg-surface py-14 sm:py-20", className)}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading title="Cum colaborăm?" />
         <ol className="relative mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

@@ -1,9 +1,11 @@
+import type { ReactNode } from "react";
+
 import { cn } from "@/lib/utils";
 
 type SectionHeadingProps = {
   eyebrow?: string;
   title: string;
-  subtitle?: string;
+  subtitle?: ReactNode;
   align?: "center" | "left";
   as?: "h2" | "h3";
   className?: string;

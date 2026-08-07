@@ -1,25 +1,32 @@
 import { MessageCircle, Phone } from "lucide-react";
 
 import { Reveal } from "@/components/common/Reveal";
-import { cn } from "@/lib/utils";
+import { ClipboardIcon } from "@/components/sections/ClipboardIcon";
 import { Button } from "@/components/ui/button";
 import { company } from "@/data/site";
-import { ClipboardIcon } from "@/components/sections/ClipboardIcon";
+import { cn } from "@/lib/utils";
 
 type CtaBannerProps = {
   title: string;
   subtitle: string;
   floating?: boolean;
+  className?: string;
 };
 
 /** Bannerul verde de CTA, folosit identic pe toate paginile. */
-export function CtaBanner({ title, subtitle, floating = false }: CtaBannerProps) {
+export function CtaBanner({
+  title,
+  subtitle,
+  floating = false,
+  className,
+}: CtaBannerProps) {
   return (
     <section
       className={cn(
         "mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8",
         floating &&
-          "relative z-10 -mt-[48px] -mb-4 py-0 sm:-mt-[50px] sm:-mb-5 sm:py-0 lg:-mt-[52px] lg:-mb-6 lg:py-0",
+        "relative z-10 -mt-[48px] -mb-4 py-0 sm:-mt-[50px] sm:-mb-5 sm:py-0 lg:-mt-[52px] lg:-mb-6 lg:py-0",
+        className,
       )}
     >
       <Reveal
@@ -44,7 +51,7 @@ export function CtaBanner({ title, subtitle, floating = false }: CtaBannerProps)
           >
             <a href={company.whatsappHref} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="size-4" aria-hidden="true" />
-              Scrie pe WhatsApp
+              Scrie-ne pe WhatsApp
             </a>
           </Button>
           <Button

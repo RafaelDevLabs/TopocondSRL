@@ -7,18 +7,18 @@
 export const company = {
   name: "Topocond Cadastru",
   shortName: "TOPOCOND",
-  // PLACEHOLDER — număr de telefon de confirmat
+  mapLabel: "Topocond Cadastru",
   phoneLabel: "0754 827 623",
   phoneHref: "tel:0754827623",
-  // PLACEHOLDER — link WhatsApp de confirmat
   whatsappHref: "https://wa.me/40754827623",
-  // PLACEHOLDER — email de confirmat
-  email: "email@placeholder.ro",
-  // PLACEHOLDER — adresă / județ de confirmat
-  address: "Județ Botoșani",
-  // PLACEHOLDER — program de confirmat
-  schedule: "Luni – Vineri: 08:00 – 17:00",
-  // PLACEHOLDER — descriere companie de confirmat
+  email: "claudiamarina30@gmail.com",
+  address: "Calea Națională nr. 71, Botoșani",
+  addressLines: ["Calea Națională nr. 71", "Botoșani"],
+  mapsUrl: "https://maps.app.goo.gl/n2UdJ9byNsAGsMmn7",
+  mapsEmbedUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d766661.6886921142!2d26.081230344220884!3d47.848995690968046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4734ebceb27d1217%3A0xdeda8395c7344954!2sTopocond%20Cadastru!5e1!3m2!1sro!2sro!4v1786099072349!5m2!1sro!2sro",
+  openingHours: "Luni – Vineri: 09:00 – 16:30",
+  schedule: "Luni – Vineri: 09:00 – 16:30",
   tagline:
     "Servicii complete de cadastru, intabulare și topografie în județul Botoșani și zonele limitrofe.",
 } as const;
@@ -91,10 +91,16 @@ export const values = [
 
 /** Pași de colaborare (pagina Servicii). */
 export const workflowSteps = [
-  { title: "Ne contactezi", text: "[text placeholder]" },
-  { title: "Analiza solicitării", text: "[text placeholder]" },
-  { title: "Realizare măsurători", text: "[text placeholder]" },
-  { title: "Predare documentație", text: "[text placeholder]" },
+  { title: "Ne contactezi", text: "Telefonic, pe WhatsApp sau prin formular." },
+  { title: "Analizăm solicitarea", text: "Ne oferi detaliile și documentele disponibile." },
+  {
+    title: "Realizăm măsurătorile",
+    text: "Ne deplasăm la locație pentru măsurătorile necesare.",
+  },
+  {
+    title: "Pregătim documentația",
+    text: "Întocmim documentația necesară pentru serviciul solicitat.",
+  },
 ] as const;
 
 /** Recenzii parafrazate după feedback public. */

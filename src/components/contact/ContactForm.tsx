@@ -22,7 +22,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { services } from "@/data/services";
+
+const contactServiceOptions = [
+  { value: "cadastru-si-intabulare", label: "Cadastru și Intabulare" },
+  { value: "ridicari-topografice", label: "Ridicări Topografice" },
+  { value: "consultanta-cadastrala", label: "Consultanță Cadastrală" },
+  { value: "dezmembrari-alipiri", label: "Dezmembrări / Alipiri" },
+  { value: "trasari-limite", label: "Trasări Limite de Proprietate" },
+  { value: "planuri-de-situatie", label: "Planuri de Situație" },
+  { value: "alt-serviciu", label: "Alt serviciu / Nu sunt sigur" },
+] as const;
 
 const schema = z.object({
   name: z.string().min(2, "Introdu numele complet."),
@@ -35,8 +44,8 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 /**
- * Formular de contact — momentan doar interfață + validare.
- * Trimiterea reală prin email nu este implementată.
+ * Formularul este pregătit la nivel de UI și validare.
+ * Trimiterea efectivă depinde de adresa finală de email sau de o integrare backend.
  */
 export function ContactForm() {
   const form = useForm<FormValues>({
@@ -45,10 +54,10 @@ export function ContactForm() {
   });
 
   const onSubmit = () => {
-    toast.success("Formular validat", {
-      description: "Trimiterea mesajelor nu este încă activată.",
+    toast.message("Mesaj pregătit pentru trimitere", {
+      description:
+        "Formularul este valid, iar conectarea pentru trimiterea efectivă va fi activată după ce primim datele finale de contact.",
     });
-    form.reset();
   };
 
   return (
@@ -71,7 +80,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Nume și prenume</FormLabel>
                 <FormControl>
-                  <Input placeholder="Nume complet" autoComplete="name" {...field} />
+                  <Input placeholder="Numele tău" autoComplete="name" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -97,7 +106,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input type="email" placeholder="nume@exemplu.ro" autoComplete="email" {...field} />
+                  <Input type="email" placeholder="nume@email.ro" autoComplete="email" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -116,9 +125,9 @@ export function ContactForm() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    {services.map((service) => (
-                      <SelectItem key={service.slug} value={service.slug}>
-                        {service.title}
+                    {contactServiceOptions.map((service) => (
+                      <SelectItem key={service.value} value={service.value}>
+                        {service.label}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -137,7 +146,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Mesaj</FormLabel>
                 <FormControl>
-                  <Textarea rows={5} placeholder="Detalii despre solicitarea ta" {...field} />
+                  <Textarea rows={5} placeholder="Spune-ne pe scurt cu ce te putem ajuta" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

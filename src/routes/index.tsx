@@ -129,7 +129,7 @@ function HomePage() {
               >
                 <a href={company.whatsappHref} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="size-4" aria-hidden="true" />
-                  Scrie pe WhatsApp
+                  Scrie-ne pe WhatsApp
                 </a>
               </Button>
               <Button
@@ -145,7 +145,7 @@ function HomePage() {
             </div>
           </Reveal>
 
-          <Reveal delay={120} className="xl:justify-self-end">
+          <div className="xl:justify-self-end">
             <ul className="grid gap-3.5 sm:grid-cols-2 lg:max-w-[35rem] lg:gap-4 xl:max-w-none">
               {refinedHeroHighlights.map((item) => {
                 const Icon = getUiIcon(item.icon);
@@ -170,7 +170,7 @@ function HomePage() {
                 );
               })}
             </ul>
-          </Reveal>
+          </div>
         </div>
       </section>
 
