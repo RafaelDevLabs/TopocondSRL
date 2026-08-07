@@ -13,19 +13,15 @@ export function Testimonials() {
         aria-hidden="true"
       />
       <div
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-            "linear-gradient(180deg, rgba(8,24,14,.5) 0%, rgba(8,24,14,.6) 100%)",
-          }}
+        className="absolute inset-0 -z-10"
+        style={{
+          background: "linear-gradient(180deg, rgba(8,24,14,.5) 0%, rgba(8,24,14,.6) 100%)",
+        }}
         aria-hidden="true"
       />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          title="Clienții noștri ne recomandă"
-          className="[&_h2]:text-white"
-        />
+        <SectionHeading title="Clienții noștri ne recomandă" className="[&_h2]:text-white" />
         <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((item, index) => (
             <Reveal as="li" key={index} delay={index * 80}>

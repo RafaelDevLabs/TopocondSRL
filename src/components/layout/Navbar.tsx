@@ -34,7 +34,10 @@ export function Navbar() {
           <Logo className="h-[50px] sm:h-[60px] lg:h-[72px]" />
         </ScrollToTopLink>
 
-        <nav aria-label="Navigatie principala" className="mx-auto hidden lg:block lg:-translate-x-3">
+        <nav
+          aria-label="Navigatie principala"
+          className="mx-auto hidden lg:block lg:-translate-x-3"
+        >
           <ul className="flex items-center gap-10 xl:gap-12">
             {navItems.map((item) => (
               <li key={item.to}>
@@ -53,7 +56,11 @@ export function Navbar() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 lg:ml-0">
-          <Button asChild variant="outline" className="hidden h-11 border-brand px-4 text-brand sm:flex">
+          <Button
+            asChild
+            variant="outline"
+            className="hidden h-11 border-brand px-4 text-brand sm:flex"
+          >
             <a href={company.phoneHref} aria-label={`Telefon ${company.phoneLabel}`}>
               <Phone className="size-[1.05rem]" aria-hidden="true" />
               {company.phoneLabel}

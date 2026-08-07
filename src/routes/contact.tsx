@@ -132,27 +132,23 @@ function ContactPage() {
                             rel={isAddress ? "noopener noreferrer" : undefined}
                             className="mt-1 block rounded text-sm font-semibold break-words text-brand-dark transition-colors hover:text-brand focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                           >
-                            {Array.isArray(detail.value) ? (
-                              detail.value.map((line) => (
-                                <span key={line} className="block">
-                                  {line}
-                                </span>
-                              ))
-                            ) : (
-                              detail.value
-                            )}
+                            {Array.isArray(detail.value)
+                              ? detail.value.map((line) => (
+                                  <span key={line} className="block">
+                                    {line}
+                                  </span>
+                                ))
+                              : detail.value}
                           </a>
                         ) : (
                           <p className="mt-1 text-sm font-semibold text-brand-dark">
-                            {Array.isArray(detail.value) ? (
-                              detail.value.map((line) => (
-                                <span key={line} className="block">
-                                  {line}
-                                </span>
-                              ))
-                            ) : (
-                              detail.value
-                            )}
+                            {Array.isArray(detail.value)
+                              ? detail.value.map((line) => (
+                                  <span key={line} className="block">
+                                    {line}
+                                  </span>
+                                ))
+                              : detail.value}
                           </p>
                         )}
                       </div>

@@ -23,9 +23,7 @@ export function Footer() {
       >
         <div>
           <Logo tone="dark" className="h-12 sm:h-14" />
-          <p className="mt-5 max-w-xs text-sm leading-[1.9] text-footer-muted">
-            {company.tagline}
-          </p>
+          <p className="mt-5 max-w-xs text-sm leading-[1.9] text-footer-muted">{company.tagline}</p>
           <ul className="mt-6 flex items-center gap-3">
             <li>
               <a
@@ -130,7 +128,9 @@ export function Footer() {
 
       <div className="border-t border-footer-muted/20">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-xs text-footer-muted sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <p>© {new Date().getFullYear()} {company.name}. Toate drepturile rezervate.</p>
+          <p>
+            © {new Date().getFullYear()} {company.name}. Toate drepturile rezervate.
+          </p>
           <p>
             Website realizat de{" "}
             <a
