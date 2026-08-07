@@ -131,7 +131,17 @@ export function Footer() {
       <div className="border-t border-footer-muted/20">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-xs text-footer-muted sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>© {new Date().getFullYear()} {company.name}. Toate drepturile rezervate.</p>
-          <p>Website realizat cu pasiune.</p>
+          <p>
+            Website realizat de{" "}
+            <a
+              href="https://rafaeldev.ro/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-footer-foreground transition-colors hover:text-footer-foreground/85 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:outline-none"
+            >
+              Rafael.Dev
+            </a>
+          </p>
         </div>
       </div>
     </footer>

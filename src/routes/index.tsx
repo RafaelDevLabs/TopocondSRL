@@ -25,6 +25,20 @@ const heroHighlights = [
   { icon: "shieldCheck", label: "Autorizare ANCPI", value: "Documentații autorizate" },
 ] as const;
 
+const heroHighlightsContent = [
+  { icon: "mapPin", label: "Acoperire locală", value: "Botoșani și împrejurimi" },
+  { icon: "fileCheck", label: "Servicii complete", value: "Cadastru & Topografie" },
+  { icon: "clock", label: "Răspuns rapid", value: "În aceeași zi" },
+  { icon: "shieldCheck", label: "Documentații", value: "Conform cerințelor ANCPI" },
+] as const;
+
+const refinedHeroHighlights = [
+  { icon: "mapPin", label: "Acoperire locală", value: "Botoșani și împrejurimi" },
+  { icon: "fileCheck", label: "Servicii complete", value: "Cadastru & topografie" },
+  { icon: "clock", label: "Răspuns rapid", value: "În aceeași zi" },
+  { icon: "shieldCheck", label: "Documentații", value: "Conforme cerințelor ANCPI" },
+] as const;
+
 const homeServiceOrder = [
   "cadastru-si-intabulare",
   "ridicari-topografice",
@@ -132,23 +146,23 @@ function HomePage() {
           </Reveal>
 
           <Reveal delay={120} className="xl:justify-self-end">
-            <ul className="grid gap-4 sm:grid-cols-2 lg:max-w-[40rem] lg:gap-5 xl:max-w-none">
-              {heroHighlights.map((item) => {
+            <ul className="grid gap-3.5 sm:grid-cols-2 lg:max-w-[35rem] lg:gap-4 xl:max-w-none">
+              {refinedHeroHighlights.map((item) => {
                 const Icon = getUiIcon(item.icon);
                 return (
                   <li
                     key={item.label}
-                    className="flex min-w-0 items-start gap-4 rounded-2xl border border-white/[0.15] bg-white/[0.08] px-7 py-6 backdrop-blur-[10px] lg:min-h-[126px] lg:items-center lg:gap-6 lg:px-8 lg:py-7 xl:min-w-[252px]"
+                    className="flex min-w-0 items-start gap-3 rounded-2xl border border-white/[0.15] bg-white/[0.08] px-5 py-4 backdrop-blur-[10px] lg:min-h-[108px] lg:items-center lg:gap-4 lg:px-6 lg:py-5 xl:min-w-[220px]"
                   >
                     <Icon
-                      className="mt-0.5 size-[2rem] shrink-0 text-white sm:size-[2.15rem] lg:size-[2.25rem]"
+                      className="mt-0.5 size-[1.75rem] shrink-0 text-white sm:size-[1.9rem] lg:size-[2rem]"
                       aria-hidden="true"
                     />
-                    <div className="min-w-0 lg:self-center">
+                    <div className="min-w-0 flex-1 lg:self-center">
                       <p className="text-[0.78rem] font-medium tracking-[0.01em] text-white/84">
                         {item.label}
                       </p>
-                      <p className="mt-1.5 text-sm font-semibold text-white sm:text-base lg:text-[1.08rem] lg:leading-snug lg:font-bold lg:whitespace-nowrap">
+                      <p className="mt-1 text-sm font-semibold text-white sm:text-[0.98rem] lg:text-[1rem] lg:leading-snug lg:font-bold">
                         {item.value}
                       </p>
                     </div>
@@ -161,8 +175,8 @@ function HomePage() {
       </section>
 
       {/* Bara cu cele 6 servicii, suprapusă pe hero */}
-      <div className="relative z-10 mx-auto -mt-[4.5rem] max-w-7xl px-4 sm:-mt-[4.9rem] sm:px-6 lg:-mt-[6rem] lg:px-8">
-        <Reveal className="rounded-[24px] border border-border bg-card p-6 shadow-[0_26px_70px_rgba(0,0,0,.12)] sm:p-8">
+      <div className="relative z-10 -mt-[4.5rem] sm:-mt-[4.9rem] lg:-mt-[6rem]">
+        <Reveal className="mx-auto w-[calc(100%-2rem)] max-w-7xl rounded-[24px] border border-border bg-card p-6 shadow-[0_26px_70px_rgba(0,0,0,.12)] sm:w-[calc(100%-3rem)] sm:p-8 lg:w-[calc(100%-4rem)]">
           <h2 className="text-center text-lg font-bold text-brand-dark">
             Servicii de cadastru și topografie
           </h2>
