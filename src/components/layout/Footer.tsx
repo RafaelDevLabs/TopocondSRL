@@ -29,7 +29,9 @@ export function Footer() {
           <ul className="mt-6 flex items-center gap-3">
             <li>
               <a
-                href="#"
+                href={company.facebookHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="grid size-9 place-items-center rounded-full border border-footer-muted/40 text-footer-foreground transition-colors hover:bg-brand focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:outline-none"
               >
@@ -38,7 +40,9 @@ export function Footer() {
             </li>
             <li>
               <a
-                href="#"
+                href={company.instagramHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="grid size-9 place-items-center rounded-full border border-footer-muted/40 text-footer-foreground transition-colors hover:bg-brand focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:outline-none"
               >

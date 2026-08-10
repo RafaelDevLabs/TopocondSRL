@@ -11,6 +11,8 @@ export const company = {
   phoneLabel: "0754 827 623",
   phoneHref: "tel:0754827623",
   whatsappHref: "https://wa.me/40754827623",
+  facebookHref: "https://www.facebook.com/topocondcadastru",
+  instagramHref: "https://www.instagram.com/topocond_cadastru/",
   email: "claudiamarina30@gmail.com",
   address: "Calea Națională nr. 71, Botoșani",
   addressLines: ["Calea Națională nr. 71", "Botoșani"],
