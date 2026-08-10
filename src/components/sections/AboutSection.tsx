@@ -105,16 +105,16 @@ export function AboutSection({
   return (
     <section className="bg-white pt-10 pb-14 sm:pt-[3.75rem] sm:pb-20 lg:pt-16 lg:pb-24">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,1fr)] lg:gap-16 lg:px-8">
-        <Reveal className="relative">
+        <Reveal className="relative pb-8 sm:pb-0">
           <div className="relative overflow-hidden rounded-2xl bg-surface shadow-card">
             <img
               src="/Images/About/Topocond-about.jpg"
               alt="Specialist Topocond realizând măsurători cadastrale pe teren"
-              className="h-[20.5rem] w-full object-cover object-center sm:h-[31rem] lg:h-[36rem]"
+              className="h-[29rem] w-full object-cover object-center sm:h-[31rem] lg:h-[36rem]"
               loading="lazy"
             />
           </div>
-          <div className="absolute right-3 bottom-3 left-3 rounded-xl border border-border bg-card/98 px-4 py-3.5 shadow-float sm:right-auto sm:bottom-5 sm:left-6 sm:max-w-[18rem] sm:px-5 sm:py-4 lg:left-8">
+          <div className="absolute right-4 -bottom-1 left-4 rounded-[14px] border border-border/70 bg-white px-5 py-4 shadow-[0_22px_48px_rgba(0,0,0,.18)] sm:right-auto sm:bottom-5 sm:left-6 sm:max-w-[18rem] sm:rounded-xl sm:border-border sm:bg-card/98 sm:px-5 sm:py-4 sm:shadow-float lg:left-8">
             <div className="flex items-start gap-3">
               <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full bg-brand-soft text-brand sm:size-10">
                 <ShieldCheck className="size-5" aria-hidden="true" />
