@@ -31,6 +31,12 @@ const contactHeroBenefits = [
     title: "Acoperire locală",
     text: "Botoșani și împrejurimi",
   },
+  {
+    icon: Phone,
+    title: "Telefon",
+    text: company.phoneLabel,
+    href: company.phoneHref,
+  },
 ] as const;
 
 export const Route = createFileRoute("/contact")({
@@ -65,22 +71,43 @@ function ContactPage() {
         subtitle={contactHeroSubtitle}
         footerContent={
           <div className="flex flex-col gap-4 sm:gap-5 lg:inline-flex lg:w-fit lg:max-w-full lg:flex-row lg:items-stretch lg:gap-0 lg:divide-x lg:divide-white/14">
-            {contactHeroBenefits.map((benefit) => (
-              <div
-                key={benefit.title}
-                className="flex items-center gap-3 lg:min-w-0 lg:pr-5 lg:pl-5 first:lg:pl-0 last:lg:pr-0"
-              >
-                <span className="grid size-11 shrink-0 place-items-center rounded-full border border-brand-accent/45 bg-white/4 text-brand-accent sm:size-[2.875rem]">
-                  <benefit.icon className="size-[1.05rem] sm:size-[1.1rem]" aria-hidden="true" />
-                </span>
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold text-primary-foreground">{benefit.title}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-primary-foreground/72 sm:text-[0.82rem]">
-                    {benefit.text}
-                  </p>
+            {contactHeroBenefits.map((benefit) => {
+              const itemContent = (
+                <>
+                  <span className="grid size-11 shrink-0 place-items-center rounded-full border border-brand-accent/45 bg-white/4 text-brand-accent sm:size-[2.875rem]">
+                    <benefit.icon
+                      className="size-[1.05rem] sm:size-[1.1rem]"
+                      aria-hidden="true"
+                    />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-primary-foreground">
+                      {benefit.title}
+                    </p>
+                    <p className="mt-1 text-xs leading-relaxed text-primary-foreground/72 sm:text-[0.82rem]">
+                      {benefit.text}
+                    </p>
+                  </div>
+                </>
+              );
+
+              return benefit.href ? (
+                <a
+                  key={benefit.title}
+                  href={benefit.href}
+                  className="flex items-center gap-3 rounded-lg transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/70 lg:min-w-0 lg:pr-5 lg:pl-5 first:lg:pl-0 last:lg:pr-0"
+                >
+                  {itemContent}
+                </a>
+              ) : (
+                <div
+                  key={benefit.title}
+                  className="flex items-center gap-3 lg:min-w-0 lg:pr-5 lg:pl-5 first:lg:pl-0 last:lg:pr-0"
+                >
+                  {itemContent}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         }
         backgroundImageSrc="/Images/Herosections/ContactHero-Topocond.png"
@@ -104,11 +131,26 @@ function ContactPage() {
           />
 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-            <Reveal>
+            <Reveal delay={100} className="order-1 lg:order-2">
+              <div className="relative h-[19rem] overflow-hidden rounded-xl shadow-card sm:h-[19.5rem]">
+                <iframe
+                  title={`${company.mapLabel} - locație Google Maps`}
+                  src={company.mapsEmbedUrl}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="h-full w-full border-0"
+                />
+              </div>
+            </Reveal>
+
+            <Reveal className="order-2 lg:order-1">
               <ContactForm />
             </Reveal>
 
-            <Reveal delay={100} className="space-y-6">
+            <Reveal
+              delay={140}
+              className="order-3 lg:col-start-2 lg:row-start-1 lg:self-start"
+            >
               <ul className="rounded-xl border border-border bg-card p-6 shadow-card">
                 {details.map((detail) => {
                   const isAddress = detail.label === "Adresă";
@@ -160,16 +202,6 @@ function ContactPage() {
                   );
                 })}
               </ul>
-
-              <div className="relative h-[19rem] overflow-hidden rounded-xl shadow-card sm:h-[19.5rem]">
-                <iframe
-                  title={`${company.mapLabel} - locație Google Maps`}
-                  src={company.mapsEmbedUrl}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="h-full w-full border-0"
-                />
-              </div>
             </Reveal>
           </div>
         </div>

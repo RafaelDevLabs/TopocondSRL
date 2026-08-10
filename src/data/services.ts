@@ -45,13 +45,14 @@ export const services: Service[] = [
     shortDescription:
       "Întocmirea documentațiilor pentru înscrierea terenurilor și construcțiilor în cartea funciară.",
     fullDescription:
-      "Realizăm documentații cadastrale complete pentru terenuri, apartamente, case și alte construcții, astfel încât proprietatea ta să fie înregistrată corect și fără complicații.",
+      "Realizăm documentații cadastrale complete pentru terenuri, apartamente, case și alte construcții, inclusiv apartamentări, relevee pentru apartamente și recepții pentru atribuirea numărului cadastral, astfel încât proprietatea ta să fie înregistrată corect și fără complicații.",
     icon: "cadastru",
     imageSrc: "/Images/Servicii/Cadastru_si_Intabulare.jpeg",
     imageAlt: "Documentație cadastrală pentru teren și construcții",
     bullets: [
       "Înregistrarea terenurilor și construcțiilor",
-      "Obținerea Extrasului de Carte Funciară",
+      "Apartamentări și relevee pentru apartamente",
+      "Recepție și atribuire număr cadastral",
       "Intabulare pentru apartamente, case și terenuri",
       "Trasarea limitelor de proprietate",
       "Dezmembrări și alipiri terenuri",
@@ -60,6 +61,7 @@ export const services: Service[] = [
     includes: [
       "Măsurători și identificarea exactă a proprietății",
       "Întocmirea documentației cadastrale complete",
+      "Documentații pentru apartamentări și relevee apartamente",
       "Pregătirea actelor pentru intabulare",
       "Depunerea documentației conform cerințelor ANCPI",
     ],
@@ -119,7 +121,7 @@ export const services: Service[] = [
     shortDescription:
       "Consultanță și sprijin pentru întocmirea documentațiilor cadastrale.",
     fullDescription:
-      "Oferim consultanță cadastrală și juridică pentru a clarifica pașii necesari, actele implicate și soluțiile potrivite fiecărei situații legate de proprietatea ta.",
+      "Oferim consultanță cadastrală și juridică pentru a clarifica pașii necesari, actele implicate și soluțiile potrivite fiecărei situații legate de proprietatea ta, inclusiv pentru înscrierea posesiei sau obținerea extraselor de carte funciară.",
     icon: "consultanta",
     imageSrc: "/Images/Servicii/Consultanta_Cadastrala_si_Juridica.jpg",
     imageAlt: "Consultanță cadastrală și juridică pentru documentații imobiliare",
@@ -128,12 +130,15 @@ export const services: Service[] = [
       "Verificarea documentației",
       "Ghidare pentru obținerea avizelor",
       "Consultanță privind înscrierea proprietăților",
+      "Înscriere posesie",
+      "Extrase de carte funciară",
       "Soluții personalizate pentru fiecare caz",
     ],
     includes: [
       "Analiza situației cadastrale și juridice",
       "Verificarea actelor și a documentației disponibile",
       "Recomandări clare pentru pașii următori",
+      "Sprijin pentru înscrierea posesiei și obținerea extraselor necesare",
       "Sprijin în relația cu instituțiile implicate",
     ],
     whenNeeded:

@@ -48,12 +48,12 @@ export const pageHighlights = [
   { icon: "mapPin", title: "Acoperire locală", text: "[text placeholder]" },
 ] as const;
 
-/** Statistici pagina Despre Noi. PLACEHOLDER — de completat de client. */
+/** Statistici pagina Despre Noi. */
 export const stats = [
-  { value: "[nr]", label: "Ani de experiență", text: "[text placeholder]" },
-  { value: "[nr]", label: "Lucrări finalizate", text: "[text placeholder]" },
-  { value: "[%]", label: "Clienți mulțumiți", text: "[text placeholder]" },
-  { value: "[zonă]", label: "Acoperire locală", text: "[text placeholder]" },
+  { value: "2+", label: "Ani de experiență", text: "Experiență practică în lucrări cadastrale și topografice." },
+  { value: "200+", label: "Lucrări finalizate", text: "Proiecte gestionate atent pentru proprietăți rezidențiale și terenuri." },
+  { value: "100%", label: "Clienți mulțumiți", text: "Comunicare clară, documentații corecte și respectarea termenelor." },
+  { value: "Botoșani", label: "Acoperire locală", text: "Servicii oferite în municipiu, județ și zonele apropiate." },
 ] as const;
 
 /** Avantaje (Home). */
@@ -82,11 +82,31 @@ export const advantages = [
 
 /** Valori (Despre Noi). */
 export const values = [
-  { icon: "target", title: "Profesionalism", text: "[text placeholder]" },
-  { icon: "scale", title: "Corectitudine", text: "[text placeholder]" },
-  { icon: "timer", title: "Promptitudine", text: "[text placeholder]" },
-  { icon: "users", title: "Parteneriat", text: "[text placeholder]" },
-  { icon: "star", title: "Calitate", text: "[text placeholder]" },
+  {
+    icon: "target",
+    title: "Profesionalism",
+    text: "Abordăm fiecare lucrare cu rigoare tehnică, atenție la detalii și responsabilitate.",
+  },
+  {
+    icon: "scale",
+    title: "Corectitudine",
+    text: "Oferim informații clare, soluții realiste și transparență pe tot parcursul colaborării.",
+  },
+  {
+    icon: "timer",
+    title: "Promptitudine",
+    text: "Răspundem rapid solicitărilor și urmărim ca fiecare etapă să avanseze eficient.",
+  },
+  {
+    icon: "users",
+    title: "Parteneriat",
+    text: "Construim relații de încredere și tratăm fiecare client cu seriozitate și respect.",
+  },
+  {
+    icon: "star",
+    title: "Calitate",
+    text: "Livrăm documentații bine pregătite, conforme și susținute de echipamente moderne.",
+  },
 ] as const;
 
 /** Pași de colaborare (pagina Servicii). */
@@ -127,11 +147,22 @@ export const testimonials = [
 
 /** Bullet-uri secțiunea „Despre companie” / „Cine suntem”. */
 export const aboutBullets = [
-  "[bullet placeholder]",
-  "[bullet placeholder]",
-  "[bullet placeholder]",
-  "[bullet placeholder]",
+  "Specialiști autorizați pentru servicii de cadastru, intabulare și topografie",
+  "Măsurători precise și documentații conforme cu cerințele ANCPI",
+  "Comunicare transparentă și suport pe tot parcursul lucrării",
+  "Respect pentru termen, buget și nevoile fiecărui proprietar",
 ] as const;
+
+export const aboutParagraphs = [
+  "Topocond Cadastru este o echipă dedicată de specialiști care oferă servicii complete de cadastru, intabulare și topografie pentru proprietari, dezvoltatori și persoane juridice din județul Botoșani.",
+  "Punem accent pe precizie, organizare și claritate în fiecare etapă, de la măsurători și verificări în teren până la pregătirea documentației necesare pentru depunere.",
+  "Folosim echipamente moderne și o abordare orientată spre rezultate, astfel încât fiecare client să primească soluții corecte, bine explicate și adaptate situației sale.",
+] as const;
+
+export const aboutAuthorization = {
+  title: "Autorizați ANCPI",
+  text: "Servicii realizate cu responsabilitate și atenție la conformitate.",
+} as const;
 
 /** Linkuri utile în footer. */
 export const usefulLinks: NavItem[] = [

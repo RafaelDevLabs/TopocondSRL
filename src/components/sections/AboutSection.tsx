@@ -4,7 +4,7 @@ import { ImagePlaceholder } from "@/components/common/ImagePlaceholder";
 import { Reveal } from "@/components/common/Reveal";
 import { ScrollToTopLink } from "@/components/common/ScrollToTopLink";
 import { Button } from "@/components/ui/button";
-import { aboutBullets, company } from "@/data/site";
+import { aboutAuthorization, aboutBullets, aboutParagraphs, company } from "@/data/site";
 
 type AboutSectionProps = {
   eyebrow?: string;
@@ -103,44 +103,60 @@ export function AboutSection({
   }
 
   return (
-    <section className="py-14 sm:py-20">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
+    <section className="bg-white pt-10 pb-14 sm:pt-[3.75rem] sm:pb-20 lg:pt-16 lg:pb-24">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,1fr)] lg:gap-16 lg:px-8">
         <Reveal className="relative">
-          <ImagePlaceholder
-            alt="Imagine placeholder cu activitatea de teren a echipei"
-            className="h-72 w-full rounded-xl sm:h-96"
-          />
-          <div className="absolute -bottom-5 left-4 flex items-center gap-2.5 rounded-lg border border-border bg-card px-4 py-3 shadow-float sm:left-6">
-            <ShieldCheck className="size-5 shrink-0 text-brand-accent" aria-hidden="true" />
-            <div className="min-w-0">
-              {/* PLACEHOLDER — autorizare de confirmat */}
-              <p className="text-xs font-semibold text-brand-dark">[badge placeholder]</p>
-              <p className="text-[0.7rem] text-muted-foreground">[detaliu placeholder]</p>
+          <div className="relative overflow-hidden rounded-2xl bg-surface shadow-card">
+            <img
+              src="/Images/About/Topocond-about.jpg"
+              alt="Specialist Topocond realizând măsurători cadastrale pe teren"
+              className="h-[20.5rem] w-full object-cover object-center sm:h-[31rem] lg:h-[36rem]"
+              loading="lazy"
+            />
+          </div>
+          <div className="absolute right-3 bottom-3 left-3 rounded-xl border border-border bg-card/98 px-4 py-3.5 shadow-float sm:right-auto sm:bottom-5 sm:left-6 sm:max-w-[18rem] sm:px-5 sm:py-4 lg:left-8">
+            <div className="flex items-start gap-3">
+              <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full bg-brand-soft text-brand sm:size-10">
+                <ShieldCheck className="size-5" aria-hidden="true" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-xs font-semibold tracking-[0.16em] text-brand-dark uppercase">
+                  {aboutAuthorization.title}
+                </p>
+                <p className="mt-1 text-[0.82rem] leading-relaxed text-muted-foreground sm:text-sm">
+                  {aboutAuthorization.text}
+                </p>
+              </div>
             </div>
           </div>
         </Reveal>
 
-        <Reveal delay={100}>
+        <Reveal delay={100} className="self-center">
           {eyebrow && (
-            <p className="text-xs font-semibold tracking-[0.2em] text-brand-accent uppercase">
+            <p className="text-xs font-semibold tracking-[0.24em] text-brand-accent uppercase">
               {eyebrow}
             </p>
           )}
-          <h2 className="mt-3 text-2xl font-bold text-brand-dark sm:text-3xl">{title}</h2>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            {/* PLACEHOLDER — descriere companie de confirmat */}
-            [descriere companie placeholder]
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            [paragraf secundar placeholder]
-          </p>
-          <ul className="mt-6 space-y-3">
-            {aboutBullets.map((bullet, i) => (
-              <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                <span className="mt-0.5 grid size-4 shrink-0 place-items-center rounded-full bg-brand-accent text-primary-foreground">
-                  <Check className="size-3" aria-hidden="true" />
+          <h2 className="mt-3 max-w-[34rem] text-2xl leading-[1.15] font-bold text-brand-dark sm:mt-4 sm:text-3xl lg:text-[2.45rem]">
+            {title}
+          </h2>
+          <div className="mt-5 space-y-3.5 sm:mt-6 sm:space-y-4">
+            {aboutParagraphs.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="max-w-[35rem] text-sm leading-[1.85] text-muted-foreground sm:text-[0.98rem] sm:leading-[1.95]"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          <ul className="mt-7 grid gap-3.5 sm:mt-8 sm:gap-4 sm:grid-cols-2">
+            {aboutBullets.map((bullet) => (
+              <li key={bullet} className="flex items-start gap-3 text-sm text-brand-dark sm:text-[0.95rem]">
+                <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-brand-accent/12 text-brand">
+                  <Check className="size-[0.95rem]" aria-hidden="true" />
                 </span>
-                <span>{bullet}</span>
+                <span className="leading-relaxed">{bullet}</span>
               </li>
             ))}
           </ul>

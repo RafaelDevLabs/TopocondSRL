@@ -4,25 +4,34 @@ import { stats } from "@/data/site";
 
 /** Banda de statistici (pagina Despre Noi). Valorile sunt placeholder. */
 export function StatsBand() {
-  const icons = ["users", "fileCheck", "badgeCheck", "mapPin"];
+  const icons = ["award", "fileCheck", "badgeCheck", "mapPin"];
 
   return (
-    <section className="bg-surface py-14 sm:py-16">
+    <section className="bg-surface/55 py-12 sm:py-16 lg:py-[4.5rem]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid overflow-hidden rounded-xl border border-border/75 bg-white shadow-[0_8px_22px_rgba(15,23,42,.035)] sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => {
             const Icon = getUiIcon(icons[index] ?? "badgeCheck");
             return (
-              <Reveal as="li" key={stat.label} delay={index * 80}>
-                <div className="text-center">
-                  <span className="mx-auto grid size-11 place-items-center rounded-full bg-brand-soft text-brand">
-                    <Icon className="size-5" aria-hidden="true" />
+              <Reveal
+                as="li"
+                key={stat.label}
+                delay={index * 80}
+                className="border-b border-border/75 px-5 py-6 sm:px-7 sm:py-8 lg:border-r lg:border-b-0 lg:px-8 lg:py-[2.35rem] last:border-b-0 last:lg:border-r-0"
+              >
+                <div className="text-center lg:text-left">
+                  <span className="mx-auto grid size-9 place-items-center rounded-full bg-brand-soft text-brand sm:size-10 lg:mx-0">
+                    <Icon className="size-[1.125rem] sm:size-5" aria-hidden="true" />
                   </span>
-                  <p className="mt-4 text-2xl font-bold text-brand-dark sm:text-3xl">
+                  <p className="mt-3 text-[1.75rem] font-bold text-brand-dark sm:mt-4 sm:text-3xl">
                     {stat.value}
                   </p>
-                  <p className="mt-1 text-sm font-semibold text-brand-dark">{stat.label}</p>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{stat.text}</p>
+                  <p className="mt-1.5 text-sm font-semibold text-brand-dark sm:mt-2 sm:text-[0.95rem]">
+                    {stat.label}
+                  </p>
+                  <p className="mt-1.5 text-[0.84rem] leading-relaxed text-muted-foreground sm:mt-2 sm:text-sm">
+                    {stat.text}
+                  </p>
                 </div>
               </Reveal>
             );
