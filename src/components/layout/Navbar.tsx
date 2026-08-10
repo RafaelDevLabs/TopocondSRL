@@ -31,7 +31,7 @@ export function Navbar() {
           className="shrink-0 rounded-md focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           aria-label={`${company.name} - pagina principala`}
         >
-          <Logo className="h-[50px] sm:h-[60px] lg:h-[72px]" />
+          <Logo className="h-[60px] sm:h-[72px] lg:h-[84px]" />
         </ScrollToTopLink>
 
         <nav aria-label="Navigatie principala" className="mx-auto hidden lg:block lg:-translate-x-3">

@@ -22,7 +22,7 @@ export function Footer() {
         )}
       >
         <div>
-          <Logo tone="dark" className="h-12 sm:h-14" />
+          <Logo tone="dark" className="h-16 sm:h-20" />
           <p className="mt-5 max-w-xs text-sm leading-[1.9] text-footer-muted">
             {company.tagline}
           </p>
