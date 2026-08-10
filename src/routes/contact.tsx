@@ -131,7 +131,7 @@ function ContactPage() {
           />
 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-            <Reveal delay={100} className="order-1 lg:order-2">
+            <Reveal delay={100} className="order-1 lg:hidden">
               <div className="relative h-[19rem] overflow-hidden rounded-xl shadow-card sm:h-[19.5rem]">
                 <iframe
                   title={`${company.mapLabel} - locație Google Maps`}
@@ -149,7 +149,7 @@ function ContactPage() {
 
             <Reveal
               delay={140}
-              className="order-3 lg:col-start-2 lg:row-start-1 lg:self-start"
+              className="order-3 space-y-6 lg:order-2 lg:self-start"
             >
               <ul className="rounded-xl border border-border bg-card p-6 shadow-card">
                 {details.map((detail) => {
@@ -202,6 +202,18 @@ function ContactPage() {
                   );
                 })}
               </ul>
+
+              <div className="hidden lg:block">
+                <div className="relative h-[19rem] overflow-hidden rounded-xl shadow-card sm:h-[19.5rem]">
+                  <iframe
+                    title={`${company.mapLabel} - locație Google Maps`}
+                    src={company.mapsEmbedUrl}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="h-full w-full border-0"
+                  />
+                </div>
+              </div>
             </Reveal>
           </div>
         </div>
