@@ -70,21 +70,18 @@ function ContactPage() {
         title="Contact"
         subtitle={contactHeroSubtitle}
         footerContent={
-          <div className="flex flex-col gap-4 sm:gap-5 lg:inline-flex lg:w-fit lg:max-w-full lg:flex-row lg:items-stretch lg:gap-0 lg:divide-x lg:divide-white/14">
+          <div className="flex flex-col gap-3 sm:gap-4 lg:inline-flex lg:w-fit lg:max-w-full lg:flex-row lg:items-stretch lg:gap-0 lg:divide-x lg:divide-white/14">
             {contactHeroBenefits.map((benefit) => {
               const itemContent = (
                 <>
-                  <span className="grid size-11 shrink-0 place-items-center rounded-full border border-brand-accent/45 bg-white/4 text-brand-accent sm:size-[2.875rem]">
-                    <benefit.icon
-                      className="size-[1.05rem] sm:size-[1.1rem]"
-                      aria-hidden="true"
-                    />
+                  <span className="grid size-10 shrink-0 place-items-center rounded-full border border-brand-accent/45 bg-white/4 text-brand-accent sm:size-[2.65rem]">
+                    <benefit.icon className="size-[0.98rem] sm:size-[1rem]" aria-hidden="true" />
                   </span>
                   <div className="min-w-0">
-                    <p className="text-sm font-semibold text-primary-foreground">
+                    <p className="text-[0.92rem] font-semibold text-primary-foreground">
                       {benefit.title}
                     </p>
-                    <p className="mt-1 text-xs leading-relaxed text-primary-foreground/72 sm:text-[0.82rem]">
+                    <p className="mt-0.5 text-[0.78rem] leading-relaxed text-primary-foreground/72 sm:text-[0.8rem]">
                       {benefit.text}
                     </p>
                   </div>
@@ -95,14 +92,14 @@ function ContactPage() {
                 <a
                   key={benefit.title}
                   href={benefit.href}
-                  className="flex items-center gap-3 rounded-lg transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/70 lg:min-w-0 lg:pr-5 lg:pl-5 first:lg:pl-0 last:lg:pr-0"
+                  className="flex items-center gap-2.5 rounded-lg transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/70 lg:min-w-0 lg:pr-4 lg:pl-4 first:lg:pl-0 last:lg:pr-0"
                 >
                   {itemContent}
                 </a>
               ) : (
                 <div
                   key={benefit.title}
-                  className="flex items-center gap-3 lg:min-w-0 lg:pr-5 lg:pl-5 first:lg:pl-0 last:lg:pr-0"
+                  className="flex items-center gap-2.5 lg:min-w-0 lg:pr-4 lg:pl-4 first:lg:pl-0 last:lg:pr-0"
                 >
                   {itemContent}
                 </div>
@@ -114,10 +111,10 @@ function ContactPage() {
         backgroundPosition="78% center"
         backgroundClassName="bg-[position:76%_center] sm:bg-[position:80%_center] lg:bg-[position:78%_center]"
         overlayClassName="bg-[rgba(5,45,28,0.55)]"
-        contentClassName="flex min-h-[34rem] flex-col justify-center py-16 sm:min-h-[36rem] sm:py-[4.5rem] lg:min-h-[33.75rem] lg:justify-end lg:py-[4.75rem] xl:min-h-[35rem] xl:py-[5rem]"
+        contentClassName="py-14 sm:py-16 lg:py-18 xl:py-20"
         breadcrumbClassName="text-[0.8rem] sm:text-[0.88rem]"
-        titleClassName="max-w-[34rem] text-[2.7rem] leading-[1.05] sm:text-[3.2rem] lg:text-[3.95rem] xl:text-[4.1rem]"
-        subtitleClassName="mt-6 max-w-[32.5rem] text-base leading-[1.8] text-primary-foreground/82 sm:text-lg lg:text-[1.18rem]"
+        titleClassName="max-w-[22rem] text-[2.2rem] leading-[1.05] sm:max-w-[30rem] sm:text-[2.55rem] sm:leading-[1.04] lg:max-w-[40rem] lg:text-[2.8rem] lg:leading-[1.02] xl:max-w-[42rem] xl:text-[3rem] xl:leading-[1.02]"
+        subtitleClassName="mt-4 max-w-2xl text-sm leading-relaxed text-primary-foreground/80 sm:text-base"
       >
         <div className="h-1 w-[3.75rem] rounded-full bg-brand-accent" aria-hidden="true" />
       </PageHero>
@@ -147,10 +144,7 @@ function ContactPage() {
               <ContactForm />
             </Reveal>
 
-            <Reveal
-              delay={140}
-              className="order-3 space-y-6 lg:order-2 lg:self-start"
-            >
+            <Reveal delay={140} className="order-3 space-y-6 lg:order-2 lg:self-start">
               <ul className="rounded-xl border border-border bg-card p-6 shadow-card">
                 {details.map((detail) => {
                   const isAddress = detail.label === "Adresă";
@@ -174,27 +168,23 @@ function ContactPage() {
                             rel={isAddress ? "noopener noreferrer" : undefined}
                             className="mt-1 block rounded text-sm font-semibold break-words text-brand-dark transition-colors hover:text-brand focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                           >
-                            {Array.isArray(detail.value) ? (
-                              detail.value.map((line) => (
-                                <span key={line} className="block">
-                                  {line}
-                                </span>
-                              ))
-                            ) : (
-                              detail.value
-                            )}
+                            {Array.isArray(detail.value)
+                              ? detail.value.map((line) => (
+                                  <span key={line} className="block">
+                                    {line}
+                                  </span>
+                                ))
+                              : detail.value}
                           </a>
                         ) : (
                           <p className="mt-1 text-sm font-semibold text-brand-dark">
-                            {Array.isArray(detail.value) ? (
-                              detail.value.map((line) => (
-                                <span key={line} className="block">
-                                  {line}
-                                </span>
-                              ))
-                            ) : (
-                              detail.value
-                            )}
+                            {Array.isArray(detail.value)
+                              ? detail.value.map((line) => (
+                                  <span key={line} className="block">
+                                    {line}
+                                  </span>
+                                ))
+                              : detail.value}
                           </p>
                         )}
                       </div>

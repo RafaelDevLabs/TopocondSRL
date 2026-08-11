@@ -39,10 +39,10 @@ function AboutPage() {
         backgroundPosition="72% center"
         backgroundClassName="bg-[position:70%_center] sm:bg-[position:74%_center] lg:bg-[position:72%_center]"
         overlayClassName="bg-[linear-gradient(90deg,rgba(8,24,18,0.69)_0%,rgba(8,24,18,0.57)_30%,rgba(8,24,18,0.36)_62%,rgba(8,24,18,0.12)_100%)]"
-        contentClassName="py-14 sm:min-h-[34rem] sm:py-[4.5rem] lg:min-h-[35.25rem] lg:justify-end lg:py-[4.1rem]"
+        contentClassName="py-14 sm:py-16 lg:py-18 xl:py-20"
         breadcrumbClassName="text-[0.8rem] sm:text-[0.88rem]"
-        titleClassName="max-w-[22rem] text-[2.15rem] leading-[1.05] sm:max-w-[30rem] sm:text-[3rem] lg:max-w-[40rem] lg:text-[3.9rem]"
-        subtitleClassName="mt-4 max-w-[22rem] text-sm leading-[1.8] text-primary-foreground/84 sm:mt-6 sm:max-w-[36rem] sm:text-lg lg:text-[1.12rem]"
+        titleClassName="max-w-[22rem] text-[2.2rem] leading-[1.05] sm:max-w-[30rem] sm:text-[2.55rem] sm:leading-[1.04] lg:max-w-[40rem] lg:text-[2.8rem] lg:leading-[1.02] xl:max-w-[42rem] xl:text-[3rem] xl:leading-[1.02]"
+        subtitleClassName="mt-4 max-w-2xl text-sm leading-relaxed text-primary-foreground/80 sm:text-base"
       >
         <div className="h-1 w-16 rounded-full bg-brand-accent" aria-hidden="true" />
       </PageHero>
