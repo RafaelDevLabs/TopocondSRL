@@ -22,6 +22,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { company } from "@/data/site";
 
 const contactServiceOptions = [
   { value: "cadastru-si-intabulare", label: "Cadastru și Intabulare" },
@@ -42,21 +43,33 @@ const schema = z.object({
 });
 
 type FormValues = z.infer<typeof schema>;
-
-/**
- * Formularul este pregătit la nivel de UI și validare.
- * Trimiterea efectivă depinde de adresa finală de email sau de o integrare backend.
- */
 export function ContactForm() {
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues: { name: "", phone: "", email: "", service: "", message: "" },
   });
 
-  const onSubmit = () => {
-    toast.message("Mesaj pregătit pentru trimitere", {
-      description:
-        "Formularul este valid, iar conectarea pentru trimiterea efectivă va fi activată după ce primim datele finale de contact.",
+  const onSubmit = (values: FormValues) => {
+    const selectedService =
+      contactServiceOptions.find((service) => service.value === values.service)?.label ??
+      values.service;
+
+    const whatsappMessage = [
+      "Bună ziua! Am completat formularul de contact de pe site.",
+      "",
+      `Nume: ${values.name}`,
+      `Telefon: ${values.phone}`,
+      `Email: ${values.email}`,
+      `Serviciu: ${selectedService}`,
+      `Mesaj: ${values.message}`,
+    ].join("\n");
+
+    const whatsappUrl = `${company.whatsappHref}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+    toast.success("Se deschide WhatsApp", {
+      description: "Mesajul a fost precompletat și poate fi trimis imediat.",
     });
   };
 
