@@ -44,6 +44,9 @@ export function ServiceDialogContent({ service }: { service: Service }) {
               </li>
             ))}
           </ul>
+          {service.documentsNote ? (
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">{service.documentsNote}</p>
+          ) : null}
         </section>
       </div>
 
