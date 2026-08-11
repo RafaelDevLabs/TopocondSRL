@@ -87,27 +87,27 @@ export const values = [
   {
     icon: "target",
     title: "Profesionalism",
-    text: "Abordăm fiecare lucrare cu rigoare tehnică, atenție la detalii și responsabilitate.",
+    text: "Tratăm fiecare lucrare de cadastru și topografie cu rigoare tehnică, atenție la detalii și responsabilitate.",
   },
   {
     icon: "scale",
     title: "Corectitudine",
-    text: "Oferim informații clare, soluții realiste și transparență pe tot parcursul colaborării.",
+    text: "Explicăm clar pașii, costurile și actele necesare pentru intabulare și documentații cadastrale.",
   },
   {
     icon: "timer",
     title: "Promptitudine",
-    text: "Răspundem rapid solicitărilor și urmărim ca fiecare etapă să avanseze eficient.",
+    text: "Răspundem rapid solicitărilor și urmărim ca fiecare etapă să avanseze eficient, fără blocaje inutile.",
   },
   {
     icon: "users",
     title: "Parteneriat",
-    text: "Construim relații de încredere și tratăm fiecare client cu seriozitate și respect.",
+    text: "Construim relații de încredere și tratăm fiecare client cu seriozitate, respect și atenție reală la contextul lucrării.",
   },
   {
     icon: "star",
     title: "Calitate",
-    text: "Livrăm documentații bine pregătite, conforme și susținute de echipamente moderne.",
+    text: "Livrăm documentații cadastrale bine pregătite, conforme și susținute de măsurători precise.",
   },
 ] as const;
 
@@ -150,20 +150,20 @@ export const testimonials = [
 /** Bullet-uri secțiunea „Despre companie” / „Cine suntem”. */
 export const aboutBullets = [
   "Specialiști autorizați pentru servicii de cadastru, intabulare și topografie",
-  "Măsurători precise și documentații conforme cu cerințele ANCPI",
-  "Comunicare transparentă și suport pe tot parcursul lucrării",
-  "Respect pentru termen, buget și nevoile fiecărui proprietar",
+  "Măsurători precise și documentații cadastrale conforme cu cerințele ANCPI",
+  "Comunicare clară și sprijin pe tot parcursul lucrării",
+  "Respect pentru termen, proprietate și particularitățile fiecărui proiect",
 ] as const;
 
 export const aboutParagraphs = [
-  "Topocond Cadastru este o echipă dedicată de specialiști care oferă servicii complete de cadastru, intabulare și topografie pentru proprietari, dezvoltatori și persoane juridice din județul Botoșani.",
-  "Punem accent pe precizie, organizare și claritate în fiecare etapă, de la măsurători și verificări în teren până la pregătirea documentației necesare pentru depunere.",
-  "Folosim echipamente moderne și o abordare orientată spre rezultate, astfel încât fiecare client să primească soluții corecte, bine explicate și adaptate situației sale.",
+  "Topocond Cadastru este o echipă specializată în servicii de cadastru, intabulare și topografie în Botoșani, care lucrează pentru proprietari, investitori și companii ce au nevoie de servicii clare și bine organizate.",
+  "Abordăm fiecare lucrare cu precizie și claritate, de la măsurători și verificări în teren până la pregătirea documentației necesare pentru depunere.",
+  "Folosim echipamente moderne și o abordare profesionistă, astfel încât fiecare client să primească explicații clare, documentații cadastrale complete și un parcurs de lucru predictibil.",
 ] as const;
 
 export const aboutAuthorization = {
   title: "Autorizați ANCPI",
-  text: "Servicii realizate cu responsabilitate și atenție la conformitate.",
+  text: "Lucrări realizate responsabil, cu atenție la conformitate și la cerințele fiecărui proiect.",
 } as const;
 
 /** Linkuri utile în footer. */

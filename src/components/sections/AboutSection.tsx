@@ -38,7 +38,7 @@ export function AboutSection({
             <div className="relative h-[540px] overflow-hidden rounded-2xl">
               <img
                 src="/Images/About/Topocond-about.jpg"
-                alt="Echipa Topocond în teren realizând măsurători cadastrale"
+                alt="Echipa Topocond realizând măsurători pentru servicii de cadastru și topografie în Botoșani"
                 className="h-full w-full object-cover object-[center_30%]"
                 loading="lazy"
               />
@@ -67,12 +67,13 @@ export function AboutSection({
               {title}
             </h2>
             <p className="mt-5 max-w-[520px] text-sm leading-[1.95] text-muted-foreground sm:text-[0.95rem]">
-              Suntem o echipă de specialiști autorizați ANCPI care oferă servicii complete de
-              cadastru, intabulare și topografie în județul Botoșani și zonele limitrofe.
+              Suntem o echipă de specialiști autorizați ANCPI care oferă servicii de cadastru,
+              intabulare și topografie în Botoșani, pentru proprietăți rezidențiale, terenuri și
+              proiecte care cer documentații corecte și bine pregătite.
             </p>
             <p className="mt-5 max-w-[520px] text-sm leading-[1.95] text-muted-foreground sm:text-[0.95rem]">
-              Folosim tehnologii moderne și respectăm cele mai înalte standarde de calitate pentru a
-              livra documentații corecte, la timp și fără bătăi de cap.
+              Lucrăm organizat, folosim tehnologii moderne și păstrăm comunicarea clară, astfel
+              încât fiecare client să știe ce urmează și să aibă încredere în rezultat.
             </p>
             <ul className="mt-7 grid gap-4 text-sm text-brand-dark sm:text-[0.95rem]">
               {homeBullets.map((bullet) => (
@@ -109,7 +110,7 @@ export function AboutSection({
           <div className="relative overflow-hidden rounded-2xl bg-surface shadow-card">
             <img
               src="/Images/About/Topocond-about.jpg"
-              alt="Specialist Topocond realizând măsurători cadastrale pe teren"
+              alt="Specialist Topocond efectuând măsurători pentru documentații cadastrale în Botoșani"
               className="h-[29rem] w-full object-cover object-center sm:h-[31rem] lg:h-[36rem]"
               loading="lazy"
             />

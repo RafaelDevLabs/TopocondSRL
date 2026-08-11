@@ -10,7 +10,7 @@ import { values } from "@/data/site";
 
 const title = "Despre Noi — Topocond Cadastru Botoșani";
 const description =
-  "Echipă de specialiști în cadastru, intabulare și topografie în județul Botoșani. Află cine suntem, valorile și modul nostru de lucru.";
+  "Topocond este o firmă de cadastru din Botoșani, specializată în cadastru, intabulare și topografie. Descoperă echipa, experiența și modul nostru de lucru.";
 
 export const Route = createFileRoute("/despre-noi")({
   head: () => ({
@@ -34,7 +34,7 @@ function AboutPage() {
       <PageHero
         breadcrumb={[{ label: "Acasă", to: "/" }, { label: "Despre Noi" }]}
         title="Despre Topocond Cadastru"
-        subtitle="Oferim servicii de cadastru, intabulare și topografie în județul Botoșani, cu accent pe precizie, claritate și o colaborare profesionistă de la primul contact până la documentația finală."
+        subtitle="Oferim servicii de cadastru, intabulare și topografie în Botoșani, printr-o abordare clară, bine organizată și atentă la fiecare etapă, de la măsurători până la documentația finală."
         backgroundImageSrc="/Images/Herosections/DespreNoiHero-Topocond.png"
         backgroundPosition="72% center"
         backgroundClassName="bg-[position:70%_center] sm:bg-[position:74%_center] lg:bg-[position:72%_center]"
@@ -49,7 +49,7 @@ function AboutPage() {
 
       <AboutSection
         eyebrow="CINE SUNTEM"
-        title="Experiență, precizie și profesionalism în serviciile de cadastru și topografie"
+        title="Experiență și rigoare în cadastru, intabulare și topografie"
       />
 
       <StatsBand />
@@ -59,7 +59,7 @@ function AboutPage() {
           <SectionHeading
             eyebrow="VALORILE NOASTRE"
             title="De ce să colaborezi cu noi?"
-            subtitle="Punem accent pe seriozitate, comunicare deschisă și rezultate corecte, astfel încât fiecare proiect să fie gestionat eficient și cu atenție la detalii."
+            subtitle="Punem accent pe seriozitate, comunicare clară și documentații cadastrale pregătite corect, astfel încât fiecare lucrare să avanseze clar și fără complicații inutile."
           />
           <div className="mt-9 sm:mt-12">
             <IconCardGrid items={values} columns={5} />
@@ -68,8 +68,8 @@ function AboutPage() {
       </section>
 
       <CtaBanner
-        title="Ai nevoie de servicii de cadastru sau topografie?"
-        subtitle="Spune-ne ce tip de lucrare ai în plan, iar noi îți oferim îndrumare, pașii necesari și o ofertă potrivită."
+        title="Ai nevoie de servicii de cadastru, intabulare sau topografie?"
+        subtitle="Spune-ne ce lucrare ai în plan, iar noi îți explicăm pașii necesari și îți propunem o soluție potrivită pentru proprietatea ta."
         iconAlwaysVisible
         className="pt-10 pb-14 sm:pt-9 sm:pb-16 lg:pt-11 lg:pb-20"
       />
