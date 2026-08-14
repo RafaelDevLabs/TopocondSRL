@@ -12,7 +12,7 @@ import { ScrollToTopLink } from "../components/common/ScrollToTopLink";
 import { Footer } from "../components/layout/Footer";
 import { Navbar } from "../components/layout/Navbar";
 import { Toaster } from "../components/ui/sonner";
-import { company, defaultOgImagePath } from "../data/site";
+import { company, defaultOgImageUrl } from "../data/site";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -86,10 +86,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "ro_RO" },
       { property: "og:site_name", content: "Topocond Cadastru" },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: defaultOgImagePath },
+      { property: "og:image", content: defaultOgImageUrl },
       { property: "og:image:alt", content: company.ogImageAlt },
-      { property: "og:image:width", content: "1731" },
-      { property: "og:image:height", content: "909" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:title", content: "Topocond Cadastru" },
       {
         name: "twitter:description",
@@ -97,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Servicii de cadastru, intabulare și topografie în județul Botoșani și zonele limitrofe.",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: defaultOgImagePath },
+      { name: "twitter:image", content: defaultOgImageUrl },
       { name: "twitter:image:alt", content: company.ogImageAlt },
       { name: "robots", content: "index, follow" },
     ],

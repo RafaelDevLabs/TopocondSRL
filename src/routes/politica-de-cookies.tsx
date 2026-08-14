@@ -8,7 +8,7 @@ import {
   company,
   createBreadcrumbSchema,
   createWebPageSchema,
-  defaultOgImagePath,
+  defaultOgImageUrl,
 } from "@/data/site";
 
 const title = "Politică de cookies | Topocond Cadastru";
@@ -25,12 +25,12 @@ export const Route = createFileRoute("/politica-de-cookies")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: pageUrl },
-      { property: "og:image", content: defaultOgImagePath },
+      { property: "og:image", content: defaultOgImageUrl },
       { property: "og:image:alt", content: company.ogImageAlt },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
-      { name: "twitter:image", content: defaultOgImagePath },
+      { name: "twitter:image", content: defaultOgImageUrl },
       { name: "twitter:image:alt", content: company.ogImageAlt },
     ],
     links: [{ rel: "canonical", href: pageUrl }],
