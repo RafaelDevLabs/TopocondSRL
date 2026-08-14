@@ -113,15 +113,21 @@ export const values = [
 
 /** Pași de colaborare (pagina Servicii). */
 export const workflowSteps = [
-  { title: "Ne contactezi", text: "Telefonic, pe WhatsApp sau prin formular." },
-  { title: "Analizăm solicitarea", text: "Ne oferi detaliile și documentele disponibile." },
   {
-    title: "Realizăm măsurătorile",
-    text: "Ne deplasăm la locație pentru măsurătorile necesare.",
+    title: "Discuție inițială",
+    text: "Înțelegem nevoile tale și tipul de proprietate pentru a-ți oferi cea mai bună soluție.",
   },
   {
-    title: "Pregătim documentația",
-    text: "Întocmim documentația necesară pentru serviciul solicitat.",
+    title: "Măsurători și documentare",
+    text: "Efectuăm măsurători în teren și adunăm toate informațiile necesare pentru proiectul tău.",
+  },
+  {
+    title: "Întocmire documentații",
+    text: "Pregătim documentațiile cadastrale și topografice conform cerințelor legale.",
+  },
+  {
+    title: "Depunere și soluționare",
+    text: "Ne ocupăm de depunere la ANCPI și urmărim dosarul până la finalizare.",
   },
 ] as const;
 

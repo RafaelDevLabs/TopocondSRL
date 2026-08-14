@@ -209,6 +209,45 @@ function ContactPage() {
         </div>
       </section>
 
+      <section className="pt-3 pb-14 sm:pt-5 sm:pb-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-[1.95rem] border border-brand-soft/40 bg-brand-soft/22 p-5 shadow-[0_20px_48px_rgba(13,36,27,0.06)] sm:p-7 lg:p-[2.15rem]">
+            <Reveal>
+              <SectionHeading
+                eyebrow="La birou"
+                title="Vizitează-ne la birou"
+                subtitle="Te așteptăm la birou pentru a discuta proiectul tău și pașii potriviți."
+                align="left"
+                className="max-w-[33rem] [&>p:first-child]:text-[0.68rem] [&>p:first-child]:tracking-[0.17em] [&>p:first-child]:text-brand-accent/80"
+              />
+            </Reveal>
+
+            <div className="mt-9 grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-5">
+              <Reveal className="overflow-hidden rounded-[1.7rem] border border-white/70 bg-card shadow-[0_24px_54px_rgba(13,36,27,0.1)]">
+                <img
+                  src="/Images/ClientsPhotos/ContactOutside.jpeg"
+                  alt="Exteriorul biroului Topocond din Botoșani"
+                  className="h-[18.5rem] w-full object-cover object-center sm:h-[23rem] lg:h-[26.5rem]"
+                  loading="lazy"
+                />
+              </Reveal>
+
+              <Reveal
+                delay={90}
+                className="overflow-hidden rounded-[1.55rem] border border-white/70 bg-card shadow-[0_20px_46px_rgba(13,36,27,0.09)]"
+              >
+                <img
+                  src="/Images/ClientsPhotos/ContactInside.jpeg"
+                  alt="Interiorul biroului Topocond pregătit pentru întâlniri cu clienții"
+                  className="h-[16rem] w-full object-cover object-center sm:h-[19rem] lg:h-[26.5rem]"
+                  loading="lazy"
+                />
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CtaBanner
         title="Ai nevoie de servicii de cadastru sau topografie?"
         subtitle="Contactează-ne acum și primești ofertă personalizată gratuit."

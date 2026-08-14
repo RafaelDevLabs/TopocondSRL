@@ -111,7 +111,7 @@ function ServicesPage() {
         <CtaBanner
           title="Ai nevoie de servicii de cadastru sau topografie?"
           subtitle="Contactează-ne acum și primești o ofertă personalizată gratuit."
-          className="bg-transparent pt-10 pb-14 sm:pt-11 sm:pb-16 lg:pt-12 lg:pb-20"
+          className="bg-transparent pt-14 pb-14 sm:pt-16 sm:pb-16 lg:pt-18 lg:pb-20"
         />
       </div>
 

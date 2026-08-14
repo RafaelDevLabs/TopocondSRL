@@ -24,6 +24,7 @@ export type Service = {
   imageSrc?: string;
   /** Alt text pentru imaginea de card. */
   imageAlt: string;
+  imageCardClassName?: string;
   /** Bullet-uri afișate pe card. */
   bullets: string[];
   /** „Ce include serviciul?” */
@@ -89,8 +90,9 @@ export const services: Service[] = [
     fullDescription:
       "Executăm ridicări topografice pentru proiecte de construcții, documentații necesare proiectării și autorizării, trasări în teren și lucrări de infrastructură, folosind echipamente moderne și metode de lucru adaptate fiecărei lucrări. Documentațiile rezultate pot fi utilizate pentru planuri topografice, planuri de situație, DTAC, PUZ, PUD și alte cerințe tehnice specifice.",
     icon: "ridicari",
-    imageSrc: "/Images/Servicii/Ridicari_Topografice.jpg",
+    imageSrc: "/Images/ClientsPhotos/RidicariTopo.png",
     imageAlt: "Ridicare topografică realizată pe teren cu echipamente moderne",
+    imageCardClassName: "object-[center_38%]",
     bullets: [
       "Ridicări topografice și planuri de situație",
       "Documentații topografice pentru proiectare",

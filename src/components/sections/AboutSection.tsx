@@ -12,6 +12,8 @@ type AboutSectionProps = {
   /** Afișează CTA-ul „Află mai multe despre noi” (doar pe Home). */
   withCta?: boolean;
   variant?: "default" | "home";
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 /** Secțiunea despre companie: imagine + descriere + bullet points (+ CTA). */
@@ -20,6 +22,8 @@ export function AboutSection({
   title,
   withCta = false,
   variant = "default",
+  imageSrc = "/Images/About/Topocond-about.jpg",
+  imageAlt = "Specialist Topocond efectuând măsurători pentru documentații cadastrale în Botoșani",
 }: AboutSectionProps) {
   const isHomeVariant = variant === "home";
 
@@ -109,8 +113,8 @@ export function AboutSection({
         <Reveal className="relative pb-8 sm:pb-0">
           <div className="relative overflow-hidden rounded-2xl bg-surface shadow-card">
             <img
-              src="/Images/About/Topocond-about.jpg"
-              alt="Specialist Topocond efectuând măsurători pentru documentații cadastrale în Botoșani"
+              src={imageSrc}
+              alt={imageAlt}
               className="h-[29rem] w-full object-cover object-center sm:h-[31rem] lg:h-[36rem]"
               loading="lazy"
             />

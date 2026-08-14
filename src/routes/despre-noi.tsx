@@ -50,6 +50,8 @@ function AboutPage() {
       <AboutSection
         eyebrow="CINE SUNTEM"
         title="Experiență și rigoare în cadastru, intabulare și topografie"
+        imageSrc="/Images/ClientsPhotos/OutsideAboutUs.jpeg"
+        imageAlt="Imagine din teren folosită în pagina Despre Noi Topocond"
       />
 
       <StatsBand />

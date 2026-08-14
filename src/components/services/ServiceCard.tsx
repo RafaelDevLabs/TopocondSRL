@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dialog";
 import type { Service } from "@/data/services";
 import { serviceIcons } from "@/lib/icons";
+import { cn } from "@/lib/utils";
 
 type ServiceCardProps = {
   service: Service;
@@ -30,7 +31,10 @@ export function ServiceCard({ service, delay = 0 }: ServiceCardProps) {
           <img
             src={service.imageSrc}
             alt={service.imageAlt}
-            className="h-44 w-full border-b border-border object-cover object-center"
+            className={cn(
+              "h-44 w-full border-b border-border object-cover object-center",
+              service.imageCardClassName,
+            )}
             loading="lazy"
           />
           <span className="absolute bottom-3 left-3 grid size-9 place-items-center rounded-md bg-card text-brand shadow-card">
