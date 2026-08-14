@@ -11,12 +11,20 @@ import { WhyChooseSection } from "@/components/sections/WhyChooseSection";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
-import { company } from "@/data/site";
+import {
+  absoluteUrl,
+  company,
+  createBreadcrumbSchema,
+  createLocalBusinessSchema,
+  createWebPageSchema,
+  defaultOgImageUrl,
+} from "@/data/site";
 import { getUiIcon, serviceIcons } from "@/lib/icons";
 
 const title = "Cadastru, Intabulare și Topografie în Botoșani | Topocond";
 const description =
   "Servicii de cadastru, intabulare și topografie în județul Botoșani: documentații cadastrale, ridicări topografice, dezmembrări și planuri de situație.";
+const pageUrl = absoluteUrl("/");
 
 const heroHighlights = [
   { icon: "award", label: "Experiență", value: "Peste 8 ani" },
@@ -60,22 +68,28 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: pageUrl },
+      { property: "og:image", content: defaultOgImageUrl },
+      { property: "og:image:alt", content: company.ogImageAlt },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: defaultOgImageUrl },
+      { name: "twitter:image:alt", content: company.ogImageAlt },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: pageUrl }],
     scripts: [
       {
         type: "application/ld+json",
-        // PLACEHOLDER - date de firmă de confirmat înainte de publicare
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: company.name,
-          description,
-          telephone: company.phoneLabel,
-          areaServed: company.address,
-        }),
+        children: JSON.stringify(createLocalBusinessSchema(description)),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(createWebPageSchema("/", title, description)),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(createBreadcrumbSchema([{ name: "Acasă", path: "/" }])),
       },
     ],
   }),
@@ -110,7 +124,8 @@ function HomePage() {
               <span className="text-brand-accent lg:whitespace-nowrap">în Botoșani</span>
             </h1>
             <p className="mt-2 max-w-[38rem] text-sm leading-relaxed text-primary-foreground/88 sm:text-base">
-              Documentații cadastrale complete, realizate rapid și conform legislației în vigoare.
+              Oferim servicii de cadastru, intabulare și topografie în Botoșani, cu
+              documentații clare, măsurători precise și suport pe tot parcursul lucrării.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
@@ -203,7 +218,7 @@ function HomePage() {
           <SectionHeading
             eyebrow="Serviciile noastre"
             title="Soluții complete pentru proprietatea ta"
-            subtitle="Fie că ai nevoie de cadastru pentru un teren, intabulare pentru casă sau consultanță pentru acte, suntem aici să te ajutăm."
+            subtitle="Fie că ai nevoie de cadastru pentru un teren, intabulare pentru casă, ridicări topografice sau consultanță pentru acte în Botoșani, suntem aici să te ajutăm."
           />
           <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.slice(0, 3).map((service, index) => (

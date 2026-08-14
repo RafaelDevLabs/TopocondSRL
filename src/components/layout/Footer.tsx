@@ -62,12 +62,12 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm text-footer-muted">
             {services.map((service) => (
               <li key={service.slug}>
-                <ScrollToTopLink
-                  to="/servicii"
+                <a
+                  href={`/servicii#${service.slug}`}
                   className="rounded transition-colors hover:text-footer-foreground focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:outline-none"
                 >
                   {service.shortTitle}
-                </ScrollToTopLink>
+                </a>
               </li>
             ))}
           </ul>
@@ -91,9 +91,6 @@ export function Footer() {
                 </ScrollToTopLink>
               </li>
             ))}
-            <li>
-              <span>Politică de confidențialitate</span>
-            </li>
           </ul>
         </nav>
 

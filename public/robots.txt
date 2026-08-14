@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-# Sitemap: se adaugă după setarea domeniului final
+Sitemap: https://intabularibotosani.ro/sitemap.xml

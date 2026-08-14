@@ -22,6 +22,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { ScrollToTopLink } from "@/components/common/ScrollToTopLink";
 import { company } from "@/data/site";
 
 const contactServiceOptions = [
@@ -83,6 +84,24 @@ export function ContactForm() {
         <h2 className="text-xl font-bold text-brand-dark">Trimite-ne un mesaj</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           Completează formularul și te contactăm în cel mai scurt timp.
+        </p>
+        <p className="mt-3 text-xs leading-6 text-muted-foreground">
+          Prin folosirea formularului, datele introduse sunt incluse într-un mesaj precompletat care
+          se deschide în WhatsApp. Detalii despre prelucrarea datelor găsești în{" "}
+          <ScrollToTopLink
+            to="/politica-de-confidentialitate"
+            className="font-medium text-brand underline-offset-4 hover:underline"
+          >
+            Politica de confidențialitate
+          </ScrollToTopLink>{" "}
+          și{" "}
+          <ScrollToTopLink
+            to="/politica-de-cookies"
+            className="font-medium text-brand underline-offset-4 hover:underline"
+          >
+            Politica de cookies
+          </ScrollToTopLink>
+          .
         </p>
 
         <div className="mt-6 grid gap-5 sm:grid-cols-2">

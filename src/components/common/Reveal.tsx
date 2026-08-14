@@ -5,13 +5,14 @@ import { cn } from "@/lib/utils";
 type RevealProps = {
   children: ReactNode;
   className?: string;
+  id?: string;
   /** Întârziere în ms pentru efect în cascadă. */
   delay?: number;
   as?: "div" | "section" | "li" | "article";
 };
 
 /** Animație discretă de fade/slide la intrarea în viewport. */
-export function Reveal({ children, className, delay = 0, as = "div" }: RevealProps) {
+export function Reveal({ children, className, id, delay = 0, as = "div" }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
 
@@ -37,6 +38,7 @@ export function Reveal({ children, className, delay = 0, as = "div" }: RevealPro
 
   return (
     <Tag
+      id={id}
       ref={ref as React.Ref<HTMLDivElement>}
       className={cn("reveal", visible && "reveal-in", className)}
       style={{ transitionDelay: `${delay}ms` }}

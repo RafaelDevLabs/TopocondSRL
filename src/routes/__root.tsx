@@ -12,6 +12,7 @@ import { ScrollToTopLink } from "../components/common/ScrollToTopLink";
 import { Footer } from "../components/layout/Footer";
 import { Navbar } from "../components/layout/Navbar";
 import { Toaster } from "../components/ui/sonner";
+import { company, defaultOgImageUrl } from "../data/site";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -82,9 +83,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Servicii de cadastru, intabulare și topografie în județul Botoșani și zonele limitrofe.",
       },
+      { property: "og:locale", content: "ro_RO" },
       { property: "og:site_name", content: "Topocond Cadastru" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: defaultOgImageUrl },
+      { property: "og:image:alt", content: company.ogImageAlt },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:title", content: "Topocond Cadastru" },
+      {
+        name: "twitter:description",
+        content:
+          "Servicii de cadastru, intabulare și topografie în județul Botoșani și zonele limitrofe.",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: defaultOgImageUrl },
+      { name: "twitter:image:alt", content: company.ogImageAlt },
       { name: "robots", content: "index, follow" },
     ],
     links: [
@@ -98,7 +112,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/site-icon-v3-32.png", type: "image/png", sizes: "32x32" },
+      { rel: "icon", href: "/site-icon-v3-16.png", type: "image/png", sizes: "16x16" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon-v3.png", sizes: "180x180" },
     ],
   }),
   shellComponent: RootShell,

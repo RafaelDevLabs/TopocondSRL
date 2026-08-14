@@ -25,10 +25,18 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  absoluteUrl,
+  company,
+  createBreadcrumbSchema,
+  createWebPageSchema,
+  defaultOgImageUrl,
+} from "@/data/site";
 
 const title = "Despre Cadastru — Ghid util pentru proprietari | Topocond";
 const description =
   "Află ce este cadastrul, când ai nevoie de el, ce acte sunt necesare și cum decurge procesul de intabulare și documentație cadastrală în Botoșani.";
+const pageUrl = absoluteUrl("/despre-cadastru");
 
 const introCards = [
   {
@@ -152,12 +160,16 @@ export const Route = createFileRoute("/despre-cadastru")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/despre-cadastru" },
+      { property: "og:url", content: pageUrl },
+      { property: "og:image", content: defaultOgImageUrl },
+      { property: "og:image:alt", content: company.ogImageAlt },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: defaultOgImageUrl },
+      { name: "twitter:image:alt", content: company.ogImageAlt },
     ],
-    links: [{ rel: "canonical", href: "/despre-cadastru" }],
+    links: [{ rel: "canonical", href: pageUrl }],
     scripts: [
       {
         type: "application/ld+json",
@@ -176,24 +188,16 @@ export const Route = createFileRoute("/despre-cadastru")({
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              name: "Acasă",
-              item: "/",
-            },
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: "Despre Cadastru",
-              item: "/despre-cadastru",
-            },
-          ],
-        }),
+        children: JSON.stringify(createWebPageSchema("/despre-cadastru", title, description)),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          createBreadcrumbSchema([
+            { name: "Acasă", path: "/" },
+            { name: "Despre Cadastru", path: "/despre-cadastru" },
+          ]),
+        ),
       },
     ],
   }),

@@ -1,12 +1,16 @@
 /**
  * Date centralizate ale site-ului.
- * TOATE valorile marcate cu PLACEHOLDER trebuie înlocuite cu informațiile reale
- * primite de la client. Nu se adaugă conținut inventat.
+ * Se folosesc doar informațiile reale confirmate pentru business și contact.
  */
 
 export const company = {
   name: "Topocond Cadastru",
+  legalName: "TOPOCOND CADASTRU SRL",
   shortName: "TOPOCOND",
+  siteUrl: "https://intabularibotosani.ro",
+  ogImagePath: "/og-image-topocond.png",
+  ogImageAlt:
+    "Identitate vizuală Topocond Cadastru pentru servicii de cadastru, intabulare și topografie în Botoșani",
   mapLabel: "Topocond Cadastru",
   phoneLabel: "0754 827 623",
   phoneHref: "tel:0754827623",
@@ -25,6 +29,111 @@ export const company = {
     "Servicii complete de cadastru, intabulare și topografie în județul Botoșani și zonele limitrofe.",
 } as const;
 
+export function absoluteUrl(path = "/") {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  return new URL(normalizedPath, company.siteUrl).toString();
+}
+
+export const defaultOgImageUrl = absoluteUrl(company.ogImagePath);
+
+export type BreadcrumbItem = {
+  name: string;
+  path: string;
+};
+
+export function createBreadcrumbSchema(items: BreadcrumbItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export function createLocalBusinessSchema(description: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": absoluteUrl("/#organization"),
+    name: company.name,
+    legalName: company.legalName,
+    alternateName: company.shortName,
+    url: company.siteUrl,
+    image: defaultOgImageUrl,
+    logo: absoluteUrl("/Images/Logo/LogoNew-transparent.png"),
+    description,
+    telephone: company.phoneLabel,
+    email: company.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: company.addressLines[0],
+      addressLocality: company.addressLines[1],
+      addressCountry: "RO",
+    },
+    areaServed: [
+      {
+        "@type": "AdministrativeArea",
+        name: "Județul Botoșani",
+      },
+      {
+        "@type": "City",
+        name: "Botoșani",
+      },
+    ],
+    sameAs: [company.facebookHref, company.instagramHref],
+    hasMap: company.mapsUrl,
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "https://schema.org/Monday",
+          "https://schema.org/Tuesday",
+          "https://schema.org/Wednesday",
+          "https://schema.org/Thursday",
+          "https://schema.org/Friday",
+        ],
+        opens: "09:00",
+        closes: "16:30",
+      },
+    ],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: company.phoneLabel,
+        email: company.email,
+        contactType: "customer service",
+        areaServed: "RO",
+        availableLanguage: ["ro"],
+      },
+    ],
+  };
+}
+
+export function createWebPageSchema(path: string, name: string, description: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${absoluteUrl(path)}#webpage`,
+    url: absoluteUrl(path),
+    name,
+    description,
+    inLanguage: "ro-RO",
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${absoluteUrl("/")}#website`,
+      url: company.siteUrl,
+      name: company.name,
+    },
+    about: {
+      "@id": absoluteUrl("/#organization"),
+    },
+  };
+}
+
 export type NavItem = { label: string; to: string };
 
 export const navItems: NavItem[] = [
@@ -34,21 +143,6 @@ export const navItems: NavItem[] = [
   { label: "Despre Cadastru", to: "/despre-cadastru" },
   { label: "Contact", to: "/contact" },
 ];
-
-/** Highlight-uri din hero / bara de highlights. PLACEHOLDER pentru valori. */
-export const heroHighlights = [
-  { icon: "award", value: "[valoare]", label: "Experiență" },
-  { icon: "fileCheck", value: "[valoare]", label: "Lucrări finalizate" },
-  { icon: "clock", value: "[valoare]", label: "Răspuns rapid" },
-  { icon: "shieldCheck", value: "[valoare]", label: "Autorizare ANCPI" },
-] as const;
-
-export const pageHighlights = [
-  { icon: "clock", title: "Răspuns rapid", text: "[text placeholder]" },
-  { icon: "shieldCheck", title: "Autorizare ANCPI", text: "[text placeholder]" },
-  { icon: "fileCheck", title: "Lucrări finalizate", text: "[text placeholder]" },
-  { icon: "mapPin", title: "Acoperire locală", text: "[text placeholder]" },
-] as const;
 
 /** Statistici pagina Despre Noi. */
 export const stats = [
@@ -178,4 +272,6 @@ export const usefulLinks: NavItem[] = [
   { label: "Despre Noi", to: "/despre-noi" },
   { label: "Servicii", to: "/servicii" },
   { label: "Contact", to: "/contact" },
+  { label: "Politică de confidențialitate", to: "/politica-de-confidentialitate" },
+  { label: "Politică de cookies", to: "/politica-de-cookies" },
 ];

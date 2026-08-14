@@ -17,15 +17,16 @@ import { cn } from "@/lib/utils";
 
 type ServiceCardProps = {
   service: Service;
+  anchorId?: string;
   delay?: number;
 };
 
 /** Card de serviciu reutilizabil; deschide popup-ul cu detalii din aceleași date. */
-export function ServiceCard({ service, delay = 0 }: ServiceCardProps) {
+export function ServiceCard({ service, anchorId, delay = 0 }: ServiceCardProps) {
   const Icon = serviceIcons[service.icon];
 
   return (
-    <Reveal as="li" delay={delay} className="h-full">
+    <Reveal as="li" id={anchorId} delay={delay} className="h-full scroll-mt-32">
       <article className="flex h-full min-h-[100%] flex-col overflow-hidden rounded-xl border border-border bg-card shadow-card transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-float">
         <div className="relative">
           <img

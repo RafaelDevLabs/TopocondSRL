@@ -8,10 +8,20 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { WorkflowSteps } from "@/components/sections/WorkflowSteps";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { services } from "@/data/services";
+import {
+  absoluteUrl,
+  company,
+  createBreadcrumbSchema,
+  createWebPageSchema,
+} from "@/data/site";
 
 const title = "Servicii de Cadastru, Intabulare și Topografie | Topocond";
 const description =
   "Servicii complete de cadastru, intabulare, ridicări topografice, dezmembrări, trasări limite și planuri de situație în județul Botoșani.";
+const pageUrl = absoluteUrl("/servicii");
+const servicesOgImageUrl = absoluteUrl("/og-image-servicii.svg");
+const servicesOgImageAlt =
+  "Servicii Topocond Cadastru pentru cadastru, intabulare și topografie în Botoșani";
 
 const servicesHeroSubtitle =
   "Oferim servicii complete de cadastru și topografie în județul Botoșani, cu profesionalism, precizie și respect pentru timpul tău.";
@@ -31,14 +41,21 @@ export const Route = createFileRoute("/servicii")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/servicii" },
+      { property: "og:url", content: pageUrl },
+      { property: "og:image", content: servicesOgImageUrl },
+      { property: "og:image:alt", content: servicesOgImageAlt },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: servicesOgImageUrl },
+      { name: "twitter:image:alt", content: servicesOgImageAlt },
     ],
-    links: [{ rel: "canonical", href: "/servicii" }],
+    links: [{ rel: "canonical", href: pageUrl }],
     scripts: [
       {
         type: "application/ld+json",
-        // PLACEHOLDER — descrierile serviciilor se completează după validarea textelor
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ItemList",
@@ -46,8 +63,31 @@ export const Route = createFileRoute("/servicii")({
             "@type": "ListItem",
             position: index + 1,
             name: service.title,
+            url: `${pageUrl}#${service.slug}`,
+            item: {
+              "@type": "Service",
+              name: service.title,
+              description: service.shortDescription,
+              areaServed: service.coverage,
+              provider: {
+                "@id": absoluteUrl("/#organization"),
+              },
+            },
           })),
         }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(createWebPageSchema("/servicii", title, description)),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          createBreadcrumbSchema([
+            { name: "Acasă", path: "/" },
+            { name: "Servicii", path: "/servicii" },
+          ]),
+        ),
       },
     ],
   }),
@@ -99,7 +139,12 @@ function ServicesPage() {
           />
           <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
-              <ServiceCard key={service.slug} service={service} delay={index * 70} />
+              <ServiceCard
+                key={service.slug}
+                service={service}
+                anchorId={service.slug}
+                delay={index * 70}
+              />
             ))}
           </ul>
         </div>

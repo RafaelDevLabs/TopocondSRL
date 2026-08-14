@@ -6,11 +6,19 @@ import { IconCardGrid } from "@/components/sections/IconCardGrid";
 import { PageHero } from "@/components/sections/PageHero";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { StatsBand } from "@/components/sections/StatsBand";
-import { values } from "@/data/site";
+import {
+  absoluteUrl,
+  company,
+  createBreadcrumbSchema,
+  createWebPageSchema,
+  defaultOgImageUrl,
+  values,
+} from "@/data/site";
 
-const title = "Despre Noi — Topocond Cadastru Botoșani";
+const title = "Despre Noi | Firmă de Cadastru, Intabulare și Topografie în Botoșani | Topocond";
 const description =
-  "Topocond este o firmă de cadastru din Botoșani, specializată în cadastru, intabulare și topografie. Descoperă echipa, experiența și modul nostru de lucru.";
+  "Descoperă echipa Topocond, firmă de cadastru din Botoșani specializată în cadastru, intabulare și topografie, cu experiență în documentații cadastrale, măsurători în teren și lucrări bine organizate.";
+const pageUrl = absoluteUrl("/despre-noi");
 
 export const Route = createFileRoute("/despre-noi")({
   head: () => ({
@@ -20,10 +28,31 @@ export const Route = createFileRoute("/despre-noi")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/despre-noi" },
+      { property: "og:url", content: pageUrl },
+      { property: "og:image", content: defaultOgImageUrl },
+      { property: "og:image:alt", content: company.ogImageAlt },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: defaultOgImageUrl },
+      { name: "twitter:image:alt", content: company.ogImageAlt },
     ],
-    links: [{ rel: "canonical", href: "/despre-noi" }],
+    links: [{ rel: "canonical", href: pageUrl }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(createWebPageSchema("/despre-noi", title, description)),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          createBreadcrumbSchema([
+            { name: "Acasă", path: "/" },
+            { name: "Despre Noi", path: "/despre-noi" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: AboutPage,
 });
@@ -34,7 +63,7 @@ function AboutPage() {
       <PageHero
         breadcrumb={[{ label: "Acasă", to: "/" }, { label: "Despre Noi" }]}
         title="Despre Topocond Cadastru"
-        subtitle="Oferim servicii de cadastru, intabulare și topografie în Botoșani, printr-o abordare clară, bine organizată și atentă la fiecare etapă, de la măsurători până la documentația finală."
+        subtitle="Oferim servicii de cadastru, intabulare și topografie în Botoșani pentru terenuri, case, apartamente și alte proprietăți, printr-o abordare clară, bine organizată și atentă la fiecare etapă, de la măsurători până la documentația finală."
         backgroundImageSrc="/Images/Herosections/DespreNoiHero-Topocond.png"
         backgroundPosition="72% center"
         backgroundClassName="bg-[position:70%_center] sm:bg-[position:74%_center] lg:bg-[position:72%_center]"

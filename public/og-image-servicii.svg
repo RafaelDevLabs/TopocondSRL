@@ -1,0 +1,42 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="92" y1="72" x2="1098" y2="558" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1F19" />
+      <stop offset="0.55" stop-color="#10382D" />
+      <stop offset="1" stop-color="#1E5B4A" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#D3B06A" />
+      <stop offset="1" stop-color="#F2DFB3" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" rx="36" fill="url(#bg)" />
+  <circle cx="1000" cy="106" r="220" fill="#D3B06A" fill-opacity="0.08" />
+  <circle cx="1128" cy="544" r="190" fill="#F2DFB3" fill-opacity="0.08" />
+  <path d="M114 502C214 430 358 402 507 419C628 433 707 479 823 479C911 479 992 454 1086 393" stroke="#D3B06A" stroke-opacity="0.38" stroke-width="3" stroke-linecap="round"/>
+
+  <rect x="84" y="72" width="1032" height="486" rx="30" fill="#FFFFFF" fill-opacity="0.05" stroke="#FFFFFF" stroke-opacity="0.12"/>
+
+  <rect x="120" y="114" width="154" height="154" rx="26" fill="#FFFFFF" fill-opacity="0.96"/>
+  <image href="Images/Logo/LogoNew-transparent.png" x="140" y="130" width="114" height="114" preserveAspectRatio="xMidYMid meet" />
+
+  <text x="308" y="162" fill="#D3B06A" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="700" letter-spacing="0.16em">TOPOCOND CADASTRU</text>
+  <text x="308" y="212" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">Servicii de Cadastru,</text>
+  <text x="308" y="278" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">Intabulare si Topografie</text>
+
+  <text x="308" y="338" fill="#E6F0EB" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="400">Documentatii cadastrale, ridicari topografice, dezmembrari,</text>
+  <text x="308" y="376" fill="#E6F0EB" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="400">trasari limite de proprietate si planuri de situatie in Botosani.</text>
+
+  <rect x="120" y="438" width="206" height="62" rx="16" fill="#D3B06A" />
+  <text x="160" y="478" fill="#0B1F19" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Raspuns rapid</text>
+
+  <rect x="344" y="438" width="242" height="62" rx="16" fill="#FFFFFF" fill-opacity="0.1" stroke="#FFFFFF" stroke-opacity="0.14"/>
+  <text x="384" y="478" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Servicii autorizate</text>
+
+  <rect x="604" y="438" width="228" height="62" rx="16" fill="#FFFFFF" fill-opacity="0.1" stroke="#FFFFFF" stroke-opacity="0.14"/>
+  <text x="644" y="478" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Acoperire locala</text>
+
+  <text x="120" y="546" fill="#D3B06A" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">intabularibotosani.ro/servicii</text>
+  <text x="815" y="546" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400">0754 827 623</text>
+</svg>

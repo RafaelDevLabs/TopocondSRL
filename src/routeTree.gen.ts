@@ -13,6 +13,8 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DespreCadastruRouteImport } from './routes/despre-cadastru'
 import { Route as DespreNoiRouteImport } from './routes/despre-noi'
+import { Route as PoliticaDeConfidentialitateRouteImport } from './routes/politica-de-confidentialitate'
+import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
 import { Route as ServiciiRouteImport } from './routes/servicii'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +37,17 @@ const DespreNoiRoute = DespreNoiRouteImport.update({
   path: '/despre-noi',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PoliticaDeConfidentialitateRoute =
+  PoliticaDeConfidentialitateRouteImport.update({
+    id: '/politica-de-confidentialitate',
+    path: '/politica-de-confidentialitate',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PoliticaDeCookiesRoute = PoliticaDeCookiesRouteImport.update({
+  id: '/politica-de-cookies',
+  path: '/politica-de-cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServiciiRoute = ServiciiRouteImport.update({
   id: '/servicii',
   path: '/servicii',
@@ -46,6 +59,8 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/despre-cadastru': typeof DespreCadastruRoute
   '/despre-noi': typeof DespreNoiRoute
+  '/politica-de-confidentialitate': typeof PoliticaDeConfidentialitateRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/servicii': typeof ServiciiRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +68,8 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/despre-cadastru': typeof DespreCadastruRoute
   '/despre-noi': typeof DespreNoiRoute
+  '/politica-de-confidentialitate': typeof PoliticaDeConfidentialitateRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/servicii': typeof ServiciiRoute
 }
 export interface FileRoutesById {
@@ -61,19 +78,37 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/despre-cadastru': typeof DespreCadastruRoute
   '/despre-noi': typeof DespreNoiRoute
+  '/politica-de-confidentialitate': typeof PoliticaDeConfidentialitateRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/servicii': typeof ServiciiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/despre-cadastru' | '/despre-noi' | '/servicii'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/despre-cadastru'
+    | '/despre-noi'
+    | '/politica-de-confidentialitate'
+    | '/politica-de-cookies'
+    | '/servicii'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/despre-cadastru' | '/despre-noi' | '/servicii'
+  to:
+    | '/'
+    | '/contact'
+    | '/despre-cadastru'
+    | '/despre-noi'
+    | '/politica-de-confidentialitate'
+    | '/politica-de-cookies'
+    | '/servicii'
   id:
     | '__root__'
     | '/'
     | '/contact'
     | '/despre-cadastru'
     | '/despre-noi'
+    | '/politica-de-confidentialitate'
+    | '/politica-de-cookies'
     | '/servicii'
   fileRoutesById: FileRoutesById
 }
@@ -82,6 +117,8 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DespreCadastruRoute: typeof DespreCadastruRoute
   DespreNoiRoute: typeof DespreNoiRoute
+  PoliticaDeConfidentialitateRoute: typeof PoliticaDeConfidentialitateRoute
+  PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
   ServiciiRoute: typeof ServiciiRoute
 }
 
@@ -115,6 +152,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DespreNoiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/politica-de-confidentialitate': {
+      id: '/politica-de-confidentialitate'
+      path: '/politica-de-confidentialitate'
+      fullPath: '/politica-de-confidentialitate'
+      preLoaderRoute: typeof PoliticaDeConfidentialitateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-cookies': {
+      id: '/politica-de-cookies'
+      path: '/politica-de-cookies'
+      fullPath: '/politica-de-cookies'
+      preLoaderRoute: typeof PoliticaDeCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/servicii': {
       id: '/servicii'
       path: '/servicii'
@@ -130,6 +181,8 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DespreCadastruRoute: DespreCadastruRoute,
   DespreNoiRoute: DespreNoiRoute,
+  PoliticaDeConfidentialitateRoute: PoliticaDeConfidentialitateRoute,
+  PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
   ServiciiRoute: ServiciiRoute,
 }
 export const routeTree = rootRouteImport

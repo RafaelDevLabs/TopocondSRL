@@ -6,14 +6,22 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { PageHero } from "@/components/sections/PageHero";
 import { SectionHeading } from "@/components/sections/SectionHeading";
-import { company } from "@/data/site";
+import {
+  absoluteUrl,
+  company,
+  createBreadcrumbSchema,
+  createLocalBusinessSchema,
+  createWebPageSchema,
+  defaultOgImageUrl,
+} from "@/data/site";
 
-const title = "Contact - Topocond Cadastru Botoșani";
+const title = "Contact Cadastru, Intabulare și Topografie în Botoșani | Topocond";
 const description =
-  "Contactează echipa Topocond pentru servicii de cadastru, intabulare și topografie în județul Botoșani. Telefon, email și program de lucru.";
+  "Contactează Topocond pentru cadastru, intabulare și topografie în Botoșani. Telefon, WhatsApp, email, program și informații pentru vizita la sediu.";
+const pageUrl = absoluteUrl("/contact");
 
 const contactHeroSubtitle =
-  "Suntem aici să te ajutăm cu servicii de cadastru, topografie și intabulare.";
+  "Suntem aici să te ajutăm cu servicii de cadastru, intabulare și topografie în Botoșani, fie că ai nevoie de informații, ofertă sau programare.";
 
 const contactHeroBenefits = [
   {
@@ -47,10 +55,30 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: pageUrl },
+      { property: "og:image", content: defaultOgImageUrl },
+      { property: "og:image:alt", content: company.ogImageAlt },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: defaultOgImageUrl },
+      { name: "twitter:image:alt", content: company.ogImageAlt },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: pageUrl }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(createWebPageSchema("/contact", title, description)),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(createBreadcrumbSchema([{ name: "Acasă", path: "/" }, { name: "Contact", path: "/contact" }])),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(createLocalBusinessSchema(description)),
+      },
+    ],
   }),
   component: ContactPage,
 });
@@ -124,7 +152,7 @@ function ContactPage() {
           <SectionHeading
             eyebrow="Contact"
             title="Hai să discutăm despre proiectul tău"
-            subtitle="Spune-ne de ce ai nevoie, iar noi revenim cu informațiile și pașii necesari."
+            subtitle="Spune-ne ce tip de lucrare ai nevoie în Botoșani sau în zonele limitrofe, iar noi revenim cu informațiile, actele necesare și pașii potriviți."
           />
 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">

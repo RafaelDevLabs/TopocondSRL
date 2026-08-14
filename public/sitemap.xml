@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: setează BASE_URL după conectarea domeniului final -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>/</loc><priority>1.0</priority></url>
-  <url><loc>/servicii</loc><priority>0.9</priority></url>
-  <url><loc>/despre-noi</loc><priority>0.8</priority></url>
-  <url><loc>/despre-cadastru</loc><priority>0.6</priority></url>
-  <url><loc>/contact</loc><priority>0.8</priority></url>
+  <url>
+    <loc>https://intabularibotosani.ro/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://intabularibotosani.ro/servicii</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://intabularibotosani.ro/despre-noi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://intabularibotosani.ro/despre-cadastru</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://intabularibotosani.ro/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
