@@ -34,6 +34,7 @@ export function absoluteUrl(path = "/") {
   return new URL(normalizedPath, company.siteUrl).toString();
 }
 
+export const defaultOgImagePath = company.ogImagePath;
 export const defaultOgImageUrl = absoluteUrl(company.ogImagePath);
 
 export type BreadcrumbItem = {

@@ -30,7 +30,7 @@ import {
   company,
   createBreadcrumbSchema,
   createWebPageSchema,
-  defaultOgImageUrl,
+  defaultOgImagePath,
 } from "@/data/site";
 
 const title = "Despre Cadastru — Ghid util pentru proprietari | Topocond";
@@ -161,12 +161,12 @@ export const Route = createFileRoute("/despre-cadastru")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: pageUrl },
-      { property: "og:image", content: defaultOgImageUrl },
+      { property: "og:image", content: defaultOgImagePath },
       { property: "og:image:alt", content: company.ogImageAlt },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: defaultOgImageUrl },
+      { name: "twitter:image", content: defaultOgImagePath },
       { name: "twitter:image:alt", content: company.ogImageAlt },
     ],
     links: [{ rel: "canonical", href: pageUrl }],
