@@ -8,7 +8,7 @@ export const company = {
   legalName: "TOPOCOND CADASTRU SRL",
   shortName: "TOPOCOND",
   siteUrl: "https://intabularibotosani.ro",
-  ogImagePath: "/og-image-topocond.png",
+  ogImagePath: "/og-image-topocond-v2.png",
   ogImageAlt:
     "Identitate vizuală Topocond Cadastru pentru servicii de cadastru, intabulare și topografie în Botoșani",
   mapLabel: "Topocond Cadastru",

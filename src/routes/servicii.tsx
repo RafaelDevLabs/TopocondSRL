@@ -19,9 +19,9 @@ const title = "Servicii de Cadastru, Intabulare și Topografie | Topocond";
 const description =
   "Servicii complete de cadastru, intabulare, ridicări topografice, dezmembrări, trasări limite și planuri de situație în județul Botoșani.";
 const pageUrl = absoluteUrl("/servicii");
-const servicesOgImageUrl = absoluteUrl("/og-image-servicii.svg");
+const servicesOgImageUrl = absoluteUrl("/og-image-servicii-v3.png");
 const servicesOgImageAlt =
-  "Servicii Topocond Cadastru pentru cadastru, intabulare și topografie în Botoșani";
+  "Previzualizare Topocond pentru servicii de cadastru, intabulare și topografie în Botoșani";
 
 const servicesHeroSubtitle =
   "Oferim servicii complete de cadastru și topografie în județul Botoșani, cu profesionalism, precizie și respect pentru timpul tău.";
@@ -44,8 +44,8 @@ export const Route = createFileRoute("/servicii")({
       { property: "og:url", content: pageUrl },
       { property: "og:image", content: servicesOgImageUrl },
       { property: "og:image:alt", content: servicesOgImageAlt },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
+      { property: "og:image:width", content: "1729" },
+      { property: "og:image:height", content: "910" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
