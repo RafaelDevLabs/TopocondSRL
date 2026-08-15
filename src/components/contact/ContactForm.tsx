@@ -178,7 +178,11 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Mesaj</FormLabel>
                 <FormControl>
-                  <Textarea rows={5} placeholder="Spune-ne pe scurt cu ce te putem ajuta" {...field} />
+                  <Textarea
+                    rows={5}
+                    placeholder="Spune-ne pe scurt cu ce te putem ajuta"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

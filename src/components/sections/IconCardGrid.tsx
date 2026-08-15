@@ -34,7 +34,9 @@ export function IconCardGrid({
                   aria-hidden="true"
                 />
               </span>
-              <h3 className="mt-4 text-sm font-bold text-brand-dark sm:mt-5 sm:text-base">{item.title}</h3>
+              <h3 className="mt-4 text-sm font-bold text-brand-dark sm:mt-5 sm:text-base">
+                {item.title}
+              </h3>
               <p className="mt-2.5 text-[0.84rem] leading-relaxed text-muted-foreground sm:mt-3 sm:text-sm">
                 {item.text}
               </p>

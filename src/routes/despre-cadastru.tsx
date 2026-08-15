@@ -211,7 +211,7 @@ function DespreCadastruPage() {
         breadcrumb={[{ label: "Acasă", to: "/" }, { label: "Despre Cadastru" }]}
         title="Despre Cadastru"
         subtitle="Informații esențiale, despre cadastru, intabulare și documentațiile topografice. Transparență, claritate și siguranță pentru proprietatea ta."
-        backgroundImageSrc="/Images/Herosections/DespreCadastruHero-Topocond.png"
+        backgroundImageSrc="/Images/Herosections/DespreCadastruHero-Topocond.jpg"
         backgroundPosition="67% center"
         backgroundClassName="bg-[position:70%_center] sm:bg-[position:74%_center] lg:bg-[position:67%_center]"
         overlayClassName="bg-[linear-gradient(90deg,rgba(8,22,18,0.78)_0%,rgba(8,22,18,0.67)_26%,rgba(8,22,18,0.47)_48%,rgba(8,22,18,0.22)_70%,rgba(8,22,18,0.06)_100%)]"
@@ -242,7 +242,7 @@ function DespreCadastruPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-[4.75rem] lg:px-8">
           <Reveal className="relative overflow-hidden rounded-[1.7rem] bg-card shadow-[0_30px_70px_rgba(11,37,28,0.14)]">
             <img
-              src="/Images/About/DespreCadastru-Topocond.png"
+              src="/Images/About/DespreCadastru-Topocond.jpg"
               alt="Activitate de măsurători topografice pentru cadastru și intabulare în Botoșani"
               className="h-[27rem] w-full object-cover object-[42%_center] sm:h-[34rem] lg:h-[40rem]"
               loading="lazy"
@@ -260,8 +260,8 @@ function DespreCadastruPage() {
               <p className="max-w-[34rem] text-sm leading-[1.95] text-muted-foreground sm:text-[0.98rem]">
                 Cadastrul este baza tehnică prin care un imobil este identificat, măsurat și descris
                 corect, astfel încât datele sale să poată fi înscrise în cartea funciară. Pentru
-                proprietari, un proces cadastral bine făcut înseamnă mai multă claritate,
-                siguranță și control asupra situației reale a proprietății.
+                proprietari, un proces cadastral bine făcut înseamnă mai multă claritate, siguranță
+                și control asupra situației reale a proprietății.
               </p>
               <p className="max-w-[34rem] text-sm leading-[1.95] text-muted-foreground sm:text-[0.98rem]">
                 Fie că ai nevoie de intabulare, de actualizarea cărții funciare sau de o
@@ -320,9 +320,7 @@ function DespreCadastruPage() {
                     <span className="mt-0.5 grid size-5.5 shrink-0 place-items-center rounded-full bg-brand-accent/12 text-brand">
                       <BadgeCheck className="size-[0.92rem]" aria-hidden="true" />
                     </span>
-                    <span className="text-sm leading-[1.62] text-muted-foreground">
-                      {document}
-                    </span>
+                    <span className="text-sm leading-[1.62] text-muted-foreground">{document}</span>
                   </li>
                 ))}
               </ul>
@@ -455,9 +453,7 @@ function InfoCard({
               <h3 className="text-[1.02rem] leading-[1.24] font-semibold text-brand-dark sm:text-[1.06rem]">
                 {cardTitle}
               </h3>
-              <p className="mt-1.25 text-[0.94rem] leading-[1.54] text-muted-foreground">
-                {text}
-              </p>
+              <p className="mt-1.25 text-[0.94rem] leading-[1.54] text-muted-foreground">{text}</p>
             </div>
           </div>
         )}

@@ -8,7 +8,7 @@ export const company = {
   legalName: "TOPOCOND CADASTRU SRL",
   shortName: "TOPOCOND",
   siteUrl: "https://intabularibotosani.ro",
-  ogImagePath: "/og-image-topocond-v2.png",
+  ogImagePath: "/og-image-topocond-v2.jpg",
   ogImageAlt:
     "Identitate vizuală Topocond Cadastru pentru servicii de cadastru, intabulare și topografie în Botoșani",
   mapLabel: "Topocond Cadastru",
@@ -158,10 +158,26 @@ export const navItems: NavItem[] = [
 
 /** Statistici pagina Despre Noi. */
 export const stats = [
-  { value: "2+", label: "Ani de experiență", text: "Experiență practică în lucrări cadastrale și topografice." },
-  { value: "200+", label: "Lucrări finalizate", text: "Proiecte gestionate atent pentru proprietăți rezidențiale și terenuri." },
-  { value: "100%", label: "Clienți mulțumiți", text: "Comunicare clară, documentații corecte și respectarea termenelor." },
-  { value: "Botoșani", label: "Acoperire locală", text: "Servicii oferite în municipiu, județ și zonele apropiate." },
+  {
+    value: "2+",
+    label: "Ani de experiență",
+    text: "Experiență practică în lucrări cadastrale și topografice.",
+  },
+  {
+    value: "200+",
+    label: "Lucrări finalizate",
+    text: "Proiecte gestionate atent pentru proprietăți rezidențiale și terenuri.",
+  },
+  {
+    value: "100%",
+    label: "Clienți mulțumiți",
+    text: "Comunicare clară, documentații corecte și respectarea termenelor.",
+  },
+  {
+    value: "Botoșani",
+    label: "Acoperire locală",
+    text: "Servicii oferite în municipiu, județ și zonele apropiate.",
+  },
 ] as const;
 
 /** Avantaje (Home). */

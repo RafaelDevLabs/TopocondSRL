@@ -60,7 +60,7 @@ function CookiesPolicyPage() {
         breadcrumb={[{ label: "Acasă", to: "/" }, { label: "Politică de cookies" }]}
         title="Politică de cookies"
         subtitle="Informații despre fișierele cookie și tehnologiile similare utilizate pe site."
-        backgroundImageSrc="/Images/Herosections/ServiciiHero-Topocond.png"
+        backgroundImageSrc="/Images/Herosections/ServiciiHero-Topocond.jpg"
         backgroundPosition="76% center"
         backgroundClassName="bg-[position:74%_center] sm:bg-[position:78%_center] lg:bg-[position:76%_center]"
         overlayClassName="bg-[linear-gradient(90deg,rgba(8,20,17,0.76)_0%,rgba(8,20,17,0.62)_34%,rgba(8,20,17,0.45)_62%,rgba(8,20,17,0.22)_100%)]"
@@ -94,15 +94,18 @@ function CookiesPolicyPage() {
               </h2>
               <ul className="mt-3 list-disc space-y-2 pl-5">
                 <li>cookie-uri tehnice sau strict necesare pentru funcționarea site-ului;</li>
-                <li>cookie-uri sau tehnologii similare ale unor servicii terțe integrate de utilizator, după caz;</li>
-                <li>elemente locale de browser necesare funcționării unor componente de interfață.</li>
+                <li>
+                  cookie-uri sau tehnologii similare ale unor servicii terțe integrate de
+                  utilizator, după caz;
+                </li>
+                <li>
+                  elemente locale de browser necesare funcționării unor componente de interfață.
+                </li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-brand-dark">
-                3. Cookie-uri neesențiale
-              </h2>
+              <h2 className="text-lg font-semibold text-brand-dark">3. Cookie-uri neesențiale</h2>
               <p className="mt-3">
                 La data publicării acestei politici, site-ul nu utilizează instrumente de analiză de
                 trafic sau de publicitate de tip Google Analytics, Meta Pixel ori alte tehnologii de
@@ -133,9 +136,7 @@ function CookiesPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-brand-dark">
-                6. Consimțământ
-              </h2>
+              <h2 className="text-lg font-semibold text-brand-dark">6. Consimțământ</h2>
               <p className="mt-3">
                 Dacă în viitor vor fi adăugate cookie-uri neesențiale, instrumente de analiză sau
                 tehnologii de marketing care necesită consimțământ, această politică și mecanismul
@@ -144,9 +145,7 @@ function CookiesPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-brand-dark">
-                7. Modificarea politicii
-              </h2>
+              <h2 className="text-lg font-semibold text-brand-dark">7. Modificarea politicii</h2>
               <p className="mt-3">
                 Putem actualiza această politică atunci când apar schimbări privind tehnologiile
                 folosite pe site sau obligațiile legale aplicabile.

@@ -159,8 +159,8 @@ function HomePage() {
               <span className="text-brand-accent lg:whitespace-nowrap">în Botoșani</span>
             </h1>
             <p className="mt-2 max-w-[38rem] text-sm leading-relaxed text-primary-foreground/88 sm:text-base">
-              Oferim servicii de cadastru, intabulare și topografie în Botoșani, cu
-              documentații clare, măsurători precise și suport pe tot parcursul lucrării.
+              Oferim servicii de cadastru, intabulare și topografie în Botoșani, cu documentații
+              clare, măsurători precise și suport pe tot parcursul lucrării.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button

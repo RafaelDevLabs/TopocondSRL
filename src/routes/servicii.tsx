@@ -10,18 +10,13 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { WorkflowSteps } from "@/components/sections/WorkflowSteps";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { services } from "@/data/services";
-import {
-  absoluteUrl,
-  company,
-  createBreadcrumbSchema,
-  createWebPageSchema,
-} from "@/data/site";
+import { absoluteUrl, company, createBreadcrumbSchema, createWebPageSchema } from "@/data/site";
 
 const title = "Servicii de Cadastru, Intabulare și Topografie | Topocond";
 const description =
   "Servicii complete de cadastru, intabulare, ridicări topografice, dezmembrări, trasări limite și planuri de situație în județul Botoșani.";
 const pageUrl = absoluteUrl("/servicii");
-const servicesOgImageUrl = absoluteUrl("/og-image-servicii-v3.png");
+const servicesOgImageUrl = absoluteUrl("/og-image-servicii-v3.jpg");
 const servicesOgImageAlt =
   "Previzualizare Topocond pentru servicii de cadastru, intabulare și topografie în Botoșani";
 
@@ -143,7 +138,7 @@ function ServicesPage() {
             Intabulare și Topografie
           </>
         }
-        backgroundImageSrc="/Images/Herosections/ServiciiHero-Topocond.png"
+        backgroundImageSrc="/Images/Herosections/ServiciiHero-Topocond.jpg"
         backgroundPosition="76% center"
         {...{
           subtitle: servicesHeroSubtitle,

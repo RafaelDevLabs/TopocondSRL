@@ -64,7 +64,7 @@ function AboutPage() {
         breadcrumb={[{ label: "Acasă", to: "/" }, { label: "Despre Noi" }]}
         title="Despre Topocond Cadastru"
         subtitle="Oferim servicii de cadastru, intabulare și topografie în Botoșani pentru terenuri, case, apartamente și alte proprietăți, printr-o abordare clară, bine organizată și atentă la fiecare etapă, de la măsurători până la documentația finală."
-        backgroundImageSrc="/Images/Herosections/DespreNoiHero-Topocond.png"
+        backgroundImageSrc="/Images/Herosections/DespreNoiHero-Topocond.jpg"
         backgroundPosition="72% center"
         backgroundClassName="bg-[position:70%_center] sm:bg-[position:74%_center] lg:bg-[position:72%_center]"
         overlayClassName="bg-[linear-gradient(90deg,rgba(8,24,18,0.69)_0%,rgba(8,24,18,0.57)_30%,rgba(8,24,18,0.36)_62%,rgba(8,24,18,0.12)_100%)]"

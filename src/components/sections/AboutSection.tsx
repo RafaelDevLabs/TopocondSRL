@@ -157,7 +157,10 @@ export function AboutSection({
           </div>
           <ul className="mt-7 grid gap-3.5 sm:mt-8 sm:gap-4 sm:grid-cols-2">
             {aboutBullets.map((bullet) => (
-              <li key={bullet} className="flex items-start gap-3 text-sm text-brand-dark sm:text-[0.95rem]">
+              <li
+                key={bullet}
+                className="flex items-start gap-3 text-sm text-brand-dark sm:text-[0.95rem]"
+              >
                 <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-brand-accent/12 text-brand">
                   <Check className="size-[0.95rem]" aria-hidden="true" />
                 </span>

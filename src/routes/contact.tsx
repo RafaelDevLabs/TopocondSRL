@@ -72,7 +72,12 @@ export const Route = createFileRoute("/contact")({
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify(createBreadcrumbSchema([{ name: "Acasă", path: "/" }, { name: "Contact", path: "/contact" }])),
+        children: JSON.stringify(
+          createBreadcrumbSchema([
+            { name: "Acasă", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+        ),
       },
       {
         type: "application/ld+json",
@@ -170,7 +175,7 @@ function ContactPage() {
             })}
           </div>
         }
-        backgroundImageSrc="/Images/Herosections/ContactHero-Topocond.png"
+        backgroundImageSrc="/Images/Herosections/ContactHero-Topocond.jpg"
         backgroundPosition="78% center"
         backgroundClassName="bg-[position:76%_center] sm:bg-[position:80%_center] lg:bg-[position:78%_center]"
         overlayClassName="bg-[rgba(5,45,28,0.55)]"

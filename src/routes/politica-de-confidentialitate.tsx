@@ -65,7 +65,7 @@ function PrivacyPolicyPage() {
         breadcrumb={[{ label: "Acasă", to: "/" }, { label: "Politică de confidențialitate" }]}
         title="Politică de confidențialitate"
         subtitle="Transparență privind datele personale prelucrate prin intermediul site-ului Topocond Cadastru."
-        backgroundImageSrc="/Images/Herosections/ContactHero-Topocond.png"
+        backgroundImageSrc="/Images/Herosections/ContactHero-Topocond.jpg"
         backgroundPosition="78% center"
         backgroundClassName="bg-[position:76%_center] sm:bg-[position:80%_center] lg:bg-[position:78%_center]"
         overlayClassName="bg-[rgba(5,45,28,0.72)]"
@@ -88,39 +88,39 @@ function PrivacyPolicyPage() {
               <h2 className="text-lg font-semibold text-brand-dark">1. Operatorul datelor</h2>
               <p className="mt-3">
                 Operatorul datelor cu caracter personal este {company.legalName}, care utilizează
-                brandul {company.name}, cu sediul în {company.address}, telefon {company.phoneLabel},
-                email {company.email}.
+                brandul {company.name}, cu sediul în {company.address}, telefon {company.phoneLabel}
+                , email {company.email}.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-brand-dark">
-                2. Ce date putem colecta
-              </h2>
+              <h2 className="text-lg font-semibold text-brand-dark">2. Ce date putem colecta</h2>
               <p className="mt-3">
-                În funcție de modul în care ne contactezi, putem prelucra nume și prenume,
-                număr de telefon, adresă de email, conținutul mesajului transmis și orice alte
-                informații pe care alegi să ni le comunici pentru a solicita o ofertă, informații
-                sau clarificări despre servicii.
+                În funcție de modul în care ne contactezi, putem prelucra nume și prenume, număr de
+                telefon, adresă de email, conținutul mesajului transmis și orice alte informații pe
+                care alegi să ni le comunici pentru a solicita o ofertă, informații sau clarificări
+                despre servicii.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-brand-dark">
-                3. Scopurile prelucrării
-              </h2>
+              <h2 className="text-lg font-semibold text-brand-dark">3. Scopurile prelucrării</h2>
               <ul className="mt-3 list-disc space-y-2 pl-5">
-                <li>preluarea și gestionarea solicitărilor transmise prin formular, telefon, email sau WhatsApp;</li>
+                <li>
+                  preluarea și gestionarea solicitărilor transmise prin formular, telefon, email sau
+                  WhatsApp;
+                </li>
                 <li>comunicarea cu persoanele interesate de serviciile oferite;</li>
-                <li>transmiterea de informații despre pașii necesari, documente și servicii solicitate;</li>
+                <li>
+                  transmiterea de informații despre pașii necesari, documente și servicii
+                  solicitate;
+                </li>
                 <li>apărarea drepturilor și intereselor legitime, dacă este necesar.</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-brand-dark">
-                4. Temeiul prelucrării
-              </h2>
+              <h2 className="text-lg font-semibold text-brand-dark">4. Temeiul prelucrării</h2>
               <p className="mt-3">
                 Prelucrarea datelor se realizează, după caz, pentru a răspunde unei solicitări
                 formulate de tine înainte de încheierea unei colaborări, pentru executarea unor
@@ -154,9 +154,7 @@ function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-brand-dark">
-                7. Cât timp păstrăm datele
-              </h2>
+              <h2 className="text-lg font-semibold text-brand-dark">7. Cât timp păstrăm datele</h2>
               <p className="mt-3">
                 Datele sunt păstrate atât timp cât este necesar pentru gestionarea solicitării,
                 continuarea discuțiilor privind serviciile cerute și respectarea eventualelor
@@ -166,13 +164,12 @@ function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-brand-dark">
-                8. Drepturile tale
-              </h2>
+              <h2 className="text-lg font-semibold text-brand-dark">8. Drepturile tale</h2>
               <p className="mt-3">
                 În condițiile prevăzute de legislația aplicabilă, poți solicita acces la date,
-                rectificarea, ștergerea, restricționarea prelucrării, opoziția la prelucrare și, după
-                caz, portabilitatea datelor. De asemenea, poți adresa o cerere la {company.email}.
+                rectificarea, ștergerea, restricționarea prelucrării, opoziția la prelucrare și,
+                după caz, portabilitatea datelor. De asemenea, poți adresa o cerere la{" "}
+                {company.email}.
               </p>
             </section>
 
@@ -188,9 +185,7 @@ function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-brand-dark">
-                10. Actualizarea politicii
-              </h2>
+              <h2 className="text-lg font-semibold text-brand-dark">10. Actualizarea politicii</h2>
               <p className="mt-3">
                 Această politică poate fi actualizată atunci când apar schimbări privind modul de
                 funcționare al site-ului sau obligațiile legale aplicabile. Versiunea publicată pe

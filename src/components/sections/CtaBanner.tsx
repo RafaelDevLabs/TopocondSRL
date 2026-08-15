@@ -27,7 +27,7 @@ export function CtaBanner({
       className={cn(
         "mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8",
         floating &&
-        "relative z-10 -mt-[48px] -mb-4 py-0 sm:-mt-[50px] sm:-mb-5 sm:py-0 lg:-mt-[52px] lg:-mb-6 lg:py-0",
+          "relative z-10 -mt-[48px] -mb-4 py-0 sm:-mt-[50px] sm:-mb-5 sm:py-0 lg:-mt-[52px] lg:-mb-6 lg:py-0",
         className,
       )}
     >
