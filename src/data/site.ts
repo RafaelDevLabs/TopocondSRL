@@ -17,9 +17,14 @@ export const company = {
   whatsappHref: "https://wa.me/40754827623",
   facebookHref: "https://www.facebook.com/topocondcadastru",
   instagramHref: "https://www.instagram.com/topocond_cadastru/",
+  salPlatformHref: "https://reclamatiisal.anpc.ro/",
   email: "claudiamarina30@gmail.com",
   address: "Calea Națională nr. 71, Botoșani",
   addressLines: ["Calea Națională nr. 71", "Botoșani"],
+  postalCode: "710019",
+  addressRegion: "Botoșani",
+  latitude: 47.74065,
+  longitude: 26.66581,
   mapsUrl: "https://maps.app.goo.gl/n2UdJ9byNsAGsMmn7",
   mapsEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d766661.6886921142!2d26.081230344220884!3d47.848995690968046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4734ebceb27d1217%3A0xdeda8395c7344954!2sTopocond%20Cadastru!5e1!3m2!1sro!2sro!4v1786099072349!5m2!1sro!2sro",
@@ -72,7 +77,14 @@ export function createLocalBusinessSchema(description: string) {
       "@type": "PostalAddress",
       streetAddress: company.addressLines[0],
       addressLocality: company.addressLines[1],
+      addressRegion: company.addressRegion,
+      postalCode: company.postalCode,
       addressCountry: "RO",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: company.latitude,
+      longitude: company.longitude,
     },
     areaServed: [
       {
@@ -106,7 +118,7 @@ export function createLocalBusinessSchema(description: string) {
         telephone: company.phoneLabel,
         email: company.email,
         contactType: "customer service",
-        areaServed: "RO",
+        areaServed: "Județul Botoșani",
         availableLanguage: ["ro"],
       },
     ],

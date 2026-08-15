@@ -1,7 +1,6 @@
 /**
  * Sursa unică de adevăr pentru servicii.
  * Cardurile de servicii și popup-urile folosesc aceste date, fără duplicare.
- * Textele marcate [placeholder] se înlocuiesc cu informațiile clientului.
  */
 
 export type ServiceIconName =

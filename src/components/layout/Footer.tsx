@@ -126,6 +126,26 @@ export function Footer() {
               <span>{company.schedule}</span>
             </li>
           </ul>
+          <div className="mt-6 space-y-3">
+            <p className="text-[0.82rem] font-medium tracking-[0.02em] text-footer-muted">
+              Protecția consumatorului
+            </p>
+            <a
+              href={company.salPlatformHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-[1rem] focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:outline-none"
+            >
+              <img
+                src="/anpc-sal.webp"
+                alt="Platforma SAL online - detalii"
+                width="250"
+                height="50"
+                loading="lazy"
+                className="h-auto max-w-[15.625rem] rounded-[1rem] transition-opacity hover:opacity-90"
+              />
+            </a>
+          </div>
         </div>
       </div>
 

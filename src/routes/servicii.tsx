@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { FileText, HelpCircle, House } from "lucide-react";
 
+import { Reveal } from "@/components/common/Reveal";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { HighlightBar } from "@/components/sections/HighlightBar";
 import { PageHero } from "@/components/sections/PageHero";
@@ -32,6 +34,37 @@ const servicePageHighlights = [
   { icon: "fileCheck", title: "Servicii complete", text: "Cadastru & Topografie" },
   { icon: "mapPin", title: "Acoperire locală", text: "Botoșani și împrejurimi" },
 ] as const;
+
+const servicesQuickHelpItems = [
+  {
+    icon: FileText,
+    title: "Ce servicii oferim?",
+    text: "Realizăm servicii de cadastru, intabulare, ridicări topografice, dezmembrări, alipiri, trasări de limite și actualizare informații cadastrale.",
+  },
+  {
+    icon: House,
+    title: "Pentru ce tipuri de proprietăți?",
+    text: "Lucrăm pentru terenuri, case, apartamente, construcții și alte imobile care necesită documentații cadastrale sau măsurători topografice.",
+  },
+  {
+    icon: HelpCircle,
+    title: "Cum afli ce serviciu ți se potrivește?",
+    text: "Dacă nu știi exact de ce lucrare ai nevoie, ne poți contacta, iar noi îți explicăm ce variantă este potrivită în funcție de proprietate și de actele disponibile.",
+  },
+] as const;
+
+const servicesFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: servicesQuickHelpItems.map((item) => ({
+    "@type": "Question",
+    name: item.title,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.text,
+    },
+  })),
+} as const;
 
 export const Route = createFileRoute("/servicii")({
   head: () => ({
@@ -89,6 +122,10 @@ export const Route = createFileRoute("/servicii")({
           ]),
         ),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(servicesFaqSchema),
+      },
     ],
   }),
   component: ServicesPage,
@@ -145,6 +182,34 @@ function ServicesPage() {
                 anchorId={service.slug}
                 delay={index * 70}
               />
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="bg-white pb-14 sm:pb-[4.4rem] lg:pb-[4.9rem]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Clarificări utile"
+            title="Cum te ajutăm concret"
+            className="max-w-[34rem]"
+          />
+
+          <ul className="mt-8 grid gap-5 lg:grid-cols-3">
+            {servicesQuickHelpItems.map((item, index) => (
+              <Reveal key={item.title} as="li" delay={index * 70} className="h-full">
+                <article className="flex h-full min-h-[12.8rem] flex-col rounded-[1.45rem] border border-border/75 bg-card px-6 py-5.5 shadow-[0_14px_34px_rgba(13,36,27,0.05)] transition-transform duration-200 lg:hover:-translate-y-0.5 lg:hover:shadow-[0_18px_40px_rgba(13,36,27,0.09)]">
+                  <span className="grid size-11 place-items-center rounded-full bg-brand-soft/72 text-brand">
+                    <item.icon className="size-5" aria-hidden="true" />
+                  </span>
+                  <h2 className="mt-4 text-[1rem] leading-snug font-semibold text-brand-dark sm:text-[1.05rem]">
+                    {item.title}
+                  </h2>
+                  <p className="mt-2.5 text-sm leading-[1.8] text-muted-foreground sm:text-[0.95rem]">
+                    {item.text}
+                  </p>
+                </article>
+              </Reveal>
             ))}
           </ul>
         </div>

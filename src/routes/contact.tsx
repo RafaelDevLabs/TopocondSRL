@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { Clock, FileText, Mail, MapPin, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 
 import { Reveal } from "@/components/common/Reveal";
 import { ContactForm } from "@/components/contact/ContactForm";
@@ -78,6 +78,10 @@ export const Route = createFileRoute("/contact")({
         type: "application/ld+json",
         children: JSON.stringify(createLocalBusinessSchema(description)),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(contactFaqSchema),
+      },
     ],
   }),
   component: ContactPage,
@@ -89,6 +93,37 @@ const details = [
   { icon: MapPin, label: "Adresă", value: company.addressLines, href: company.mapsUrl },
   { icon: Clock, label: "Program", value: company.openingHours },
 ] as const;
+
+const contactQuickHelpItems = [
+  {
+    icon: MessageCircle,
+    title: "Cum ne trimiți detaliile lucrării?",
+    text: "Ne poți scrie sau suna la telefon, pe WhatsApp, prin formularul de mai sus sau poți veni direct la sediul nostru din Botoșani.",
+  },
+  {
+    icon: FileText,
+    title: "Ce informații este util să ne spui?",
+    text: "Localitatea, adresa imobilului, tipul proprietății și serviciul dorit ne ajută să îți oferim răspunsul potrivit mai rapid.",
+  },
+  {
+    icon: Clock,
+    title: "Când primești răspuns?",
+    text: "Revenim rapid, de regulă în aceeași zi, cu pașii de urmat și lista actelor necesare pentru proiectul tău.",
+  },
+] as const;
+
+const contactFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: contactQuickHelpItems.map((item) => ({
+    "@type": "Question",
+    name: item.title,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.text,
+    },
+  })),
+} as const;
 
 function ContactPage() {
   return (
@@ -233,6 +268,36 @@ function ContactPage() {
                 </div>
               </div>
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white pb-14 sm:pb-[4.4rem] lg:pb-[4.9rem]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-[1.9rem] border border-brand-soft/40 bg-brand-soft/18 px-5 py-8 shadow-[0_18px_44px_rgba(13,36,27,0.05)] sm:px-7 sm:py-10 lg:px-9 lg:py-11">
+            <SectionHeading
+              eyebrow="Răspunsuri rapide"
+              title="Cum ne poți contacta mai ușor"
+              className="max-w-[35rem]"
+            />
+
+            <ul className="mt-8 grid gap-5 lg:grid-cols-3">
+              {contactQuickHelpItems.map((item, index) => (
+                <Reveal key={item.title} as="li" delay={index * 70} className="h-full">
+                  <article className="flex h-full min-h-[13rem] flex-col rounded-[1.45rem] border border-border/75 bg-card px-6 py-5.5 shadow-[0_14px_34px_rgba(13,36,27,0.05)] transition-all duration-200 lg:hover:-translate-y-0.5 lg:hover:shadow-[0_18px_40px_rgba(13,36,27,0.09)]">
+                    <span className="grid size-11 place-items-center rounded-full bg-brand-soft/72 text-brand">
+                      <item.icon className="size-5" aria-hidden="true" />
+                    </span>
+                    <h2 className="mt-4 text-[1rem] leading-snug font-semibold text-brand-dark sm:text-[1.05rem]">
+                      {item.title}
+                    </h2>
+                    <p className="mt-2.5 text-sm leading-[1.8] text-muted-foreground sm:text-[0.95rem]">
+                      {item.text}
+                    </p>
+                  </article>
+                </Reveal>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@ import { Reveal } from "@/components/common/Reveal";
 import { getUiIcon } from "@/lib/icons";
 import { stats } from "@/data/site";
 
-/** Banda de statistici (pagina Despre Noi). Valorile sunt placeholder. */
+/** Banda de statistici (pagina Despre Noi). */
 export function StatsBand() {
   const icons = ["award", "fileCheck", "badgeCheck", "mapPin"];
 

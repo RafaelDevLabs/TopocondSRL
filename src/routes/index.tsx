@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, Building2, MapPinned, MessageCircle, Phone, ScanSearch } from "lucide-react";
 
 import { Reveal } from "@/components/common/Reveal";
 import { ScrollToTopLink } from "@/components/common/ScrollToTopLink";
@@ -60,6 +60,37 @@ const homeServices = homeServiceOrder
   .map((slug) => services.find((service) => service.slug === slug))
   .filter((service) => service !== undefined);
 
+const quickAnswerItems = [
+  {
+    icon: ScanSearch,
+    title: "Cu ce se ocupă Topocond?",
+    text: "Topocond oferă servicii de cadastru, intabulare și topografie în Botoșani pentru terenuri, case, apartamente și alte proprietăți.",
+  },
+  {
+    icon: MapPinned,
+    title: "Unde oferim servicii?",
+    text: "Lucrăm în Botoșani și în zonele limitrofe, pentru proprietari care au nevoie de măsurători, documentații cadastrale și sprijin în relația cu instituțiile competente.",
+  },
+  {
+    icon: Building2,
+    title: "Cum începe colaborarea?",
+    text: "Ne contactezi prin telefon, WhatsApp, formularul de pe site sau direct la sediu, iar noi îți spunem ce acte sunt necesare și care sunt pașii potriviți pentru lucrarea ta.",
+  },
+] as const;
+
+const homeFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: quickAnswerItems.map((item) => ({
+    "@type": "Question",
+    name: item.title,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.text,
+    },
+  })),
+} as const;
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -90,6 +121,10 @@ export const Route = createFileRoute("/")({
       {
         type: "application/ld+json",
         children: JSON.stringify(createBreadcrumbSchema([{ name: "Acasă", path: "/" }])),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(homeFaqSchema),
       },
     ],
   }),
@@ -212,6 +247,34 @@ function HomePage() {
       </div>
 
       <AboutSection eyebrow="CINE SUNTEM" title="Despre Topocond Cadastru" withCta variant="home" />
+
+      <section className="bg-white pt-7 pb-14 sm:pt-[2.2rem] sm:pb-[4.4rem] lg:pt-[2.6rem] lg:pb-[4.9rem]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Răspunsuri rapide"
+            title="Ce trebuie să știi despre serviciile noastre"
+            className="max-w-[42rem]"
+          />
+
+          <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {quickAnswerItems.map((item, index) => (
+              <Reveal key={item.title} as="li" delay={index * 70} className="h-full">
+                <article className="flex h-full min-h-[15rem] flex-col rounded-[1.6rem] border border-border/75 bg-card px-6 py-6 shadow-[0_16px_38px_rgba(13,36,27,0.06)] transition-transform duration-200 lg:hover:-translate-y-0.5 lg:hover:shadow-[0_22px_48px_rgba(13,36,27,0.1)]">
+                  <span className="grid size-12 place-items-center rounded-full bg-brand-soft/72 text-brand">
+                    <item.icon className="size-5" aria-hidden="true" />
+                  </span>
+                  <h2 className="mt-5 text-[1.02rem] leading-snug font-semibold text-brand-dark sm:text-[1.08rem]">
+                    {item.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-[1.85] text-muted-foreground sm:text-[0.96rem]">
+                    {item.text}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       <section className="bg-surface py-14 sm:py-[4.75rem]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

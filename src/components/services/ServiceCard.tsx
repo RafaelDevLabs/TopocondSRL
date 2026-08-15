@@ -27,7 +27,7 @@ export function ServiceCard({ service, anchorId, delay = 0 }: ServiceCardProps) 
 
   return (
     <Reveal as="li" id={anchorId} delay={delay} className="h-full scroll-mt-32">
-      <article className="flex h-full min-h-[100%] flex-col overflow-hidden rounded-xl border border-border bg-card shadow-card transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-float">
+      <article className="flex h-full min-h-[100%] flex-col overflow-hidden rounded-xl border border-border bg-card shadow-card transition-all duration-[250ms] lg:hover:-translate-y-1 lg:hover:shadow-float">
         <div className="relative">
           <img
             src={service.imageSrc}
