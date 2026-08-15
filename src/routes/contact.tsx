@@ -197,6 +197,8 @@ function ContactPage() {
                   title={`${company.mapLabel} - locație Google Maps`}
                   src={company.mapsEmbedUrl}
                   loading="lazy"
+                  allow="fullscreen"
+                  allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
                   className="h-full w-full border-0"
                 />
@@ -262,6 +264,8 @@ function ContactPage() {
                     title={`${company.mapLabel} - locație Google Maps`}
                     src={company.mapsEmbedUrl}
                     loading="lazy"
+                    allow="fullscreen"
+                    allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
                     className="h-full w-full border-0"
                   />
