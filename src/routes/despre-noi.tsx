@@ -37,7 +37,21 @@ export const Route = createFileRoute("/despre-noi")({
       { name: "twitter:image", content: defaultOgImageUrl },
       { name: "twitter:image:alt", content: company.ogImageAlt },
     ],
-    links: [{ rel: "canonical", href: pageUrl }],
+    links: [
+      { rel: "canonical", href: pageUrl },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/Images/Herosections/DespreNoiHero-Topocond-mobile.jpg",
+        media: "(max-width: 640px)",
+      },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/Images/Herosections/DespreNoiHero-Topocond.jpg",
+        media: "(min-width: 641px)",
+      },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -65,8 +79,9 @@ function AboutPage() {
         title="Despre Topocond Cadastru"
         subtitle="Oferim servicii de cadastru, intabulare și topografie în Botoșani pentru terenuri, case, apartamente și alte proprietăți, printr-o abordare clară, bine organizată și atentă la fiecare etapă, de la măsurători până la documentația finală."
         backgroundImageSrc="/Images/Herosections/DespreNoiHero-Topocond.jpg"
+        backgroundImageMobileSrc="/Images/Herosections/DespreNoiHero-Topocond-mobile.jpg"
         backgroundPosition="72% center"
-        backgroundClassName="bg-[position:70%_center] sm:bg-[position:74%_center] lg:bg-[position:72%_center]"
+        backgroundClassName="object-[70%_center] sm:object-[74%_center] lg:object-[72%_center]"
         overlayClassName="bg-[linear-gradient(90deg,rgba(8,24,18,0.69)_0%,rgba(8,24,18,0.57)_30%,rgba(8,24,18,0.36)_62%,rgba(8,24,18,0.12)_100%)]"
         contentClassName="py-14 sm:py-16 lg:py-18 xl:py-20"
         breadcrumbClassName="text-[0.8rem] sm:text-[0.88rem]"

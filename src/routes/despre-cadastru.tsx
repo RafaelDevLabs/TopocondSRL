@@ -169,7 +169,21 @@ export const Route = createFileRoute("/despre-cadastru")({
       { name: "twitter:image", content: defaultOgImageUrl },
       { name: "twitter:image:alt", content: company.ogImageAlt },
     ],
-    links: [{ rel: "canonical", href: pageUrl }],
+    links: [
+      { rel: "canonical", href: pageUrl },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/Images/Herosections/DespreCadastruHero-Topocond-mobile.jpg",
+        media: "(max-width: 640px)",
+      },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/Images/Herosections/DespreCadastruHero-Topocond.jpg",
+        media: "(min-width: 641px)",
+      },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -212,8 +226,9 @@ function DespreCadastruPage() {
         title="Despre Cadastru"
         subtitle="Informații esențiale, despre cadastru, intabulare și documentațiile topografice. Transparență, claritate și siguranță pentru proprietatea ta."
         backgroundImageSrc="/Images/Herosections/DespreCadastruHero-Topocond.jpg"
+        backgroundImageMobileSrc="/Images/Herosections/DespreCadastruHero-Topocond-mobile.jpg"
         backgroundPosition="67% center"
-        backgroundClassName="bg-[position:70%_center] sm:bg-[position:74%_center] lg:bg-[position:67%_center]"
+        backgroundClassName="object-[70%_center] sm:object-[74%_center] lg:object-[67%_center]"
         overlayClassName="bg-[linear-gradient(90deg,rgba(8,22,18,0.78)_0%,rgba(8,22,18,0.67)_26%,rgba(8,22,18,0.47)_48%,rgba(8,22,18,0.22)_70%,rgba(8,22,18,0.06)_100%)]"
         contentClassName="py-14 sm:py-16 lg:py-18 xl:py-20"
         breadcrumbClassName="text-[0.8rem] sm:text-[0.88rem]"

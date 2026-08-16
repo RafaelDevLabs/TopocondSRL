@@ -80,7 +80,21 @@ export const Route = createFileRoute("/servicii")({
       { name: "twitter:image", content: servicesOgImageUrl },
       { name: "twitter:image:alt", content: servicesOgImageAlt },
     ],
-    links: [{ rel: "canonical", href: pageUrl }],
+    links: [
+      { rel: "canonical", href: pageUrl },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/Images/Herosections/ServiciiHero-Topocond-mobile.jpg",
+        media: "(max-width: 640px)",
+      },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/Images/Herosections/ServiciiHero-Topocond.jpg",
+        media: "(min-width: 641px)",
+      },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -139,11 +153,11 @@ function ServicesPage() {
           </>
         }
         backgroundImageSrc="/Images/Herosections/ServiciiHero-Topocond.jpg"
+        backgroundImageMobileSrc="/Images/Herosections/ServiciiHero-Topocond-mobile.jpg"
         backgroundPosition="76% center"
         {...{
           subtitle: servicesHeroSubtitle,
-          backgroundClassName:
-            "bg-[position:74%_center] sm:bg-[position:78%_center] lg:bg-[position:76%_center]",
+          backgroundClassName: "object-[74%_center] sm:object-[78%_center] lg:object-[76%_center]",
           overlayClassName:
             "bg-[linear-gradient(90deg,rgba(8,20,17,0.64)_0%,rgba(8,20,17,0.53)_34%,rgba(8,20,17,0.36)_62%,rgba(8,20,17,0.18)_100%)]",
           contentClassName: "py-14 sm:py-16 lg:py-18 xl:py-20",

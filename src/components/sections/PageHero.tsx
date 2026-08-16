@@ -12,6 +12,7 @@ type PageHeroProps = {
   children?: ReactNode;
   footerContent?: ReactNode;
   backgroundImageSrc?: string;
+  backgroundImageMobileSrc?: string;
   backgroundImageAlt?: string;
   backgroundPosition?: string;
   backgroundClassName?: string;
@@ -20,6 +21,7 @@ type PageHeroProps = {
   breadcrumbClassName?: string;
   titleClassName?: string;
   subtitleClassName?: string;
+  prioritizeImage?: boolean;
 };
 
 /** Hero-ul folosit pe paginile interioare (Servicii, Despre Noi, Despre Cadastru, Contact). */
@@ -30,6 +32,7 @@ export function PageHero({
   children,
   footerContent,
   backgroundImageSrc,
+  backgroundImageMobileSrc,
   backgroundImageAlt,
   backgroundPosition = "center",
   backgroundClassName,
@@ -38,15 +41,25 @@ export function PageHero({
   breadcrumbClassName,
   titleClassName,
   subtitleClassName,
+  prioritizeImage = true,
 }: PageHeroProps) {
   return (
     <section className="relative isolate overflow-hidden bg-brand-dark">
       {backgroundImageSrc ? (
-        <div
-          className={cn("absolute inset-0 -z-10 bg-cover bg-no-repeat", backgroundClassName)}
-          style={{ backgroundImage: `url("${backgroundImageSrc}")`, backgroundPosition }}
-          aria-hidden="true"
-        />
+        <picture className="absolute inset-0 -z-10 block overflow-hidden" aria-hidden="true">
+          {backgroundImageMobileSrc ? (
+            <source media="(max-width: 640px)" srcSet={backgroundImageMobileSrc} />
+          ) : null}
+          <img
+            src={backgroundImageSrc}
+            alt=""
+            className={cn("h-full w-full object-cover", backgroundClassName)}
+            style={{ objectPosition: backgroundPosition }}
+            fetchPriority={prioritizeImage ? "high" : "auto"}
+            loading={prioritizeImage ? "eager" : "lazy"}
+            decoding="async"
+          />
+        </picture>
       ) : (
         <ImagePlaceholder
           alt={backgroundImageAlt ?? "Imagine placeholder de fundal pentru hero"}

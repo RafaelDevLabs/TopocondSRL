@@ -108,7 +108,21 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: defaultOgImageUrl },
       { name: "twitter:image:alt", content: company.ogImageAlt },
     ],
-    links: [{ rel: "canonical", href: pageUrl }],
+    links: [
+      { rel: "canonical", href: pageUrl },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/Images/Herosections/HomeHero-Topocond-mobile.jpeg",
+        media: "(max-width: 640px)",
+      },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/Images/Herosections/HomeHero-Topocond.jpeg",
+        media: "(min-width: 641px)",
+      },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -135,11 +149,20 @@ function HomePage() {
   return (
     <>
       <section className="relative isolate overflow-hidden bg-brand-dark">
-        <div
-          className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url("/Images/Herosections/HomeHero-Topocond.jpeg")' }}
-          aria-hidden="true"
-        />
+        <picture className="absolute inset-0 -z-20 block overflow-hidden" aria-hidden="true">
+          <source
+            media="(max-width: 640px)"
+            srcSet="/Images/Herosections/HomeHero-Topocond-mobile.jpeg"
+          />
+          <img
+            src="/Images/Herosections/HomeHero-Topocond.jpeg"
+            alt=""
+            className="h-full w-full object-cover object-center"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
         <div
           className="absolute inset-0 -z-10"
           style={{

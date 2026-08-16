@@ -64,7 +64,21 @@ export const Route = createFileRoute("/contact")({
       { name: "twitter:image", content: defaultOgImageUrl },
       { name: "twitter:image:alt", content: company.ogImageAlt },
     ],
-    links: [{ rel: "canonical", href: pageUrl }],
+    links: [
+      { rel: "canonical", href: pageUrl },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/Images/Herosections/ContactHero-Topocond-mobile.jpg",
+        media: "(max-width: 640px)",
+      },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/Images/Herosections/ContactHero-Topocond.jpg",
+        media: "(min-width: 641px)",
+      },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -176,8 +190,9 @@ function ContactPage() {
           </div>
         }
         backgroundImageSrc="/Images/Herosections/ContactHero-Topocond.jpg"
+        backgroundImageMobileSrc="/Images/Herosections/ContactHero-Topocond-mobile.jpg"
         backgroundPosition="78% center"
-        backgroundClassName="bg-[position:76%_center] sm:bg-[position:80%_center] lg:bg-[position:78%_center]"
+        backgroundClassName="object-[76%_center] sm:object-[80%_center] lg:object-[78%_center]"
         overlayClassName="bg-[rgba(5,45,28,0.55)]"
         contentClassName="py-14 sm:py-16 lg:py-18 xl:py-20"
         breadcrumbClassName="text-[0.8rem] sm:text-[0.88rem]"
@@ -196,25 +211,11 @@ function ContactPage() {
           />
 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-            <Reveal delay={100} className="order-1 lg:hidden">
-              <div className="relative h-[19rem] overflow-hidden rounded-xl shadow-card sm:h-[19.5rem]">
-                <iframe
-                  title={`${company.mapLabel} - locație Google Maps`}
-                  src={company.mapsEmbedUrl}
-                  loading="lazy"
-                  allow="fullscreen"
-                  allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="h-full w-full border-0"
-                />
-              </div>
-            </Reveal>
-
-            <Reveal className="order-2 lg:order-1">
+            <Reveal className="order-1 lg:order-1">
               <ContactForm />
             </Reveal>
 
-            <Reveal delay={140} className="order-3 space-y-6 lg:order-2 lg:self-start">
+            <Reveal delay={140} className="order-2 space-y-6 lg:order-2 lg:self-start">
               <ul className="rounded-xl border border-border bg-card p-6 shadow-card">
                 {details.map((detail) => {
                   const isAddress = detail.label === "Adresă";
@@ -262,19 +263,16 @@ function ContactPage() {
                   );
                 })}
               </ul>
-
-              <div className="hidden lg:block">
-                <div className="relative h-[19rem] overflow-hidden rounded-xl shadow-card sm:h-[19.5rem]">
-                  <iframe
-                    title={`${company.mapLabel} - locație Google Maps`}
-                    src={company.mapsEmbedUrl}
-                    loading="lazy"
-                    allow="fullscreen"
-                    allowFullScreen
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="h-full w-full border-0"
-                  />
-                </div>
+              <div className="relative h-[19rem] overflow-hidden rounded-xl shadow-card sm:h-[19.5rem]">
+                <iframe
+                  title={`${company.mapLabel} - locație Google Maps`}
+                  src={company.mapsEmbedUrl}
+                  loading="lazy"
+                  allow="fullscreen"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="h-full w-full border-0"
+                />
               </div>
             </Reveal>
           </div>
