@@ -41,13 +41,13 @@ export function AboutSection({
           <Reveal className="relative">
             <div className="relative h-[540px] overflow-hidden rounded-2xl">
               <img
-                src="/Images/About/Topocond-about.jpg"
+                src="/Images/About/Topocond-about-ui.jpg"
                 alt="Echipa Topocond realizând măsurători pentru servicii de cadastru și topografie în Botoșani"
                 className="h-full w-full object-cover object-[center_30%]"
                 loading="lazy"
                 decoding="async"
-                width={1280}
-                height={854}
+                width={900}
+                height={600}
                 sizes="(min-width: 768px) 50vw, 100vw"
               />
             </div>

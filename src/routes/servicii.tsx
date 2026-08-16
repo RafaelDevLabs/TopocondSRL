@@ -191,6 +191,7 @@ function ServicesPage() {
               <ServiceCard
                 key={service.slug}
                 service={service}
+                detailsService={service}
                 anchorId={service.slug}
                 delay={index * 70}
               />

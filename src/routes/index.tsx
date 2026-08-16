@@ -10,7 +10,6 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { WhyChooseSection } from "@/components/sections/WhyChooseSection";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { Button } from "@/components/ui/button";
-import { services } from "@/data/services";
 import {
   absoluteUrl,
   company,
@@ -47,18 +46,98 @@ const refinedHeroHighlights = [
   { icon: "shieldCheck", label: "Documentații", value: "Conforme cerințelor ANCPI" },
 ] as const;
 
-const homeServiceOrder = [
-  "cadastru-si-intabulare",
-  "ridicari-topografice",
-  "dezmembrari-alipiri-terenuri",
-  "trasari-limite-de-proprietate",
-  "planuri-de-situatie",
-  "consultanta-cadastrala-si-juridica",
+const homeServices = [
+  {
+    slug: "cadastru-si-intabulare",
+    title: "Cadastru și Intabulare",
+    shortTitle: "Cadastru și Intabulare",
+    shortDescription:
+      "Întocmirea documentațiilor cadastrale pentru înscrierea și actualizarea imobilelor în sistemul de cadastru și carte funciară.",
+    icon: "cadastru",
+    imageSrc: "/Images/Servicii/Cadastru_si_Intabulare-card-ui.jpg",
+    imageAlt: "Documentație cadastrală pentru teren și construcții",
+    bullets: [
+      "Cadastru și intabulare pentru terenuri",
+      "Case și alte construcții",
+      "Apartamente și actualizări",
+    ],
+  },
+  {
+    slug: "ridicari-topografice",
+    title: "Ridicări Topografice",
+    shortTitle: "Ridicări Topografice",
+    shortDescription:
+      "Măsurători topografice pentru proiectare, autorizare și realizarea lucrărilor de construcții.",
+    icon: "ridicari",
+    imageSrc: "/Images/ClientsPhotos/RidicariTopo-home-card-ui.jpg",
+    imageAlt: "Ridicare topografică realizată pe teren cu echipamente moderne",
+    imageCardClassName: "object-[center_38%]",
+    bullets: [
+      "Ridicări topografice și planuri",
+      "Documentații pentru proiectare",
+      "Trasări și infrastructură",
+    ],
+  },
+  {
+    slug: "dezmembrari-alipiri-terenuri",
+    title: "Dezmembrări / Alipiri Terenuri",
+    shortTitle: "Dezmembrări / Alipiri",
+    shortDescription:
+      "Servicii cadastrale pentru împărțirea sau unirea imobilelor, cu documentația necesară pentru actualizarea evidențelor.",
+    icon: "dezmembrari",
+    imageSrc: "/Images/Servicii/Dezmembrari_alipire-home-card-ui.jpg",
+    imageAlt: "Documentație pentru dezmembrare și alipire terenuri",
+    bullets: [
+      "Dezmembrare în loturi",
+      "Alipire imobile",
+      "Depunere la OCPI",
+    ],
+  },
+  {
+    slug: "trasari-limite-de-proprietate",
+    title: "Trasări Limite de Proprietate",
+    shortTitle: "Trasări Limite",
+    shortDescription:
+      "Identificarea și materializarea în teren a limitelor unui imobil, pe baza documentației cadastrale și a coordonatelor existente.",
+    icon: "trasari",
+    imageSrc: "/Images/Servicii/Trasari_limite-card-ui.jpg",
+    imageAlt: "Trasare limite de proprietate pe teren",
+    bullets: [
+      "Identificarea limitelor",
+      "Materializarea punctelor",
+      "Măsurători precise",
+    ],
+  },
+  {
+    slug: "planuri-de-situatie",
+    title: "Actualizare Informații Cadastrale",
+    shortTitle: "Actualizare Informații",
+    shortDescription:
+      "Actualizarea datelor tehnice ale unui imobil atunci când situația existentă în teren sau informațiile cadastrale necesită modificări.",
+    icon: "planuri",
+    imageSrc: "/Images/Servicii/Planuri_de_Situatie.jpg",
+    imageAlt: "Actualizare informații cadastrale și documentații tehnice",
+    bullets: [
+      "Înscriere construcții",
+      "Modificare suprafață",
+      "Repoziționare imobil",
+    ],
+  },
+  {
+    slug: "consultanta-cadastrala-si-juridica",
+    title: "Consultanță Cadastrală și Juridică",
+    shortTitle: "Consultanță Cadastrală",
+    shortDescription: "Consultanță și sprijin pentru întocmirea documentațiilor cadastrale.",
+    icon: "consultanta",
+    imageSrc: "/Images/Servicii/Consultanta_Cadastrala_si_Juridica.jpg",
+    imageAlt: "Consultanță cadastrală și juridică pentru documentații imobiliare",
+    bullets: [
+      "Analiză acte",
+      "Clarificare pași",
+      "Sprijin instituțional",
+    ],
+  },
 ] as const;
-
-const homeServices = homeServiceOrder
-  .map((slug) => services.find((service) => service.slug === slug))
-  .filter((service) => service !== undefined);
 
 const quickAnswerItems = [
   {
@@ -152,19 +231,20 @@ function HomePage() {
     <>
       <section className="relative isolate overflow-hidden bg-brand-dark">
         <picture className="absolute inset-0 -z-20 block overflow-hidden" aria-hidden="true">
+          <source media="(min-width: 641px)" srcSet="/Images/Herosections/HomeHero-Topocond-ui.jpg" />
           <source
             media="(max-width: 640px)"
             srcSet="/Images/Herosections/HomeHero-Topocond-mobile-ui.jpg"
           />
           <img
-            src="/Images/Herosections/HomeHero-Topocond-ui.jpg"
+            src="/Images/Herosections/HomeHero-Topocond-mobile-ui.jpg"
             alt=""
             className="h-full w-full object-cover object-center"
             fetchPriority="high"
             loading="eager"
             decoding="async"
-            width={1400}
-            height={934}
+            width={560}
+            height={373}
             sizes="100vw"
           />
         </picture>
@@ -312,8 +392,14 @@ function HomePage() {
             subtitle="Fie că ai nevoie de cadastru pentru un teren, intabulare pentru casă, ridicări topografice sau consultanță pentru acte în Botoșani, suntem aici să te ajutăm."
           />
           <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.slice(0, 3).map((service, index) => (
-              <ServiceCard key={service.slug} service={service} delay={index * 80} />
+            {homeServices.slice(0, 3).map((service, index) => (
+              <ServiceCard
+                key={service.slug}
+                service={service}
+                delay={index * 80}
+                dialogEnabled={false}
+                detailsHref={`/servicii#${service.slug}`}
+              />
             ))}
           </ul>
           <div className="mt-6 text-center">

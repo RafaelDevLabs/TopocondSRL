@@ -2,6 +2,7 @@ import { Check } from "lucide-react";
 import { lazy, Suspense, useState } from "react";
 
 import { Reveal } from "@/components/common/Reveal";
+import { ScrollToTopLink } from "@/components/common/ScrollToTopLink";
 import { Button } from "@/components/ui/button";
 import type { Service } from "@/data/services";
 import { serviceIcons } from "@/lib/icons";
@@ -10,13 +11,33 @@ import { cn } from "@/lib/utils";
 const LazyServiceDialog = lazy(() => import("@/components/services/LazyServiceDialog"));
 
 type ServiceCardProps = {
-  service: Service;
+  service: Pick<
+    Service,
+    | "slug"
+    | "title"
+    | "shortDescription"
+    | "icon"
+    | "imageSrc"
+    | "imageAlt"
+    | "imageCardClassName"
+    | "bullets"
+  >;
   anchorId?: string;
   delay?: number;
+  dialogEnabled?: boolean;
+  detailsHref?: string;
+  detailsService?: Service;
 };
 
 /** Card de serviciu reutilizabil; deschide popup-ul cu detalii din aceleași date. */
-export function ServiceCard({ service, anchorId, delay = 0 }: ServiceCardProps) {
+export function ServiceCard({
+  service,
+  anchorId,
+  delay = 0,
+  dialogEnabled = true,
+  detailsHref,
+  detailsService,
+}: ServiceCardProps) {
   const Icon = serviceIcons[service.icon];
   const [open, setOpen] = useState(false);
 
@@ -54,17 +75,30 @@ export function ServiceCard({ service, anchorId, delay = 0 }: ServiceCardProps) 
             ))}
           </ul>
 
-          <Button
-            variant="link"
-            className="mt-5 h-auto justify-start p-0 text-brand"
-            onClick={() => setOpen(true)}
-          >
-            Vezi detalii →
-          </Button>
-          {open ? (
-            <Suspense fallback={null}>
-              <LazyServiceDialog open={open} onOpenChange={setOpen} service={service} Icon={Icon} />
-            </Suspense>
+          {dialogEnabled && detailsService ? (
+            <>
+              <Button
+                variant="link"
+                className="mt-5 h-auto justify-start p-0 text-brand"
+                onClick={() => setOpen(true)}
+              >
+                Vezi detalii →
+              </Button>
+              {open ? (
+                <Suspense fallback={null}>
+                  <LazyServiceDialog
+                    open={open}
+                    onOpenChange={setOpen}
+                    service={detailsService}
+                    Icon={Icon}
+                  />
+                </Suspense>
+              ) : null}
+            </>
+          ) : detailsHref ? (
+            <Button asChild variant="link" className="mt-5 h-auto justify-start p-0 text-brand">
+              <ScrollToTopLink to={detailsHref}>Vezi detalii →</ScrollToTopLink>
+            </Button>
           ) : null}
         </div>
       </article>
