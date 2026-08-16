@@ -11,7 +11,6 @@ import type { ReactNode } from "react";
 import { ScrollToTopLink } from "../components/common/ScrollToTopLink";
 import { Footer } from "../components/layout/Footer";
 import { Navbar } from "../components/layout/Navbar";
-import { Toaster } from "../components/ui/sonner";
 import { company, defaultOgImageUrl } from "../data/site";
 import appCss from "../styles.css?url";
 
@@ -155,7 +154,6 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
-        <Toaster />
       </div>
     </QueryClientProvider>
   );

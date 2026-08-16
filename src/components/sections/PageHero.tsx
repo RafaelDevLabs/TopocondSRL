@@ -12,6 +12,7 @@ type PageHeroProps = {
   children?: ReactNode;
   footerContent?: ReactNode;
   backgroundImageSrc?: string;
+  backgroundImageSrcSet?: string;
   backgroundImageMobileSrc?: string;
   backgroundImageAlt?: string;
   backgroundPosition?: string;
@@ -22,6 +23,9 @@ type PageHeroProps = {
   titleClassName?: string;
   subtitleClassName?: string;
   prioritizeImage?: boolean;
+  backgroundImageWidth?: number;
+  backgroundImageHeight?: number;
+  backgroundImageSizes?: string;
 };
 
 /** Hero-ul folosit pe paginile interioare (Servicii, Despre Noi, Despre Cadastru, Contact). */
@@ -32,6 +36,7 @@ export function PageHero({
   children,
   footerContent,
   backgroundImageSrc,
+  backgroundImageSrcSet,
   backgroundImageMobileSrc,
   backgroundImageAlt,
   backgroundPosition = "center",
@@ -42,6 +47,9 @@ export function PageHero({
   titleClassName,
   subtitleClassName,
   prioritizeImage = true,
+  backgroundImageWidth,
+  backgroundImageHeight,
+  backgroundImageSizes = "100vw",
 }: PageHeroProps) {
   return (
     <section className="relative isolate overflow-hidden bg-brand-dark">
@@ -52,7 +60,11 @@ export function PageHero({
           ) : null}
           <img
             src={backgroundImageSrc}
+            srcSet={backgroundImageSrcSet}
+            sizes={backgroundImageSizes}
             alt=""
+            width={backgroundImageWidth}
+            height={backgroundImageHeight}
             className={cn("h-full w-full object-cover", backgroundClassName)}
             style={{ objectPosition: backgroundPosition }}
             fetchPriority={prioritizeImage ? "high" : "auto"}

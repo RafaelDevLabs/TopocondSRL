@@ -84,7 +84,7 @@ export const services: Service[] = [
     fullDescription:
       "Executăm ridicări topografice pentru proiecte de construcții, documentații necesare proiectării și autorizării, trasări în teren și lucrări de infrastructură, folosind echipamente moderne și metode de lucru adaptate fiecărei lucrări. Documentațiile rezultate pot fi utilizate pentru planuri topografice, planuri de situație, DTAC, PUZ, PUD și alte cerințe tehnice specifice.",
     icon: "ridicari",
-    imageSrc: "/Images/ClientsPhotos/RidicariTopo.png",
+    imageSrc: "/Images/ClientsPhotos/RidicariTopo-card-ui.jpg",
     imageAlt: "Ridicare topografică realizată pe teren cu echipamente moderne",
     imageCardClassName: "object-[center_38%]",
     bullets: [
@@ -205,7 +205,7 @@ export const services: Service[] = [
     fullDescription:
       "Identificăm și materializăm în teren limitele unei proprietăți pe baza documentației cadastrale existente, a coordonatelor disponibile și a măsurătorilor topografice efectuate la fața locului. Serviciul este util atunci când trebuie clarificate limitele terenului înainte de împrejmuire, construcție, vânzare sau alte intervenții care necesită o delimitare corectă a proprietății.",
     icon: "trasari",
-    imageSrc: "/Images/Servicii/Trasari_limite.jpg",
+    imageSrc: "/Images/Servicii/Trasari_limite-card-ui.jpg",
     imageAlt: "Trasare limite de proprietate pe teren",
     bullets: [
       "Identificarea imobilului pe baza documentației cadastrale",

@@ -91,7 +91,7 @@ export const Route = createFileRoute("/servicii")({
       {
         rel: "preload",
         as: "image",
-        href: "/Images/Herosections/ServiciiHero-Topocond.jpg",
+        href: "/Images/Herosections/ServiciiHero-Topocond-ui.jpg",
         media: "(min-width: 641px)",
       },
     ],
@@ -152,8 +152,11 @@ function ServicesPage() {
             Intabulare și Topografie
           </>
         }
-        backgroundImageSrc="/Images/Herosections/ServiciiHero-Topocond.jpg"
+        backgroundImageSrc="/Images/Herosections/ServiciiHero-Topocond-ui.jpg"
+        backgroundImageSrcSet="/Images/Herosections/ServiciiHero-Topocond-ui.jpg 1400w, /Images/Herosections/ServiciiHero-Topocond.jpg 1717w"
         backgroundImageMobileSrc="/Images/Herosections/ServiciiHero-Topocond-mobile.jpg"
+        backgroundImageWidth={1400}
+        backgroundImageHeight={747}
         backgroundPosition="76% center"
         {...{
           subtitle: servicesHeroSubtitle,

@@ -75,7 +75,7 @@ export const Route = createFileRoute("/contact")({
       {
         rel: "preload",
         as: "image",
-        href: "/Images/Herosections/ContactHero-Topocond.jpg",
+        href: "/Images/Herosections/ContactHero-Topocond-ui.jpg",
         media: "(min-width: 641px)",
       },
     ],
@@ -189,8 +189,11 @@ function ContactPage() {
             })}
           </div>
         }
-        backgroundImageSrc="/Images/Herosections/ContactHero-Topocond.jpg"
+        backgroundImageSrc="/Images/Herosections/ContactHero-Topocond-ui.jpg"
+        backgroundImageSrcSet="/Images/Herosections/ContactHero-Topocond-ui.jpg 1400w, /Images/Herosections/ContactHero-Topocond.jpg 1720w"
         backgroundImageMobileSrc="/Images/Herosections/ContactHero-Topocond-mobile.jpg"
+        backgroundImageWidth={1400}
+        backgroundImageHeight={744}
         backgroundPosition="78% center"
         backgroundClassName="object-[76%_center] sm:object-[80%_center] lg:object-[78%_center]"
         overlayClassName="bg-[rgba(5,45,28,0.55)]"
@@ -325,10 +328,14 @@ function ContactPage() {
             <div className="mt-9 grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-5">
               <Reveal className="overflow-hidden rounded-[1.7rem] border border-white/70 bg-card shadow-[0_24px_54px_rgba(13,36,27,0.1)]">
                 <img
-                  src="/Images/ClientsPhotos/ContactOutside.jpeg"
+                  src="/Images/ClientsPhotos/ContactOutside-ui.jpg"
                   alt="Exteriorul biroului Topocond din Botoșani"
                   className="h-[18.5rem] w-full object-cover object-center sm:h-[23rem] lg:h-[26.5rem]"
                   loading="lazy"
+                  decoding="async"
+                  width={1200}
+                  height={900}
+                  sizes="(min-width: 1024px) 55vw, 100vw"
                 />
               </Reveal>
 
@@ -337,10 +344,14 @@ function ContactPage() {
                 className="overflow-hidden rounded-[1.55rem] border border-white/70 bg-card shadow-[0_20px_46px_rgba(13,36,27,0.09)]"
               >
                 <img
-                  src="/Images/ClientsPhotos/ContactInside.jpeg"
+                  src="/Images/ClientsPhotos/ContactInside-ui.jpg"
                   alt="Interiorul biroului Topocond pregătit pentru întâlniri cu clienții"
                   className="h-[16rem] w-full object-cover object-center sm:h-[19rem] lg:h-[26.5rem]"
                   loading="lazy"
+                  decoding="async"
+                  width={1200}
+                  height={900}
+                  sizes="(min-width: 1024px) 45vw, 100vw"
                 />
               </Reveal>
             </div>

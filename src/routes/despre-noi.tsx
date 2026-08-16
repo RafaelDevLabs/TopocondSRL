@@ -48,7 +48,7 @@ export const Route = createFileRoute("/despre-noi")({
       {
         rel: "preload",
         as: "image",
-        href: "/Images/Herosections/DespreNoiHero-Topocond.jpg",
+        href: "/Images/Herosections/DespreNoiHero-Topocond-ui.jpg",
         media: "(min-width: 641px)",
       },
     ],
@@ -78,8 +78,11 @@ function AboutPage() {
         breadcrumb={[{ label: "Acasă", to: "/" }, { label: "Despre Noi" }]}
         title="Despre Topocond Cadastru"
         subtitle="Oferim servicii de cadastru, intabulare și topografie în Botoșani pentru terenuri, case, apartamente și alte proprietăți, printr-o abordare clară, bine organizată și atentă la fiecare etapă, de la măsurători până la documentația finală."
-        backgroundImageSrc="/Images/Herosections/DespreNoiHero-Topocond.jpg"
+        backgroundImageSrc="/Images/Herosections/DespreNoiHero-Topocond-ui.jpg"
+        backgroundImageSrcSet="/Images/Herosections/DespreNoiHero-Topocond-ui.jpg 1400w, /Images/Herosections/DespreNoiHero-Topocond.jpg 1717w"
         backgroundImageMobileSrc="/Images/Herosections/DespreNoiHero-Topocond-mobile.jpg"
+        backgroundImageWidth={1400}
+        backgroundImageHeight={747}
         backgroundPosition="72% center"
         backgroundClassName="object-[70%_center] sm:object-[74%_center] lg:object-[72%_center]"
         overlayClassName="bg-[linear-gradient(90deg,rgba(8,24,18,0.69)_0%,rgba(8,24,18,0.57)_30%,rgba(8,24,18,0.36)_62%,rgba(8,24,18,0.12)_100%)]"
@@ -94,7 +97,7 @@ function AboutPage() {
       <AboutSection
         eyebrow="CINE SUNTEM"
         title="Experiență și rigoare în cadastru, intabulare și topografie"
-        imageSrc="/Images/ClientsPhotos/OutsideAboutUs.jpeg"
+        imageSrc="/Images/ClientsPhotos/OutsideAboutUs-ui.jpg"
         imageAlt="Imagine din teren folosită în pagina Despre Noi Topocond"
       />
 

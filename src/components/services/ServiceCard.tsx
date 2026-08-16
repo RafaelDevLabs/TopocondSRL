@@ -37,6 +37,8 @@ export function ServiceCard({ service, anchorId, delay = 0 }: ServiceCardProps) 
               service.imageCardClassName,
             )}
             loading="lazy"
+            decoding="async"
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
           />
           <span className="absolute bottom-3 left-3 grid size-9 place-items-center rounded-md bg-card text-brand shadow-card">
             <Icon className="size-5" aria-hidden="true" />

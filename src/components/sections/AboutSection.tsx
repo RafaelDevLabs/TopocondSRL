@@ -45,6 +45,10 @@ export function AboutSection({
                 alt="Echipa Topocond realizând măsurători pentru servicii de cadastru și topografie în Botoșani"
                 className="h-full w-full object-cover object-[center_30%]"
                 loading="lazy"
+                decoding="async"
+                width={1280}
+                height={854}
+                sizes="(min-width: 768px) 50vw, 100vw"
               />
             </div>
             <div className="absolute right-4 -bottom-1 left-4 rounded-[14px] border border-border/70 bg-white px-5 py-4 shadow-[0_22px_48px_rgba(0,0,0,.18)] sm:right-auto sm:-bottom-2 sm:left-5 sm:max-w-[270px] sm:px-5 sm:py-4">
@@ -117,6 +121,10 @@ export function AboutSection({
               alt={imageAlt}
               className="h-[29rem] w-full object-cover object-center sm:h-[31rem] lg:h-[36rem]"
               loading="lazy"
+              decoding="async"
+              width={1200}
+              height={900}
+              sizes="(min-width: 1024px) 50vw, 100vw"
             />
           </div>
           <div className="absolute right-4 -bottom-1 left-4 rounded-[14px] border border-border/70 bg-white px-5 py-4 shadow-[0_22px_48px_rgba(0,0,0,.18)] sm:right-auto sm:bottom-5 sm:left-6 sm:max-w-[18rem] sm:rounded-xl sm:border-border sm:bg-card/98 sm:px-5 sm:py-4 sm:shadow-float lg:left-8">

@@ -180,7 +180,7 @@ export const Route = createFileRoute("/despre-cadastru")({
       {
         rel: "preload",
         as: "image",
-        href: "/Images/Herosections/DespreCadastruHero-Topocond.jpg",
+        href: "/Images/Herosections/DespreCadastruHero-Topocond-ui.jpg",
         media: "(min-width: 641px)",
       },
     ],
@@ -225,8 +225,11 @@ function DespreCadastruPage() {
         breadcrumb={[{ label: "Acasă", to: "/" }, { label: "Despre Cadastru" }]}
         title="Despre Cadastru"
         subtitle="Informații esențiale, despre cadastru, intabulare și documentațiile topografice. Transparență, claritate și siguranță pentru proprietatea ta."
-        backgroundImageSrc="/Images/Herosections/DespreCadastruHero-Topocond.jpg"
+        backgroundImageSrc="/Images/Herosections/DespreCadastruHero-Topocond-ui.jpg"
+        backgroundImageSrcSet="/Images/Herosections/DespreCadastruHero-Topocond-ui.jpg 1400w, /Images/Herosections/DespreCadastruHero-Topocond.jpg 1774w"
         backgroundImageMobileSrc="/Images/Herosections/DespreCadastruHero-Topocond-mobile.jpg"
+        backgroundImageWidth={1400}
+        backgroundImageHeight={700}
         backgroundPosition="67% center"
         backgroundClassName="object-[70%_center] sm:object-[74%_center] lg:object-[67%_center]"
         overlayClassName="bg-[linear-gradient(90deg,rgba(8,22,18,0.78)_0%,rgba(8,22,18,0.67)_26%,rgba(8,22,18,0.47)_48%,rgba(8,22,18,0.22)_70%,rgba(8,22,18,0.06)_100%)]"
