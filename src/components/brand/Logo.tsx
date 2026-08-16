@@ -9,12 +9,12 @@ type LogoProps = {
 export function Logo({ tone = "light", className }: LogoProps) {
   return (
     <img
-      src="/Images/Logo/LogoNew-ui-128.png"
-      srcSet="/Images/Logo/LogoNew-ui-128.png 128w, /Images/Logo/LogoNew-ui-192.png 192w"
+      src="/Images/Logo/LogoNew-ui-112.png"
+      srcSet="/Images/Logo/LogoNew-ui-112.png 112w, /Images/Logo/LogoNew-ui-168.png 168w"
       sizes="(max-width: 640px) 80px, 84px"
       alt={company.name}
-      width={192}
-      height={192}
+      width={168}
+      height={168}
       decoding="async"
       className={cn("block h-11 w-auto shrink-0 sm:h-12", className)}
     />

@@ -14,9 +14,6 @@ import { Navbar } from "../components/layout/Navbar";
 import { company, defaultOgImageUrl } from "../data/site";
 import appCss from "../styles.css?url";
 
-const manropeStylesheetHref =
-  "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap";
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -105,8 +102,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       {
+        rel: "preload",
+        as: "style",
+        href: appCss,
+      },
+      {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "preload",
+        as: "font",
+        href: "/fonts/Manrope-latin-ext.woff2",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        as: "font",
+        href: "/fonts/Manrope-latin.woff2",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
       },
       { rel: "icon", href: "/site-icon-v3-32.png", type: "image/png", sizes: "32x32" },
       { rel: "icon", href: "/site-icon-v3-16.png", type: "image/png", sizes: "16x16" },
@@ -123,16 +139,6 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="ro">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='${manropeStylesheetHref}';document.head.appendChild(l);}())`,
-          }}
-        />
-        <noscript>
-          <link rel="stylesheet" href={manropeStylesheetHref} />
-        </noscript>
         <HeadContent />
       </head>
       <body>
