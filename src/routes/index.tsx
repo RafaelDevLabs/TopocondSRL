@@ -113,14 +113,16 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: "/Images/Herosections/HomeHero-Topocond-mobile.jpeg",
+        href: "/Images/Herosections/HomeHero-Topocond-mobile-ui.jpg",
         media: "(max-width: 640px)",
+        fetchPriority: "high",
       },
       {
         rel: "preload",
         as: "image",
-        href: "/Images/Herosections/HomeHero-Topocond.jpeg",
+        href: "/Images/Herosections/HomeHero-Topocond-ui.jpg",
         media: "(min-width: 641px)",
+        fetchPriority: "high",
       },
     ],
     scripts: [
@@ -152,15 +154,18 @@ function HomePage() {
         <picture className="absolute inset-0 -z-20 block overflow-hidden" aria-hidden="true">
           <source
             media="(max-width: 640px)"
-            srcSet="/Images/Herosections/HomeHero-Topocond-mobile.jpeg"
+            srcSet="/Images/Herosections/HomeHero-Topocond-mobile-ui.jpg"
           />
           <img
-            src="/Images/Herosections/HomeHero-Topocond.jpeg"
+            src="/Images/Herosections/HomeHero-Topocond-ui.jpg"
             alt=""
             className="h-full w-full object-cover object-center"
             fetchPriority="high"
             loading="eager"
             decoding="async"
+            width={1400}
+            height={934}
+            sizes="100vw"
           />
         </picture>
         <div

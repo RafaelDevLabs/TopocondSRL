@@ -67,7 +67,7 @@ export function AboutSection({
 
           <Reveal delay={100} className="self-center">
             {eyebrow && (
-              <p className="text-xs font-semibold tracking-[0.22em] text-brand-accent uppercase">
+              <p className="text-xs font-semibold tracking-[0.22em] text-brand uppercase">
                 {eyebrow}
               </p>
             )}
@@ -146,7 +146,7 @@ export function AboutSection({
 
         <Reveal delay={100} className="self-center">
           {eyebrow && (
-            <p className="text-xs font-semibold tracking-[0.24em] text-brand-accent uppercase">
+            <p className="text-xs font-semibold tracking-[0.24em] text-brand uppercase">
               {eyebrow}
             </p>
           )}

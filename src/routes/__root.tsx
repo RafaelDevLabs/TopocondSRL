@@ -14,6 +14,9 @@ import { Navbar } from "../components/layout/Navbar";
 import { company, defaultOgImageUrl } from "../data/site";
 import appCss from "../styles.css?url";
 
+const manropeStylesheetHref =
+  "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap";
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -101,12 +104,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "robots", content: "index, follow" },
     ],
     links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap",
-      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -126,6 +123,16 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="ro">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='${manropeStylesheetHref}';document.head.appendChild(l);}())`,
+          }}
+        />
+        <noscript>
+          <link rel="stylesheet" href={manropeStylesheetHref} />
+        </noscript>
         <HeadContent />
       </head>
       <body>

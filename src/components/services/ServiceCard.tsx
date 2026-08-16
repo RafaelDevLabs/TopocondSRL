@@ -1,19 +1,13 @@
 import { Check } from "lucide-react";
+import { lazy, Suspense, useState } from "react";
 
 import { Reveal } from "@/components/common/Reveal";
-import { ServiceDialogContent } from "@/components/services/ServiceDialogContent";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import type { Service } from "@/data/services";
 import { serviceIcons } from "@/lib/icons";
 import { cn } from "@/lib/utils";
+
+const LazyServiceDialog = lazy(() => import("@/components/services/LazyServiceDialog"));
 
 type ServiceCardProps = {
   service: Service;
@@ -24,6 +18,7 @@ type ServiceCardProps = {
 /** Card de serviciu reutilizabil; deschide popup-ul cu detalii din aceleași date. */
 export function ServiceCard({ service, anchorId, delay = 0 }: ServiceCardProps) {
   const Icon = serviceIcons[service.icon];
+  const [open, setOpen] = useState(false);
 
   return (
     <Reveal as="li" id={anchorId} delay={delay} className="h-full scroll-mt-32">
@@ -59,29 +54,18 @@ export function ServiceCard({ service, anchorId, delay = 0 }: ServiceCardProps) 
             ))}
           </ul>
 
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="link" className="mt-5 h-auto justify-start p-0 text-brand">
-                Vezi detalii →
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-h-[90vh] overflow-y-auto bg-white p-7 sm:max-w-2xl sm:p-8">
-              <DialogHeader className="pb-1">
-                <div className="flex min-w-0 items-start gap-3 text-left">
-                  <span className="grid size-10 shrink-0 place-items-center rounded-md bg-brand-soft text-brand">
-                    <Icon className="size-5" aria-hidden="true" />
-                  </span>
-                  <div className="min-w-0">
-                    <DialogTitle className="text-lg text-brand-dark">{service.title}</DialogTitle>
-                    <DialogDescription className="mt-2 text-sm leading-relaxed">
-                      {service.shortDescription}
-                    </DialogDescription>
-                  </div>
-                </div>
-              </DialogHeader>
-              <ServiceDialogContent service={service} />
-            </DialogContent>
-          </Dialog>
+          <Button
+            variant="link"
+            className="mt-5 h-auto justify-start p-0 text-brand"
+            onClick={() => setOpen(true)}
+          >
+            Vezi detalii →
+          </Button>
+          {open ? (
+            <Suspense fallback={null}>
+              <LazyServiceDialog open={open} onOpenChange={setOpen} service={service} Icon={Icon} />
+            </Suspense>
+          ) : null}
         </div>
       </article>
     </Reveal>

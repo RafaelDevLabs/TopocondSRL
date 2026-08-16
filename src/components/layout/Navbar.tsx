@@ -61,7 +61,7 @@ export function Navbar() {
                 <ScrollToTopLink
                   to={item.to}
                   activeOptions={{ exact: item.to === "/" }}
-                  activeProps={{ className: "text-brand-accent" }}
+                  activeProps={{ className: "text-brand" }}
                   inactiveProps={{ className: "text-foreground/80 hover:text-brand" }}
                   className="rounded-md text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                 >
@@ -123,7 +123,7 @@ export function Navbar() {
                   to={item.to}
                   onClick={() => setOpen(false)}
                   activeOptions={{ exact: item.to === "/" }}
-                  activeProps={{ className: "text-brand-accent" }}
+                  activeProps={{ className: "text-brand" }}
                   className="block rounded-md py-3 text-sm font-medium text-foreground/90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                 >
                   {item.label}
