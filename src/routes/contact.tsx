@@ -1,8 +1,8 @@
+import { Suspense, lazy } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock, FileText, Mail, MapPin, MessageCircle, Phone, ShieldCheck } from "lucide-react";
+import { Clock, ExternalLink, FileText, Mail, MapPin, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 
 import { Reveal } from "@/components/common/Reveal";
-import { ContactForm } from "@/components/contact/ContactForm";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { PageHero } from "@/components/sections/PageHero";
 import { SectionHeading } from "@/components/sections/SectionHeading";
@@ -19,6 +19,12 @@ const title = "Contact Cadastru, Intabulare și Topografie în Botoșani | Topoc
 const description =
   "Contactează Topocond pentru cadastru, intabulare și topografie în Botoșani. Telefon, WhatsApp, email, program și informații pentru vizita la sediu.";
 const pageUrl = absoluteUrl("/contact");
+
+const ContactForm = lazy(() =>
+  import("@/components/contact/ContactForm").then((module) => ({
+    default: module.ContactForm,
+  })),
+);
 
 const contactHeroSubtitle =
   "Suntem aici să te ajutăm cu servicii de cadastru, intabulare și topografie în Botoșani, fie că ai nevoie de informații, ofertă sau programare.";
@@ -69,14 +75,16 @@ export const Route = createFileRoute("/contact")({
       {
         rel: "preload",
         as: "image",
-        href: "/Images/Herosections/ContactHero-Topocond-mobile.jpg",
+        href: "/Images/Herosections/ContactHero-Topocond-mobile-ui.jpg",
         media: "(max-width: 640px)",
+        fetchpriority: "high",
       },
       {
         rel: "preload",
         as: "image",
         href: "/Images/Herosections/ContactHero-Topocond-ui.jpg",
         media: "(min-width: 641px)",
+        fetchpriority: "high",
       },
     ],
     scripts: [
@@ -144,6 +152,32 @@ const contactFaqSchema = {
   })),
 } as const;
 
+function ContactFormFallback() {
+  return (
+    <div className="rounded-xl border border-border bg-card p-6 shadow-card sm:p-8" aria-hidden="true">
+      <div className="h-7 w-44 rounded bg-brand-soft/55" />
+      <div className="mt-3 h-4 w-72 max-w-full rounded bg-brand-soft/35" />
+      <div className="mt-2 h-4 w-64 max-w-full rounded bg-brand-soft/25" />
+
+      <div className="mt-6 grid gap-5 sm:grid-cols-2">
+        {Array.from({ length: 4 }).map((_, index) => (
+          <div key={index} className="space-y-2">
+            <div className="h-4 w-28 rounded bg-brand-soft/35" />
+            <div className="h-10 rounded-md bg-brand-soft/20" />
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-5 space-y-2">
+        <div className="h-4 w-24 rounded bg-brand-soft/35" />
+        <div className="h-32 rounded-md bg-brand-soft/20" />
+      </div>
+
+      <div className="mt-6 h-11 w-44 rounded-full bg-brand-soft/45" />
+    </div>
+  );
+}
+
 function ContactPage() {
   return (
     <>
@@ -190,10 +224,11 @@ function ContactPage() {
           </div>
         }
         backgroundImageSrc="/Images/Herosections/ContactHero-Topocond-ui.jpg"
-        backgroundImageSrcSet="/Images/Herosections/ContactHero-Topocond-ui.jpg 1400w, /Images/Herosections/ContactHero-Topocond.jpg 1720w"
-        backgroundImageMobileSrc="/Images/Herosections/ContactHero-Topocond-mobile.jpg"
-        backgroundImageWidth={1400}
+        backgroundImageSrcSet="/Images/Herosections/ContactHero-Topocond-mobile-ui.jpg 480w, /Images/Herosections/ContactHero-Topocond-ui.jpg 1280w"
+        backgroundImageMobileSrc="/Images/Herosections/ContactHero-Topocond-mobile-ui.jpg"
+        backgroundImageWidth={1280}
         backgroundImageHeight={744}
+        backgroundImageSizes="100vw"
         backgroundPosition="78% center"
         backgroundClassName="object-[76%_center] sm:object-[80%_center] lg:object-[78%_center]"
         overlayClassName="bg-[rgba(5,45,28,0.55)]"
@@ -215,7 +250,9 @@ function ContactPage() {
 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
             <Reveal className="order-1 lg:order-1">
-              <ContactForm />
+              <Suspense fallback={<ContactFormFallback />}>
+                <ContactForm />
+              </Suspense>
             </Reveal>
 
             <Reveal delay={140} className="order-2 space-y-6 lg:order-2 lg:self-start">
@@ -266,16 +303,41 @@ function ContactPage() {
                   );
                 })}
               </ul>
-              <div className="relative h-[19rem] overflow-hidden rounded-xl shadow-card sm:h-[19.5rem]">
-                <iframe
-                  title={`${company.mapLabel} - locație Google Maps`}
-                  src={company.mapsEmbedUrl}
-                  loading="lazy"
-                  allow="fullscreen"
-                  allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="h-full w-full border-0"
-                />
+              <div className="relative h-[19rem] overflow-hidden rounded-xl border border-border bg-card shadow-card sm:h-[19.5rem]">
+                <div className="flex h-full flex-col justify-between bg-[linear-gradient(180deg,rgba(10,39,27,0.9)_0%,rgba(10,39,27,0.82)_100%)] p-5 text-primary-foreground sm:p-6">
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <span className="grid size-11 place-items-center rounded-full border border-brand-accent/40 bg-white/5 text-brand-accent">
+                        <MapPin className="size-5" aria-hidden="true" />
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold text-primary-foreground">
+                          Harta biroului Topocond
+                        </p>
+                        <p className="mt-1 text-sm leading-relaxed text-primary-foreground/72">
+                          Deschide traseul direct în Google Maps, fără să încărcăm resurse grele pe mobil.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="mt-5 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm leading-relaxed text-primary-foreground/78">
+                      <p className="font-semibold text-primary-foreground">{company.mapLabel}</p>
+                      <p className="mt-1">{company.addressLines.join(", ")}</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-5">
+                    <a
+                      href={company.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:w-auto"
+                    >
+                      Deschide în Google Maps
+                      <ExternalLink className="size-4" aria-hidden="true" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </Reveal>
           </div>
@@ -328,14 +390,15 @@ function ContactPage() {
             <div className="mt-9 grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-5">
               <Reveal className="overflow-hidden rounded-[1.7rem] border border-white/70 bg-card shadow-[0_24px_54px_rgba(13,36,27,0.1)]">
                 <img
-                  src="/Images/ClientsPhotos/ContactOutside-ui.jpg"
+                  src="/Images/ClientsPhotos/ContactOutside-ui-mobile.jpg"
+                  srcSet="/Images/ClientsPhotos/ContactOutside-ui-mobile.jpg 560w, /Images/ClientsPhotos/ContactOutside-ui.jpg 960w"
                   alt="Exteriorul biroului Topocond din Botoșani"
                   className="h-[18.5rem] w-full object-cover object-center sm:h-[23rem] lg:h-[26.5rem]"
                   loading="lazy"
                   decoding="async"
-                  width={1200}
-                  height={900}
-                  sizes="(min-width: 1024px) 55vw, 100vw"
+                  width={560}
+                  height={493}
+                  sizes="(min-width: 1024px) 55vw, (min-width: 640px) 100vw, 92vw"
                 />
               </Reveal>
 
@@ -344,14 +407,15 @@ function ContactPage() {
                 className="overflow-hidden rounded-[1.55rem] border border-white/70 bg-card shadow-[0_20px_46px_rgba(13,36,27,0.09)]"
               >
                 <img
-                  src="/Images/ClientsPhotos/ContactInside-ui.jpg"
+                  src="/Images/ClientsPhotos/ContactInside-ui-mobile.jpg"
+                  srcSet="/Images/ClientsPhotos/ContactInside-ui-mobile.jpg 560w, /Images/ClientsPhotos/ContactInside-ui.jpg 960w"
                   alt="Interiorul biroului Topocond pregătit pentru întâlniri cu clienții"
                   className="h-[16rem] w-full object-cover object-center sm:h-[19rem] lg:h-[26.5rem]"
                   loading="lazy"
                   decoding="async"
-                  width={1200}
-                  height={900}
-                  sizes="(min-width: 1024px) 45vw, 100vw"
+                  width={560}
+                  height={420}
+                  sizes="(min-width: 1024px) 45vw, (min-width: 640px) 100vw, 92vw"
                 />
               </Reveal>
             </div>
