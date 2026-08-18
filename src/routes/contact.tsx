@@ -315,7 +315,7 @@ function ContactPage() {
                           Harta biroului Topocond
                         </p>
                         <p className="mt-1 text-sm leading-relaxed text-primary-foreground/72">
-                          Deschide traseul direct în Google Maps, fără să încărcăm resurse grele pe mobil.
+                          Deschide traseul direct în Google Maps.
                         </p>
                       </div>
                     </div>
