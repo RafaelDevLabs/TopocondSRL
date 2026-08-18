@@ -312,10 +312,10 @@ function ContactPage() {
                       </span>
                       <div>
                         <p className="text-sm font-semibold text-primary-foreground">
-                          Harta biroului Topocond
+                          Cum ajungi la noi
                         </p>
                         <p className="mt-1 text-sm leading-relaxed text-primary-foreground/72">
-                          Deschide traseul direct în Google Maps.
+                          Apasă mai jos și pornește navigarea direct din telefon.
                         </p>
                       </div>
                     </div>
@@ -333,7 +333,7 @@ function ContactPage() {
                       rel="noopener noreferrer"
                       className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:w-auto"
                     >
-                      Deschide în Google Maps
+                      Pornește navigarea
                       <ExternalLink className="size-4" aria-hidden="true" />
                     </a>
                   </div>
